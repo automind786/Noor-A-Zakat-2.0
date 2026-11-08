@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Noor Zakat Amanah</string>
+    <string name="widget_name">हिजरी तारीख़ और नमाज़</string>
+    <string name="widget_description">आज की हिजरी तारीख़, इस्लामी अवसर और अगली नमाज़</string>
+    <string name="widget_tap_hint">विवरण खोलने और बंद करने के लिए छुएँ</string>
+    <string name="widget_event_placeholder">आज का इस्लामी अवसर</string>
+    <string name="widget_open_app">विस्तार देखें</string>
+</resources>

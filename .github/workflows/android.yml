@@ -1,0 +1,40 @@
+name: Noor Zakat Amanah Android CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Configure live Islamic events feed for repository branch
+        if: github.event_name != 'pull_request'
+        run: echo "NOOR_EVENTS_FEED_URL=https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_REF_NAME}/content/islamic-events.json" >> "$GITHUB_ENV"
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Verify tests, lint and assemble debug APK
+        run: ./gradlew assembleDebug --stacktrace -PNOOR_EVENTS_FEED_URL="${NOOR_EVENTS_FEED_URL:-}"
+
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: noor-zakat-amanah-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14

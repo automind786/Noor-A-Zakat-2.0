@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">نور الزكاة أمانة</string>
+    <string name="widget_name">التاريخ الهجري والصلاة</string>
+    <string name="widget_description">تاريخ اليوم الهجري والمناسبة والصلاة القادمة</string>
+    <string name="widget_tap_hint">اضغط لعرض التفاصيل أو إخفائها</string>
+    <string name="widget_event_placeholder">مناسبة اليوم الإسلامية</string>
+    <string name="widget_open_app">عرض التفاصيل</string>
+</resources>

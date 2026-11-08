@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Noor Zakat Amanah</string>
+    <string name="widget_name">Hijri date &amp; prayer</string>
+    <string name="widget_description">Today’s Hijri date, observance and next prayer</string>
+    <string name="widget_tap_hint">Tap to expand or collapse details</string>
+    <string name="widget_event_placeholder">Today’s Islamic observance</string>
+    <string name="widget_open_app">Open details</string>
+</resources>

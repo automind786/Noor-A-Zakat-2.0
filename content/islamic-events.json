@@ -1,0 +1,449 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-07",
+  "calendarBasis": "Hijri month/day observance; local moon sighting can move dates",
+  "events": [
+    {
+      "id": "hijri_new_year",
+      "month": 1,
+      "day": 1,
+      "theme": "new_year",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "इस्लामी नया साल",
+        "ur": "اسلامی نیا سال",
+        "en": "Islamic New Year",
+        "ar": "رأس السنة الهجرية"
+      },
+      "description": {
+        "hi": "नए हिजरी साल का आरम्भ। स्थानीय चाँद की पुष्टि के अनुसार तारीख़ में अंतर हो सकता है।",
+        "ur": "نئے ہجری سال کا آغاز۔ مقامی رؤیت کے مطابق تاریخ مختلف ہو سکتی ہے۔",
+        "en": "The start of the Hijri year. The observed date can vary with local moon sighting.",
+        "ar": "بداية السنة الهجرية، وقد يختلف التاريخ بحسب رؤية الهلال المحلية."
+      },
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "ashura",
+      "month": 1,
+      "day": 10,
+      "theme": "ashura",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "यौम-ए-आशूरा",
+        "ur": "یومِ عاشوراء",
+        "en": "Day of Ashura",
+        "ar": "يوم عاشوراء"
+      },
+      "description": {
+        "hi": "मुहर्रम की दसवीं तारीख़। रोज़े और संबंधित मसाइल के लिए शरई हवाला देखें।",
+        "ur": "محرم کی دسویں تاریخ۔ روزے اور متعلقہ مسائل کے لیے شرعی حوالہ دیکھیں۔",
+        "en": "The tenth of Muharram. Consult the references for fasting and related rulings.",
+        "ar": "اليوم العاشر من المحرم. راجع المراجع لأحكام الصيام وما يتعلق به."
+      },
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "mawlid",
+      "month": 3,
+      "day": 12,
+      "theme": "mawlid",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "जश्न-ए-मीलादुन्नबी ﷺ",
+        "ur": "جشنِ میلاد النبی ﷺ",
+        "en": "Mawlid observance",
+        "ar": "ذكرى المولد النبوي ﷺ"
+      },
+      "description": {
+        "hi": "अहल-ए-सुन्नत में प्रचलित 12 रबीउल-अव्वल की यादगार। स्थानीय रिवायत/कैलेंडर की पुष्टि करें।",
+        "ur": "اہلِ سنت میں معروف 12 ربیع الاول کی یادگار۔ مقامی روایت اور تقویم کی تصدیق کریں۔",
+        "en": "A widely observed Ahl-e-Sunnat date. Confirm the local tradition and calendar.",
+        "ar": "تاريخ مشهور عند أهل السنة؛ يرجى مراعاة العرف والتقويم المحلي."
+      },
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "ghyarween",
+      "month": 4,
+      "day": 11,
+      "theme": "green_gold",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "ग्यारहवीं शरीफ़",
+        "ur": "گیارہویں شریف",
+        "en": "Gyarhween Shareef",
+        "ar": "گیارہویں شریف"
+      },
+      "description": {
+        "hi": "स्थानीय अहल-ए-सुन्नत परंपरा में याद की जाने वाली तारीख़।",
+        "ur": "مقامی اہلِ سنت روایت میں یاد کی جانے والی تاریخ۔",
+        "en": "A date observed in some local Ahl-e-Sunnat traditions.",
+        "ar": "تاريخ يُذكر في بعض التقاليد المحلية لأهل السنة."
+      },
+      "sourceUrl": "https://www.dawateislami.net/events/en/abdul-qadir-jilani",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "isra_miraj",
+      "month": 7,
+      "day": 27,
+      "theme": "night_sky",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "शब-ए-मेराज (प्रचलित तारीख़)",
+        "ur": "شبِ معراج (مشہور تاریخ)",
+        "en": "Isra and Mi'raj (commonly observed date)",
+        "ar": "الإسراء والمعراج (التاريخ المشهور)"
+      },
+      "description": {
+        "hi": "27 रजब को प्रचलित तौर पर याद किया जाता है; तारीख़ और अमल पर स्थानीय शरई रहनुमाई देखें।",
+        "ur": "27 رجب کو معروف طور پر یاد کیا جاتا ہے؛ تاریخ اور اعمال کے لیے مقامی شرعی رہنمائی دیکھیں۔",
+        "en": "Commonly observed on 27 Rajab; consult local scholarly guidance on the date and practices.",
+        "ar": "يُذكر غالباً في 27 رجب؛ راجع التوجيه العلمي المحلي بشأن التاريخ والأعمال."
+      },
+      "sourceUrl": "https://www.dawateislami.net/magazine/en/topic-of-the-month/rajab-events-2",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "shab_e_barat",
+      "month": 8,
+      "day": 15,
+      "theme": "night_sky",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "शब-ए-बरात",
+        "ur": "شبِ براءت",
+        "en": "Shab-e-Barat",
+        "ar": "ليلة البراءة"
+      },
+      "description": {
+        "hi": "शाबान की पंद्रहवीं रात के लिए प्रचलित नाम। अमल के विवरण के लिए प्रमाणित हवाले देखें।",
+        "ur": "شعبان کی پندرہویں رات کا معروف نام۔ اعمال کے لیے مستند حوالے دیکھیں۔",
+        "en": "Common name for the fifteenth night of Sha'ban. Check authenticated references for practices.",
+        "ar": "اسم شائع لليلة النصف من شعبان؛ راجع المراجع الموثوقة للأعمال."
+      },
+      "sourceUrl": "https://www.dawateislami.net/events/en/shab-e-barat",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "ramadan_start",
+      "month": 9,
+      "day": 1,
+      "theme": "ramadan",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "रमज़ान का पहला दिन (चाँद पर निर्भर)",
+        "ur": "رمضان کا پہلا دن (رویتِ ہلال سے مشروط)",
+        "en": "First day of Ramadan (moon-sighting dependent)",
+        "ar": "أول رمضان (بحسب رؤية الهلال)"
+      },
+      "description": {
+        "hi": "रमज़ान का आरम्भ स्थानीय चाँद दिखने और मान्य घोषणा के अनुसार होगा।",
+        "ur": "رمضان کا آغاز مقامی رؤیتِ ہلال اور معتبر اعلان کے مطابق ہوگا۔",
+        "en": "Ramadan begins according to local moon sighting and the accepted announcement.",
+        "ar": "يبدأ رمضان وفق رؤية الهلال المحلية والإعلان المعتمد."
+      },
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "badr",
+      "month": 9,
+      "day": 17,
+      "theme": "ramadan",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "यौम-ए-बद्र",
+        "ur": "یومِ بدر",
+        "en": "Day of Badr",
+        "ar": "يوم بدر"
+      },
+      "description": {
+        "hi": "17 रमज़ान की तारीख़ को ग़ज़वा-ए-बद्र की याद से जोड़ा जाता है।",
+        "ur": "17 رمضان کو غزوۂ بدر کی یاد سے منسوب کیا جاتا ہے۔",
+        "en": "17 Ramadan is associated with remembrance of the Battle of Badr.",
+        "ar": "يرتبط 17 رمضان بذكرى غزوة بدر."
+      },
+      "sourceUrl": "https://www.dawateislami.net/events/en/battle-of-badr",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "last_ten_nights",
+      "month": 9,
+      "day": 21,
+      "theme": "ramadan",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "रमज़ान की आख़िरी दस रातें",
+        "ur": "رمضان کے آخری دس عشرے کی ابتدا",
+        "en": "Last ten nights of Ramadan",
+        "ar": "العشر الأواخر من رمضان"
+      },
+      "description": {
+        "hi": "लैलतुल-क़द्र को आख़िरी दस रातों में तलाश किया जाता है; 27वीं रात को निश्चित न बताएं।",
+        "ur": "لیلۃ القدر کو آخری دس راتوں میں تلاش کیا جاتا ہے؛ 27ویں رات کو قطعی نہ کہیں۔",
+        "en": "Laylat al-Qadr is sought in the last ten nights; do not assert the 27th as certain.",
+        "ar": "تُطلب ليلة القدر في العشر الأواخر؛ ولا تُجزم بأنها ليلة 27."
+      },
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "laylatul_qadr_possible",
+      "month": 9,
+      "day": 27,
+      "theme": "ramadan",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "27वीं रात — लैलतुल-क़द्र की संभावित रात",
+        "ur": "ستائیسویں رات — شبِ قدر کی ممکنہ رات",
+        "en": "27th night — a possible Laylat al-Qadr",
+        "ar": "ليلة 27 — ليلة محتملة للقدر"
+      },
+      "description": {
+        "hi": "यह एक संभावित रात है; लैलतुल-क़द्र की तारीख़ को निश्चित घोषित न करें।",
+        "ur": "یہ ایک ممکنہ رات ہے؛ شبِ قدر کی تاریخ کو یقینی قرار نہ دیں۔",
+        "en": "This is a possible night; do not declare the date of Laylat al-Qadr as certain.",
+        "ar": "هذه ليلة محتملة؛ لا يُجزم بأن ليلة القدر توافق هذا التاريخ."
+      },
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "eid_fitr",
+      "month": 10,
+      "day": 1,
+      "theme": "eid",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "ईद-उल-फ़ित्र (चाँद पर निर्भर)",
+        "ur": "عید الفطر (رویتِ ہلال سے مشروط)",
+        "en": "Eid al-Fitr (moon-sighting dependent)",
+        "ar": "عيد الفطر (بحسب رؤية الهلال)"
+      },
+      "description": {
+        "hi": "ईद की तारीख़ स्थानीय चाँद देखने और आधिकारिक घोषणा से तय होगी।",
+        "ur": "عید کی تاریخ مقامی رؤیتِ ہلال اور معتبر اعلان سے طے ہوگی۔",
+        "en": "The date depends on local moon sighting and the accepted announcement.",
+        "ar": "يتحدد التاريخ بحسب رؤية الهلال المحلية والإعلان المعتمد."
+      },
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "arafah",
+      "month": 12,
+      "day": 9,
+      "theme": "hajj",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "यौम-ए-अरफ़ा",
+        "ur": "یومِ عرفہ",
+        "en": "Day of Arafah",
+        "ar": "يوم عرفة"
+      },
+      "description": {
+        "hi": "ज़ुल-हिज्जा की नौवीं तारीख़। रोज़े के मसाइल और हज के अमल के लिए हवाले देखें।",
+        "ur": "ذوالحجہ کی نویں تاریخ۔ روزے اور حج کے اعمال کے مسائل کے لیے حوالے دیکھیں۔",
+        "en": "The ninth of Dhu al-Hijjah. See references for fasting and Hajj rulings.",
+        "ar": "التاسع من ذي الحجة؛ راجع المراجع لأحكام الصيام والحج."
+      },
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "eid_adha",
+      "month": 12,
+      "day": 10,
+      "theme": "eid",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "ईद-उल-अज़्हा",
+        "ur": "عید الاضحیٰ",
+        "en": "Eid al-Adha",
+        "ar": "عيد الأضحى"
+      },
+      "description": {
+        "hi": "ज़ुल-हिज्जा की दसवीं तारीख़; स्थानीय चाँद/घोषणा के अनुसार।",
+        "ur": "ذوالحجہ کی دسویں تاریخ؛ مقامی رؤیت اور اعلان کے مطابق۔",
+        "en": "The tenth of Dhu al-Hijjah, subject to the local calendar announcement.",
+        "ar": "العاشر من ذي الحجة بحسب التقويم والإعلان المحلي."
+      },
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "tashreeq",
+      "month": 12,
+      "day": 11,
+      "theme": "hajj",
+      "moonSightingDependent": true,
+      "title": {
+        "hi": "अय्याम-ए-तशरीक़",
+        "ur": "ایامِ تشریق",
+        "en": "Days of Tashriq",
+        "ar": "أيام التشريق"
+      },
+      "description": {
+        "hi": "ज़ुल-हिज्जा की 11 से 13 तारीख़ तक के दिन। तकबीर और संबंधित अहकाम के लिए हवाले देखें।",
+        "ur": "ذوالحجہ کی 11 سے 13 تاریخ تک کے دن۔ تکبیر اور احکام کے لیے حوالے دیکھیں۔",
+        "en": "The days from 11 to 13 Dhu al-Hijjah. Consult references for takbir and related rulings.",
+        "ar": "الأيام من 11 إلى 13 ذي الحجة؛ راجع المراجع للتكبير والأحكام."
+      },
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "sourceName": "Dawat-e-Islami"
+    },
+    {
+      "id": "youm_umar_farooq",
+      "month": 1,
+      "day": 1,
+      "theme": "green_gold",
+      "moonSightingDependent": true,
+      "sourceName": "Dawat-e-Islami",
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "title": {
+        "hi": "यौम-ए-फ़ारूक़-ए-आज़म رضي الله عنه",
+        "ur": "یومِ فاروقِ اعظم رضی اللہ عنہ",
+        "en": "Youm-e-Farooq-e-Azam",
+        "ar": "يوم الفاروق الأعظم"
+      },
+      "description": {
+        "hi": "दावत-ए-इस्लामी के इस्लामी इवेंट कैलेंडर में 1 मुहर्रम को हज़रत उमर फ़ारूक़ رضي الله عنه की याद के रूप में दर्ज किया गया है। स्थानीय हिजरी तारीख़ की पुष्टि करें।",
+        "ur": "دعوتِ اسلامی کے اسلامی ایونٹس کیلنڈر میں یکم محرم کو حضرت عمر فاروق رضی اللہ عنہ کے یوم کے طور پر درج کیا گیا ہے۔ مقامی ہجری تاریخ کی تصدیق کریں۔",
+        "en": "Listed by Dawat-e-Islami on 1 Muharram. Confirm the locally observed Hijri date.",
+        "ar": "مدرج لدى دعوة إسلامي في الأول من محرم. يرجى التحقق من التاريخ الهجري المحلي."
+      }
+    },
+    {
+      "id": "ala_hazrat_urs",
+      "month": 2,
+      "day": 25,
+      "theme": "green_gold",
+      "moonSightingDependent": true,
+      "sourceName": "Dawat-e-Islami",
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "title": {
+        "hi": "उर्स-ए-आला हज़रत رحمه الله",
+        "ur": "یومِ عرس اعلیٰ حضرت رحمۃ اللہ علیہ",
+        "en": "Urs of Ala Hazrat",
+        "ar": "ذكرى الإمام أحمد رضا خان"
+      },
+      "description": {
+        "hi": "इमाम अहमद रज़ा ख़ान बरेलवी رحمه الله का उर्स। दावत-ए-इस्लामी के प्रकाशित इवेंट कैलेंडर में 25 सफ़र दर्ज है।",
+        "ur": "امام احمد رضا خان بریلوی رحمۃ اللہ علیہ کا یومِ عرس۔ دعوتِ اسلامی کے شائع شدہ ایونٹس کیلنڈر میں 25 صفر درج ہے۔",
+        "en": "Urs of Imam Ahmad Raza Khan Barelvi, listed by Dawat-e-Islami on 25 Safar.",
+        "ar": "ذكرى الإمام أحمد رضا خان البريلوي، مدرجة لدى دعوة إسلامي في 25 صفر."
+      }
+    },
+    {
+      "id": "khwaja_gharib_nawaz_urs",
+      "month": 7,
+      "day": 6,
+      "theme": "green_gold",
+      "moonSightingDependent": true,
+      "sourceName": "Dawat-e-Islami",
+      "sourceUrl": "https://www.dawateislami.net/magazine/en/topic-of-the-month/rajab-events-2",
+      "title": {
+        "hi": "उर्स-ए-ख़्वाजा ग़रीब नवाज़ رحمه الله",
+        "ur": "عرسِ خواجہ غریب نواز رحمۃ اللہ علیہ",
+        "en": "Urs of Khwaja Gharib Nawaz",
+        "ar": "ذكرى خواجة غريب نواز"
+      },
+      "description": {
+        "hi": "दावत-ए-इस्लामी की प्रकाशित Rajab events सामग्री में 6 रजब को ख़्वाजा ग़रीब नवाज़ حسن سنجری رحمه الله का उर्स दर्ज है।",
+        "ur": "دعوتِ اسلامی کے شائع شدہ رجب ایونٹس میں 6 رجب کو خواجہ غریب نواز حسن سنجری رحمۃ اللہ علیہ کا یومِ عرس درج ہے۔",
+        "en": "Dawat-e-Islami’s Rajab events material lists 6 Rajab as the Urs of Khwaja Gharib Nawaz Hasan Sanjari.",
+        "ar": "تذكر مادة أحداث رجب لدى دعوة إسلامي يوم 6 رجب ذكرى خواجة غريب نواز حسن سنجري."
+      }
+    },
+    {
+      "id": "ali_21_ramadan",
+      "month": 9,
+      "day": 21,
+      "theme": "ramadan",
+      "moonSightingDependent": true,
+      "sourceName": "Dawat-e-Islami",
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "title": {
+        "hi": "यौम-ए-हज़रत अली رضي الله عنه",
+        "ur": "یومِ حضرت علی رضی اللہ عنہ",
+        "en": "Youm of Hazrat Ali",
+        "ar": "ذكرى سيدنا علي رضي الله عنه"
+      },
+      "description": {
+        "hi": "दावत-ए-इस्लामी के प्रकाशित इवेंट कैलेंडर में 21 रमज़ान को हज़रत अली رضي الله عنه का यौम दर्ज है।",
+        "ur": "دعوتِ اسلامی کے شائع شدہ ایونٹس کیلنڈر میں 21 رمضان کو حضرت علی رضی اللہ عنہ کا یوم درج ہے۔",
+        "en": "Listed by Dawat-e-Islami on 21 Ramadan. Confirm the local Hijri date.",
+        "ar": "مدرج لدى دعوة إسلامي في 21 رمضان. يرجى التحقق من التاريخ المحلي."
+      }
+    },
+    {
+      "id": "ameer_hamza_15_shawwal",
+      "month": 10,
+      "day": 15,
+      "theme": "green_gold",
+      "moonSightingDependent": true,
+      "sourceName": "Dawat-e-Islami",
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "title": {
+        "hi": "यौम-ए-हज़रत अमीर हमज़ा رضي الله عنه",
+        "ur": "یومِ حضرت امیر حمزہ رضی اللہ عنہ",
+        "en": "Youm of Hazrat Ameer Hamza",
+        "ar": "ذكرى سيدنا حمزة رضي الله عنه"
+      },
+      "description": {
+        "hi": "दावत-ए-इस्लामी के प्रकाशित इवेंट कैलेंडर में 15 शव्वाल को हज़रत अमीर हमज़ा رضي الله عنه का यौम दर्ज है।",
+        "ur": "دعوتِ اسلامی کے شائع شدہ ایونٹس کیلنڈر میں 15 شوال کو حضرت امیر حمزہ رضی اللہ عنہ کا یوم درج ہے۔",
+        "en": "Listed by Dawat-e-Islami on 15 Shawwal.",
+        "ar": "مدرج لدى دعوة إسلامي في 15 شوال."
+      }
+    },
+    {
+      "id": "uthman_18_dhul_hijjah",
+      "month": 12,
+      "day": 18,
+      "theme": "hajj",
+      "moonSightingDependent": true,
+      "sourceName": "Dawat-e-Islami",
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "title": {
+        "hi": "यौम-ए-हज़रत उस्मान-ए-ग़नी رضي الله عنه",
+        "ur": "یومِ حضرت عثمانِ غنی رضی اللہ عنہ",
+        "en": "Youm of Hazrat Usman Ghani",
+        "ar": "ذكرى سيدنا عثمان الغني رضي الله عنه"
+      },
+      "description": {
+        "hi": "दावत-ए-इस्लामी के प्रकाशित इवेंट कैलेंडर में 18 ज़ुल-हिज्जा को हज़रत उस्मान-ए-ग़नी رضي الله عنه का यौम दर्ज है।",
+        "ur": "دعوتِ اسلامی کے شائع شدہ ایونٹس کیلنڈر میں 18 ذوالحجہ کو حضرت عثمانِ غنی رضی اللہ عنہ کا یوم درج ہے۔",
+        "en": "Listed by Dawat-e-Islami on 18 Dhu al-Hijjah.",
+        "ar": "مدرج لدى دعوة إسلامي في 18 ذي الحجة."
+      }
+    },
+    {
+      "id": "siddiq_22_jumada_akhirah",
+      "month": 6,
+      "day": 22,
+      "theme": "green_gold",
+      "moonSightingDependent": true,
+      "sourceName": "Dawat-e-Islami",
+      "sourceUrl": "https://www.dawateislami.net/events/",
+      "title": {
+        "hi": "यौम-ए-सिद्दीक़-ए-अकबर رضي الله عنه",
+        "ur": "یومِ صدیقِ اکبر رضی اللہ عنہ",
+        "en": "Youm of Siddiq-e-Akbar",
+        "ar": "ذكرى الصديق الأكبر رضي الله عنه"
+      },
+      "description": {
+        "hi": "दावत-ए-इस्लामी के प्रकाशित इवेंट कैलेंडर में 22 जमादल आख़िरा को हज़रत अबू बक्र सिद्दीक़ رضي الله عنه का यौम दर्ज है।",
+        "ur": "دعوتِ اسلامی کے شائع شدہ ایونٹس کیلنڈر میں 22 جمادی الآخر کو حضرت ابو بکر صدیق رضی اللہ عنہ کا یوم درج ہے۔",
+        "en": "Listed by Dawat-e-Islami on 22 Jumada al-Akhirah.",
+        "ar": "مدرج لدى دعوة إسلامي في 22 جمادى الآخرة."
+      }
+    }
+  ],
+  "sourcePolicy": "Editorial Hijri observance dates are based on cited Ahl-e-Sunnat publications. Local moon sighting may shift the Gregorian date. An event listing is not a religious ruling."
+}

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">نور زکوٰۃ امانت</string>
+    <string name="widget_name">ہجری تاریخ اور نماز</string>
+    <string name="widget_description">آج کی ہجری تاریخ، اسلامی مناسبت اور اگلی نماز</string>
+    <string name="widget_tap_hint">تفصیل کھولنے یا بند کرنے کے لیے چھوئیں</string>
+    <string name="widget_event_placeholder">آج کی اسلامی مناسبت</string>
+    <string name="widget_open_app">تفصیل دیکھیں</string>
+</resources>
