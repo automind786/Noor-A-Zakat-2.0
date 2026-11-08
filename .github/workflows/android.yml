@@ -5,6 +5,9 @@ on:
     branches: [ "main", "master" ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,10 +31,13 @@ jobs:
       - name: Assemble Debug APK
         run: ./gradlew assembleDebug --stacktrace -PNOOR_EVENTS_FEED_URL="${NOOR_EVENTS_FEED_URL:-}"
 
-      - name: Upload debug APK
-        uses: actions/upload-artifact@v4
+      - name: Publish Direct APK to GitHub Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: noor-zakat-amanah-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
-          if-no-files-found: error
-          retention-days: 14
+          tag_name: v1.0.0-build
+          name: "Noor Zakat Amanah v1.0.0 APK"
+          draft: false
+          prerelease: false
+          files: app/build/outputs/apk/debug/app-debug.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
