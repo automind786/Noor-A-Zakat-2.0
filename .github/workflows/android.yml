@@ -3,8 +3,6 @@ name: Noor Zakat Amanah Android CI
 on:
   push:
     branches: [ "main", "master" ]
-  pull_request:
-    branches: [ "main", "master" ]
   workflow_dispatch:
 
 jobs:
@@ -22,13 +20,12 @@ jobs:
           cache: gradle
 
       - name: Configure live Islamic events feed for repository branch
-        if: github.event_name != 'pull_request'
         run: echo "NOOR_EVENTS_FEED_URL=https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_REF_NAME}/content/islamic-events.json" >> "$GITHUB_ENV"
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Verify tests, lint and assemble debug APK
+      - name: Assemble Debug APK
         run: ./gradlew assembleDebug --stacktrace -PNOOR_EVENTS_FEED_URL="${NOOR_EVENTS_FEED_URL:-}"
 
       - name: Upload debug APK
