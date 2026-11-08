@@ -193,12 +193,12 @@ private fun NoorApplication(initialPage: String?) {
     LaunchedEffect(Unit) {
         delay(1750)
         showIntro = false
-        IslamicEventsFeed.schedule(context)
+        runCatching { IslamicEventsFeed.schedule(context) }
         val didRefreshEvents = withContext(Dispatchers.IO) {
             runCatching { IslamicEventsFeed.syncNow(context) }.getOrDefault(false)
         }
         if (didRefreshEvents) eventsVersion += 1
-        if (!prefs.getBoolean("widget_prompt_seen", false)) askWidget = true
+        runCatching { if (!prefs.getBoolean("widget_prompt_seen", false)) askWidget = true }
     }
 
     MaterialTheme(colorScheme = darkColorScheme(
