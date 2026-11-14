@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#0B1514">
+    <TextView
+        android:id="@+id/widgetHijri"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="12 Rabi al-Awwal 1448 AH"
+        android:textColor="#F4D35E"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/widgetGregorian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Friday, 06 Nov 2026"
+        android:textColor="#E8ECEA"
+        android:textSize="13sp"/>
+    <TextView
+        android:id="@+id/widgetSpecial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Milad-un-Nabi ﷺ"
+        android:textColor="#A7F3D0"
+        android:textSize="12sp"
+        android:maxLines="2"/>
+    <TextView
+        android:id="@+id/widgetStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Online • UAQ"
+        android:textColor="#93A4A1"
+        android:textSize="10sp"/>
+</LinearLayout>

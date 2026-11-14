@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html lang="hi" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#07130F">
+<title>Noor-A-Zakat Royal Edition</title>
+<style>
+  :root {
+    --bg-main: #060A0E;
+    --bg-card: #0E151F;
+    --bg-elevated: #16202E;
+    --gold: #D4AF37;
+    --gold-light: #FDE08D;
+    --gold-dim: rgba(212, 175, 55, 0.16);
+    --border-gold: rgba(212, 175, 55, 0.38);
+    --border-soft: rgba(255, 255, 255, 0.08);
+    --green: #10B981;
+    --green-dim: rgba(16, 185, 129, 0.16);
+    --red: #F43F5E;
+    --red-dim: rgba(244, 63, 94, 0.16);
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+  }
+  body.theme-madinah {
+    --bg-main: #04100B; --bg-card: #091E16; --bg-elevated: #102E22;
+    --gold: #34D399; --gold-light: #A7F3D0; --gold-dim: rgba(52, 211, 153, 0.16); --border-gold: rgba(52, 211, 153, 0.4);
+  }
+  body.theme-ottoman {
+    --bg-main: #050B16; --bg-card: #0C182D; --bg-elevated: #152542;
+    --gold: #38BDF8; --gold-light: #BAE6FD; --gold-dim: rgba(56, 189, 248, 0.16); --border-gold: rgba(56, 189, 248, 0.4);
+  }
+  body.theme-velvet {
+    --bg-main: #110508; --bg-card: #220B12; --bg-elevated: #33121B;
+    --gold: #FB7185; --gold-light: #FECDD3; --gold-dim: rgba(251, 113, 133, 0.16); --border-gold: rgba(251, 113, 133, 0.4);
+  }
+  body.theme-daylight {
+    --bg-main: #F4F1EA; --bg-card: #FFFFFF; --bg-elevated: #EBE6DC;
+    --gold: #9A6F0B; --gold-light: #785304; --gold-dim: rgba(154, 111, 11, 0.12); --border-gold: rgba(154, 111, 11, 0.35);
+    --border-soft: rgba(0, 0, 0, 0.08); --text-primary: #1E293B; --text-secondary: #64748B;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    background-color: var(--bg-main);
+    background-image: radial-gradient(circle at 50% 0%, var(--gold-dim) 0%, transparent 65%);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Nastaliq Urdu", sans-serif;
+    min-height: 100vh; padding-bottom: 92px; overflow-x: hidden;
+  }
+  body[dir="rtl"] { font-family: "Noto Naskh Arabic", "Noto Nastaliq Urdu", "Traditional Arabic", Tahoma, sans-serif; }
+
+  /* ROYAL ISLAMIC HEADER */
+  .royal-header {
+    background: var(--bg-card);
+    border-bottom: 1.5px solid var(--border-gold);
+    padding: 12px 16px 10px 16px;
+    position: sticky; top: 0; z-index: 50;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+  }
+  .header-row1 { display: flex; justify-content: space-between; align-items: center; }
+  .brand-box { display: flex; align-items: center; gap: 10px; }
+  .octagram-badge {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    display: flex; align-items: center; justify-content: center;
+    color: #060A0E; font-weight: 900; font-size: 1.1rem;
+    box-shadow: 0 3px 12px var(--gold-dim);
+  }
+  .app-title { font-size: 1.05rem; font-weight: 900; color: var(--gold-light); letter-spacing: 0.4px; }
+  .app-subtitle { font-size: 0.68rem; color: var(--text-secondary); font-weight: 600; }
+
+  .user-chip {
+    background: var(--bg-elevated); border: 1px solid var(--border-gold);
+    color: var(--gold-light); padding: 6px 12px; border-radius: 20px;
+    font-size: 0.74rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 5px;
+  }
+
+  /* HIJRI & ISVI LIVE DATE RIBBON */
+  .date-ribbon {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 8px; padding-top: 7px; border-top: 1px dashed var(--border-soft);
+    font-size: 0.7rem; color: var(--text-secondary);
+  }
+  .hijri-tag { color: var(--gold-light); font-weight: 700; }
+
+  .container { padding: 14px 15px; max-width: 540px; margin: 0 auto; }
+
+  /* MIHRAB ARCH HERO CARD */
+  .mihrab-card {
+    background: linear-gradient(160deg, var(--bg-elevated) 0%, var(--bg-card) 100%);
+    border: 1.5px solid var(--border-gold);
+    border-radius: 24px 24px 16px 16px;
+    padding: 18px 16px; margin-bottom: 14px;
+    position: relative; overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  }
+  .mihrab-card::before {
+    content: "۞"; position: absolute; top: 8px; right: 14px;
+    font-size: 1.4rem; color: var(--gold); opacity: 0.25;
+  }
+
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border-soft);
+    border-radius: 16px; padding: 15px; margin-bottom: 13px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+  .card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 11px; }
+  .card-title { font-size: 0.92rem; font-weight: 800; color: var(--gold-light); display: flex; align-items: center; gap: 7px; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .grid-5 { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+  .royal-header { padding-top: max(12px, env(safe-area-inset-top)); }
+  .brand-box { gap: 0; }
+  .app-title { letter-spacing: .7px; }
+  .calendar-card { background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 18px; padding: 13px; margin-bottom: 12px; }
+  .calendar-toolbar { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:12px; }
+  .calendar-month { color:var(--gold-light); font-size:1rem; font-weight:900; text-align:center; flex:1; }
+  .calendar-nav { width:40px; min-height:40px; border:1px solid var(--border-gold); background:var(--bg-elevated); color:var(--gold-light); border-radius:12px; font-size:1.1rem; font-weight:900; }
+  .calendar-grid { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:5px; }
+  .calendar-weekday { text-align:center; color:var(--text-secondary); font-size:.66rem; font-weight:800; padding:5px 0; }
+  .calendar-day { min-width:0; min-height:58px; padding:5px 2px; border:1px solid var(--border-soft); border-radius:10px; background:var(--bg-elevated); color:var(--text-primary); display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:3px; }
+  .calendar-day.other { opacity:.35; }
+  .calendar-day.today { border-color:var(--green); }
+  .calendar-day.selected { background:var(--gold-dim); border:1.5px solid var(--gold); }
+  .calendar-day .gday { font-size:.82rem; font-weight:900; }
+  .calendar-day .hday { font-size:.57rem; color:var(--gold-light); line-height:1.1; }
+  .calendar-day .event-dot { width:5px; height:5px; border-radius:50%; background:var(--green); }
+  .calendar-selected-title { color:var(--gold-light); font-size:.85rem; font-weight:900; margin-bottom:8px; }
+  .calendar-event { display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:8px; padding:10px; margin-top:7px; border-radius:11px; background:var(--bg-elevated); border:1px solid var(--border-soft); }
+  .calendar-event-title { font-size:.82rem; font-weight:800; }
+  .calendar-event-note { font-size:.7rem; color:var(--text-secondary); margin-top:3px; white-space:pre-wrap; }
+  .tts-stop-fab { display:none; position:fixed; z-index:260; right:18px; bottom:100px; border:1px solid #F43F5E; border-radius:999px; padding:13px 17px; background:#7F1D1D; color:#fff; font-weight:900; box-shadow:0 8px 24px rgba(0,0,0,.5); }
+  .inline-note { font-size:.72rem; color:var(--text-secondary); line-height:1.5; margin:5px 0 9px; }
+  .field input[type="number"] { font-variant-numeric:tabular-nums; }
+  @media(max-width:370px) { .dock { left:5px; right:5px; gap:1px; padding:4px; } .dock-item { font-size:.58rem; } .calendar-day { min-height:51px; } }
+  .field { margin-bottom: 11px; }
+  .field label { display: block; font-size: 0.72rem; color: var(--text-secondary); font-weight: 700; margin-bottom: 4px; }
+  input, select {
+    width: 100%; background: var(--bg-elevated); color: var(--text-primary);
+    border: 1px solid var(--border-soft); border-radius: 11px;
+    padding: 10px 12px; font-size: 0.86rem; font-weight: 600;
+  }
+  input:focus, select:focus { outline: none; border-color: var(--gold); }
+
+  .btn-royal {
+    width: 100%; background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: #060A0E; border: none; border-radius: 12px; padding: 12px;
+    font-size: 0.88rem; font-weight: 900; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+    box-shadow: 0 5px 16px var(--gold-dim);
+  }
+  .btn-add {
+    width: 100%; background: var(--gold-dim); color: var(--gold-light);
+    border: 1.5px dashed var(--border-gold); border-radius: 11px;
+    padding: 10px; font-size: 0.8rem; font-weight: 800; cursor: pointer; margin-top: 6px;
+  }
+  .btn-dalil {
+    background: var(--bg-elevated); border: 1px solid var(--border-gold);
+    color: var(--gold-light); padding: 4px 9px; border-radius: 7px;
+    font-size: 0.68rem; font-weight: 800; cursor: pointer; white-space: nowrap;
+  }
+  .lang-card-btn {
+    background: var(--bg-elevated); border: 1.5px solid var(--border-soft);
+    color: var(--text-primary); padding: 12px 8px; border-radius: 12px;
+    font-size: 0.85rem; font-weight: 800; cursor: pointer; text-align: center;
+  }
+  .lang-card-btn.selected { border-color: var(--gold); background: var(--gold-dim); color: var(--gold-light); }
+
+  /* WEALTH VISUAL PROGRESS BAR */
+  .wealth-bar-wrap { height: 10px; background: var(--bg-main); border-radius: 8px; overflow: hidden; display: flex; margin: 12px 0 6px 0; border: 1px solid var(--border-soft); }
+  .wb-gold { background: #F59E0B; height: 100%; }
+  .wb-silver { background: #94A3B8; height: 100%; }
+  .wb-cash { background: #10B981; height: 100%; }
+
+  .item-row {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--bg-elevated); border: 1px solid var(--border-soft);
+    padding: 10px 12px; border-radius: 11px; margin-top: 7px; gap: 8px;
+  }
+  .badge { font-size: 0.68rem; font-weight: 800; padding: 3px 7px; border-radius: 6px; }
+  .b-plus { background: var(--gold-dim); color: var(--gold-light); }
+  .b-zero { background: var(--green-dim); color: var(--green); }
+  .b-minus { background: var(--red-dim); color: var(--red); }
+
+  /* BOTTOM DOCK */
+  .dock {
+    position: fixed; bottom: 10px; left: 12px; right: 12px; max-width: 520px; margin: 0 auto;
+    background: var(--bg-card); border: 1.5px solid var(--border-gold);
+    border-radius: 22px; padding: 6px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.75); z-index: 80;
+  }
+  .dock-item {
+    background: none; border: none; color: var(--text-secondary);
+    padding: 7px 2px; border-radius: 15px; font-size: 0.65rem; font-weight: 700;
+    cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px;
+  }
+  .dock-item.active { background: var(--gold-dim); color: var(--gold-light); font-weight: 900; }
+
+  /* BOTTOM SHEET MODAL FOR DALIL */
+  .backdrop {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.82);
+    z-index: 9999; align-items: flex-end; justify-content: center;
+    touch-action: none;
+  }
+  .sheet {
+    position: relative; z-index: 10000;
+    background: var(--bg-card); border-top: 2px solid var(--gold);
+    border-radius: 24px 24px 0 0; width: 100%; max-width: 540px;
+    max-height: 82vh; overflow-y: auto; overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch; touch-action: pan-y;
+    padding: 20px 18px 28px 18px; box-shadow: 0 -10px 40px rgba(0,0,0,0.8);
+    will-change: transform, opacity; transition: transform 180ms ease, opacity 180ms ease;
+  }
+
+  /* ============ NOOR v2 — PREMIUM POLISH ============ */
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.045;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'><g fill='none' stroke='%23D4AF37' stroke-width='1'><path d='M36 6l8 8h12v12l8 8-8 8v12H44l-8 8-8-8H16V42l-8-8 8-8V14h12z'/><circle cx='36' cy='34' r='8'/></g></svg>");
+    background-size: 72px 72px;
+  }
+  .container, .royal-header { position: relative; z-index: 1; }
+  .royal-header { position: sticky; z-index: 50; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .royal-header::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: .7;
+  }
+  .mihrab-card::after {
+    content: ""; position: absolute; inset: -40% -20% auto auto; width: 70%; height: 90%;
+    background: radial-gradient(circle, var(--gold-dim) 0%, transparent 70%); pointer-events: none;
+  }
+  #lblHeroZakat { letter-spacing: .3px; text-shadow: 0 2px 18px var(--gold-dim); font-variant-numeric: tabular-nums; }
+  .app-subtitle, .field label, .badge { font-size: max(0.72rem, 11.5px); }
+  .dock-item { min-height: 52px; font-size: 0.7rem; transition: background .2s, color .2s, transform .15s; }
+  .dock-item:active, .btn-royal:active, .btn-add:active, .btn-dalil:active, .lang-card-btn:active { transform: scale(.96); }
+  .btn-royal, .btn-add, .btn-dalil, .lang-card-btn { transition: transform .15s, box-shadow .2s, background .2s; min-height: 44px; }
+  .btn-dalil { min-height: 36px; }
+  .dock-item span:first-child { font-size: 1.15rem; }
+  input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 2px; }
+  .card, .mihrab-card, .item-row { animation: noorIn .35s ease both; }
+  @keyframes noorIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .rate-status { font-size: .72rem; color: var(--text-secondary); margin: -2px 0 10px; line-height: 1.5; }
+  .rate-status.warn { color: var(--gold-light); }
+  .note { font-size: .76rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 8px; }
+  .disclaimer { background: var(--gold-dim); border: 1px solid var(--border-gold); border-radius: 12px; padding: 11px 12px; font-size: .76rem; line-height: 1.55; margin-bottom: 10px; }
+  .toast {
+    position: fixed; left: 50%; bottom: 96px; transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
+    max-width: 88%; background: var(--bg-elevated); color: var(--text-primary); border: 1px solid var(--border-gold);
+    padding: 11px 16px; border-radius: 14px; font-size: .8rem; font-weight: 700; text-align: center; z-index: 300;
+    box-shadow: 0 10px 30px rgba(0,0,0,.6); transition: opacity .25s, transform .25s;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+  .about-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
+  .about-actions .btn-add { margin-top: 0; }
+  .masarif-8 .item-row { align-items: flex-start; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+  @media print {
+    body::before, .royal-header, .dock, .container > *:not(#sec-calc), #sec-calc > *:not(#subsub-zakat),
+    #subsub-zakat > *:not(#parchaBox), #parchaBox .grid-2, .toast { display: none !important; }
+    body { background: #fff !important; color: #000 !important; padding: 0 !important; }
+    #parchaBox { border: 1px solid #999 !important; box-shadow: none !important; background: #fff !important; color: #000 !important; }
+    #parchaBox * { color: #000 !important; }
+  }
+
+  /* NOOR SMART DESIGN SYSTEM — refined responsive dashboard */
+  :root {
+    --bg-main:#07110f; --bg-card:#101d19; --bg-elevated:#172923;
+    --gold:#d6b56d; --gold-light:#f3dfaa; --gold-dim:rgba(214,181,109,.13);
+    --border-gold:rgba(214,181,109,.28); --border-soft:rgba(255,255,255,.075);
+    --green:#48c6a0; --text-primary:#f5f2e9; --text-secondary:#a5b4ad;
+  }
+  body { background:linear-gradient(180deg,#07130f 0%,#091713 48%,#07110f 100%); padding-bottom:108px; }
+  .royal-header { padding: max(15px,env(safe-area-inset-top)) 18px 13px; background:rgba(12,28,22,.94); border-bottom:1px solid rgba(214,181,109,.2); box-shadow:0 8px 28px rgba(0,0,0,.22); }
+  .app-title { font-size:1.12rem; letter-spacing:1.25px; color:#f2dfb0; }
+  .app-subtitle { margin-top:3px; letter-spacing:.25px; }
+  .date-ribbon { border:0; padding-top:10px; margin-top:10px; gap:10px; font-size:.75rem; }
+  .date-ribbon span { background:rgba(255,255,255,.045); border:1px solid var(--border-soft); padding:7px 10px; border-radius:12px; }
+  .container { max-width:620px; padding:18px 16px 24px; }
+  .mihrab-card { border-radius:26px; border:1px solid rgba(214,181,109,.3); background:linear-gradient(145deg,#1b3328,#10221b 65%,#0e1d18); box-shadow:0 16px 36px rgba(0,0,0,.24); padding:21px 18px; }
+  .card,.calendar-card { border-radius:20px; border:1px solid rgba(255,255,255,.075); background:linear-gradient(150deg,rgba(20,37,30,.98),rgba(13,27,22,.98)); box-shadow:0 10px 26px rgba(0,0,0,.18); padding:17px; }
+  .card-title { font-size:.98rem; letter-spacing:.1px; }
+  .grid-2,.grid-3 { gap:11px; }
+  input,select { min-height:46px; border-radius:13px; background:#0c1b15; border-color:rgba(255,255,255,.11); }
+  .btn-royal { min-height:49px; border-radius:14px; background:linear-gradient(135deg,#f0d99e,#c7a45b); box-shadow:0 8px 18px rgba(174,137,66,.17); }
+  .btn-add,.lang-card-btn { border-radius:14px; }
+  .item-row { border-radius:14px; padding:12px; background:rgba(255,255,255,.035); }
+  .dock { left:10px; right:10px; bottom:max(10px,env(safe-area-inset-bottom)); max-width:600px; border-radius:20px; padding:7px; background:rgba(12,27,21,.96); border:1px solid rgba(214,181,109,.24); box-shadow:0 12px 34px rgba(0,0,0,.4); backdrop-filter:blur(18px); }
+  .dock-item { min-height:55px; border-radius:14px; font-size:.67rem; }
+  .dock-item.active { background:linear-gradient(180deg,rgba(214,181,109,.2),rgba(214,181,109,.08)); color:#f4dfaa; }
+  .calendar-card { padding:16px; }
+  .calendar-toolbar { margin-bottom:16px; }
+  .calendar-month { font-size:1.02rem; letter-spacing:.2px; }
+  .calendar-nav { border-radius:13px; background:#1a3026; }
+  .calendar-grid { gap:6px; }
+  .calendar-weekday { padding:7px 0; font-size:.7rem; }
+  .calendar-day { min-height:66px; border-radius:13px; border:1px solid rgba(255,255,255,.07); background:#14251e; justify-content:center; gap:5px; padding:6px 2px; }
+  .calendar-day .gday { font-size:1rem; color:#f1d99f; }
+  .calendar-day .hday { font-size:.61rem; color:#b7c5bc; }
+  .calendar-day.other { opacity:.32; }
+  .calendar-day.today { border:1px solid #55c7a1; box-shadow:inset 0 0 0 1px rgba(85,199,161,.15); }
+  .calendar-day.selected { background:rgba(214,181,109,.16); border:1.5px solid #d6b56d; }
+  .calendar-selected-title { font-size:.92rem; line-height:1.5; }
+  .tts-stop-fab { bottom:116px; border-radius:16px; }
+  @media(max-width:370px) { .calendar-day { min-height:56px; } .calendar-day .hday { font-size:.54rem; } }
+</style>
+</head>
+<body>
+
+<!-- TOP ROYAL HEADER -->
+<div class="royal-header">
+  <div class="header-row1">
+    <div class="brand-box">
+      <div>
+        <div class="app-title" id="uiAppTitle">NOOR-A-ZAKAT PRO</div>
+        <div class="app-subtitle" id="uiAppSub">Fiqh-e-Hanafi • Mustanad Nizam</div>
+      </div>
+    </div>
+    <button class="user-chip" onclick="openSetupModal()">
+      <span>👤</span> <span id="uiProfileName">Setup</span> <span>⚙️</span>
+    </button>
+  </div>
+  <div class="date-ribbon">
+    <span id="uiGregorianDate">📅 --</span>
+    <span class="hijri-tag" id="uiHijriDate">🌙 Hijri Loading...</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ================= STEP 0: SMART ONBOARDING &SHART GATEKEEPER ================= -->
+  <div id="sec-setup" style="display:none;">
+    <div class="mihrab-card">
+      <div class="card-title" data-i18n="setup_title" style="font-size:1.05rem; margin-bottom:6px;">🌟 Bismillah — Shuruati Setup</div>
+      <p data-i18n="setup_intro" style="font-size:0.78rem; color:var(--text-secondary); margin-bottom:14px;">
+        Sabse pehle apni pasandida Bhasha, Naam aur Shar'i Shartein chunein taaki app aapke mutabiq set ho jaye:
+      </p>
+
+      <div class="field">
+        <label data-i18n="setup_language_label">1. Apni Bhasha Chunein (Select Language):</label>
+        <div class="grid-5" style="margin-top:6px;">
+          <button type="button" class="lang-card-btn" id="lbtn-urdu" onclick="selectLang('urdu')">اردو</button>
+          <button type="button" class="lang-card-btn" id="lbtn-hindi" onclick="selectLang('hindi')">हिंदी</button>
+          <button type="button" class="lang-card-btn selected" id="lbtn-hinglish" onclick="selectLang('hinglish')">Hinglish</button>
+          <button type="button" class="lang-card-btn" id="lbtn-english" onclick="selectLang('english')">English</button>
+          <button type="button" class="lang-card-btn" id="lbtn-arabic" onclick="selectLang('arabic')">العربية</button>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="field">
+          <label id="lblSetupName" data-i18n="setup_name">2. Hisab Kiske Naam Se Hai?</label>
+          <input type="text" id="setupUserName" data-i18n-placeholder="placeholder_name" placeholder="e.g. Shahid / Begum">
+        </div>
+        <div class="field">
+          <label id="lblSetupAge" data-i18n="setup_age">3. Umar (Age in Years)</label>
+          <input type="number" id="setupUserAge" value="22" min="1" max="120" oninput="checkAgeGate()">
+        </div>
+      </div>
+
+      <p class="note" id="ageFiqhNote" data-i18n="age_fiqh_note" style="display:none;">Age by itself does not always determine puberty status in Hanafi fiqh. Choose the correct status based on the relevant signs and ask a qualified Mufti if unsure.</p>
+
+      <div class="grid-2">
+        <div class="field">
+          <label id="lblSetupBaligh" data-i18n="setup_owner">4. Shar'i Haisiyat</label>
+          <select id="setupBalighStatus" onchange="checkAgeGate()">
+            <option value="BALIGH" data-i18n="opt_owner_baligh">Baaligh & Aqil Musalman</option>
+            <option value="NABALIGH" data-i18n="opt_owner_minor">Nabaligh Bacha (Under-Age)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label id="lblSetupCurrency" data-i18n="setup_currency">5. Currency (Mulk)</label>
+          <select id="setupCurrency">
+            <option value="INR">₹ INR (India)</option><option value="PKR">Rs PKR (Pakistan)</option><option value="BDT">৳ BDT (Bangladesh)</option>
+            <option value="SAR">﷼ SAR (Saudi Arabia)</option><option value="AED">د.إ AED (UAE)</option><option value="QAR">ر.ق QAR (Qatar)</option>
+            <option value="KWD">د.ك KWD (Kuwait)</option><option value="BHD">د.ب BHD (Bahrain)</option><option value="OMR">ر.ع OMR (Oman)</option>
+            <option value="MYR">RM MYR (Malaysia)</option><option value="USD">$ USD</option><option value="GBP">£ GBP (UK)</option><option value="EUR">€ EUR</option><option value="CAD">$ CAD (Canada)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- INSTANT SHAR'I GATEKEEPER ALERT IF NABALIGH -->
+      <div id="gatekeeperAlert" style="display:none; background:var(--green-dim); border:1.5px solid var(--green); padding:12px; border-radius:12px; margin-bottom:12px;">
+        <div style="font-weight:900; color:var(--green); font-size:0.88rem;">🟢 SHARIAT KA FAISLA: ZAKAT FARZ NAHI HAI (₹0)</div>
+        <p data-i18n="minor_note" style="font-size:0.78rem; color:var(--text-primary); margin-top:4px; line-height:1.45;">
+          Fiqh-e-Hanafi ke mutabiq nabaligh ke maal par zakat ka hukm alag hai; exact status Mufti se confirm karein.
+        </p>
+      </div>
+
+      <button class="btn-royal" data-i18n="save_continue" onclick="completeSetupAndContinue()">
+        ✅ Save Karein Aur Aage Badhein ➔
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= TAB 1: USOOL ================= -->
+  <div id="sec-rules">
+    <div class="mihrab-card">
+      <div data-i18n="fiqh_standard" style="font-size:0.72rem; color:var(--gold); font-weight:800; text-transform:uppercase;">Bahar-e-Shariat Standard</div>
+      <div data-i18n="standard_title" style="font-size:1.3rem; font-weight:900; margin:4px 0 8px 0;" id="uiHeroStandardTitle">Fiqh-e-Hanafi Mi'yar</div>
+      <p data-i18n="standard_desc" style="font-size:0.78rem; color:var(--text-secondary); line-height:1.5;" id="uiHeroStandardDesc">
+        Har masla Sadrush Shariah Mufti Amjad Ali Aazmi aur Aala Hazrat Imam Ahmad Raza Khan (Rehmatullah Alaih) ki tahqiq ke mutabiq set hai.
+      </p>
+      <div class="grid-2" style="margin-top:12px; padding-top:10px; border-top:1px solid var(--border-soft);">
+        <div>
+          <span data-i18n="gold_nisab" style="font-size:0.68rem; color:var(--text-secondary); display:block;">SONA NISAB (7.5 Tola)</span>
+          <strong style="color:var(--gold-light); font-size:0.9rem;">87.48 Grams</strong>
+        </div>
+        <div>
+          <span data-i18n="silver_nisab" style="font-size:0.68rem; color:var(--text-secondary); display:block;">CHANDI NISAB (52.5 Tola)</span>
+          <strong style="color:var(--green); font-size:0.9rem;">612.36 Grams</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title" id="txtQuickRulesTitle" data-i18n="quick_rules_title">✨ Zakat Ke 4 Buniyadi Usool</div>
+      </div>
+      <div id="quickRulesContainer"></div>
+      <button class="btn-royal" data-i18n="rules_start" style="margin-top:14px;" onclick="switchTab('calc')">
+        🧮 Bismillah — Hisab Shuru Karein
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= TAB 2: HISAB (4-IN-1 CALCULATORS) ================= -->
+  <div id="sec-calc" style="display:none;">
+    <div class="grid-4" style="margin-bottom:12px;">
+      <button class="lang-card-btn selected" data-i18n="tab_zakat" id="subbtn-zakat" onclick="switchSubTab('zakat')" style="padding:8px 4px; font-size:0.72rem;">🪙 Zakat</button>
+      <button class="lang-card-btn" data-i18n="tab_ushr" id="subbtn-ushr" onclick="switchSubTab('ushr')" style="padding:8px 4px; font-size:0.72rem;">🌾 Ushr</button>
+      <button class="lang-card-btn" data-i18n="tab_fitra" id="subbtn-fitra" onclick="switchSubTab('fitra')" style="padding:8px 4px; font-size:0.72rem;">🍞 Fitra</button>
+      <button class="lang-card-btn" data-i18n="tab_family" id="subbtn-tamleek" onclick="switchSubTab('tamleek')" style="padding:8px 4px; font-size:0.72rem;">👥 Rishte</button>
+    </div>
+
+    <div id="subsub-zakat">
+      <!-- LIVE ROYAL SUMMARY DASHBOARD -->
+      <div class="mihrab-card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <div data-i18n="hero_zakat" style="font-size:0.7rem; color:var(--gold); font-weight:800;">KHALIS WAJIB ZAKAT</div>
+            <div style="font-size:2.05rem; font-weight:900; color:var(--text-primary); margin:2px 0 6px 0;" id="lblHeroZakat">₹0</div>
+          </div>
+          <button class="btn-dalil" data-i18n="listen_report" onclick="readAloudParcha()">🔊 Parcha Suniye</button>
+        </div>
+        <div id="heroStatusPill" class="badge b-zero" style="display:inline-block; font-size:0.76rem; padding:5px 12px;">Check Ho Raha Hai</div>
+
+        <!-- Visual Wealth Bar -->
+        <div class="wealth-bar-wrap">
+          <div class="wb-gold" id="barGold" style="width:33%;"></div>
+          <div class="wb-silver" id="barSilver" style="width:33%;"></div>
+          <div class="wb-cash" id="barCash" style="width:34%;"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:0.68rem; color:var(--text-secondary);">
+          <span>🟡 Sona Nisab: <strong id="lblGoldNisab" style="color:var(--gold-light);">₹0</strong></span>
+          <span>🟢 Chandi Nisab: <strong id="lblSilverNisab" style="color:var(--green);">₹0</strong></span>
+        </div>
+      </div>
+
+      <!-- STEP 1: LIVE MARKET RATES & SHART -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title" data-i18n="live_rates">1. Aaj Ka Bazaru Bhav & Saal</div>
+          <button class="btn-dalil" data-i18n="live_rates_button" onclick="fetchOnlineMarketRates()" id="btnFetchLive">🔄 Live Bhav</button>
+        </div>
+        <div class="grid-2">
+          <div class="field">
+            <label><span data-i18n="gold_rate">24K Sona (10g Bhav)</span> <span class="cur-tag"></span></label>
+            <input type="number" id="goldRate10g" placeholder="Bhav daalein" inputmode="decimal" oninput="onRateInput()">
+          </div>
+          <div class="field">
+            <label><span data-i18n="silver_rate">Chandi (10g Bhav)</span> <span class="cur-tag"></span></label>
+            <input type="number" id="silverRate10g" placeholder="Bhav daalein" inputmode="decimal" oninput="onRateInput()">
+          </div>
+        </div>
+        <div class="rate-status" id="rateStatus"></div>
+        <div class="grid-2">
+          <div class="field">
+            <label data-i18n="owner_label">Maalik Ki Shart</label>
+            <select id="ownerStatus" onchange="calculateAll()">
+              <option value="BALIGH" data-i18n="opt_owner_baligh">Baaligh & Aqil</option>
+              <option value="NABALIGH" data-i18n="opt_owner_minor">Nabaligh Bacha (0)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label data-i18n="hawl_label">Saal (Hawl)</label>
+            <select id="hawlStatus" onchange="calculateAll()">
+              <option value="QAMRI_354" data-i18n="opt_hawl_lunar">Qamri 354 Din (2.5%)</option>
+              <option value="SHAMSI_365" data-i18n="opt_hawl_solar">English 365 Din (2.5775%)</option>
+              <option value="INCOMPLETE" data-i18n="opt_hawl_incomplete">1 Saal Poora Nahi Hua</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: ZEWAR TIJORI -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title" data-i18n="jewels_title">2. Sona & Chandi Zewar Tijori</div>
+          <button class="btn-dalil" data-i18n="dalil_button" onclick="showDalil('R05')" data-i18n="dalil_button">Dalil 📖</button>
+        </div>
+        <div class="grid-2">
+          <div class="field"><label data-i18n="jewel_name">Zewar Naam</label><input type="text" id="jewelName" placeholder="e.g. Kangan / Haar"></div>
+          <div class="field"><label data-i18n="metal_label">Dhatu</label><select id="jewelMetal" onchange="updateTolaPreview()"><option value="GOLD" data-i18n="opt_gold">Sona (Gold)</option><option value="SILVER" data-i18n="opt_silver">Chandi (Silver)</option><option value="DIAMOND_EXEMPT" data-i18n="opt_gems">Heera/Moti (MAAF)</option></select></div>
+        </div>
+        <div class="grid-3">
+          <div class="field"><label data-i18n="unit_label">Unit</label><select id="jewelUnit" onchange="updateTolaPreview()"><option value="GRAMS" data-i18n="opt_grams">Grams (g)</option><option value="SHARI_TOLA" data-i18n="opt_shari_tola">Shar'i Tola (11.664g)</option><option value="MARKET_TOLA" data-i18n="opt_market_tola">Bazaru Tola (10g)</option></select></div>
+          <div class="field"><label data-i18n="weight_label">Kul Wazan</label><input type="number" id="jewelWeight" placeholder="50" oninput="updateTolaPreview()"></div>
+          <div class="field"><label data-i18n="stones_label">Nag/Lakh (g)</label><input type="number" id="jewelStoneG" value="0" oninput="updateTolaPreview()"></div>
+        </div>
+        <div class="field"><label data-i18n="purity_label">Carat (Purity)</label><select id="jewelCarat" onchange="updateTolaPreview()"><option value="22" data-i18n="carat22">22 Carat (91.6% Hallmark)</option><option value="24" data-i18n="carat24">24 Carat (99.9% Khalis)</option><option value="20" data-i18n="carat20">20 Carat (83.3%)</option><option value="18" data-i18n="carat18">18 Carat (75.0%)</option></select></div>
+        <div id="tolaPreview" style="font-size:0.74rem; color:var(--gold-light); margin-bottom:6px; font-weight:700;"></div>
+        <button class="btn-add" data-i18n="add_jewel" onclick="addJewelItem()">+ Tijori Mein Zewar Jodein</button>
+        <div id="jewelList"></div>
+      </div>
+
+      <!-- STEP 3: CASH, DUKAN & GHAR -->
+      <div class="card" id="assetInputSection">
+        <div class="card-head">
+          <div class="card-title" data-i18n="assets_title">3. Cash, Dukan, Makan & Gaadi</div>
+          <button class="btn-dalil" data-i18n="dalil_button" onclick="showDalil('R07')" data-i18n="dalil_button">Dalil 📖</button>
+        </div>
+	    <div class="grid-2">
+          <div class="field"><label data-i18n="asset_name">Naam</label><input type="text" id="assetTitle" placeholder="e.g. Bank Balance"></div>
+          <div class="field"><label data-i18n="amount_label">Rakam</label><input type="number" id="assetAmount" placeholder="50000"></div>
+        </div>
+        <div class="field">
+          <label data-i18n="asset_type_label">Qism & Niyat</label>
+          <select id="assetType">
+            <option value="CASH_BANK" data-i18n="opt_cash">💵 Cash / Bank Balance / FD — zakatable</option>
+            <option value="BC_SAVED" data-i18n="opt_committee">🤝 Committee / BC ki jama raqam — zakatable</option>
+            <option value="SHOP_STOCK" data-i18n="opt_stock">📦 Dukan ka tayyar trading stock — zakatable</option>
+            <option value="RAW_MATERIAL" data-i18n="opt_raw">🧱 Karobar ka raw material — zakatable</option>
+            <option value="PLOT_TRADING" data-i18n="opt_plot">📈 Bechne ki niyat se kharida plot — zakatable</option>
+            <option value="UDHAR_QAWI" data-i18n="opt_receivable">📥 Wapas milne ki mazboot umeed wala udhar*</option>
+            <option value="HOME_USE" data-i18n="opt_home">🏠 Apna istemal ka ghar — aam tor par exempt</option>
+            <option value="PERSONAL_VEHICLE" data-i18n="opt_vehicle">🚗 Personal car / bike / mobile — exempt</option>
+            <option value="SHOP_TOOLS" data-i18n="opt_tools">🛠️ Karobar ke tools / machinery — exempt</option>
+          </select>
+          <p class="inline-note" data-i18n="asset_note">*Udhar ki zakat aur wasooli ke waqt adaigi mein fiqhi tafseel hai. Mushkil case mein Mufti se tasdeeq karein. Apni milkiyat ka hissa neeche darj karein.</p>
+        </div>
+        <div class="field"><label data-i18n="ownership_pct">Aapki milkiyat (%)</label><input type="number" id="assetOwnership" value="100" min="0.01" max="100" step="0.01" inputmode="decimal"></div>
+        <button class="btn-add" data-i18n="add_asset" onclick="addAssetItem()">+ Sampatti Jodein</button>
+        <div id="assetList"></div>
+      </div>
+
+      <!-- STEP 4: QARZ -->
+      <div class="card" id="debtInputSection">
+        <div class="card-head">
+          <div class="card-title" data-i18n="debts_title">4. Wajib-ul-Ada Qarz (-)</div>
+          <button class="btn-dalil" data-i18n="dalil_button" onclick="showDalil('R13')" data-i18n="dalil_button">Dalil 📖</button>
+        </div>
+        <div class="grid-2">
+          <div class="field"><label data-i18n="debt_name">Qarz Naam</label><input type="text" id="debtTitle" placeholder="e.g. Supplier Udhar"></div>
+          <div class="field"><label data-i18n="amount_label">Rakam</label><input type="number" id="debtAmount" placeholder="15000"></div>
+        </div>
+        <div class="field"><label data-i18n="debt_type">Qism</label><select id="debtType"><option value="SHORT_TERM" data-i18n="opt_short_debt">Fori Qarz / Bill / Biwi ka Mahr (100% Minus)</option><option value="LONG_EMI" data-i18n="opt_long_debt">Long-Term Loan: 1 Mahine ki EMI (12 Mahine Minus)</option></select></div>
+        <button class="btn-add" data-i18n="add_debt" onclick="addDebtItem()">- Qarz Minus Karein</button>
+        <div id="debtList"></div>
+      </div>
+
+      <!-- OFFICIAL SHAR'I PARCHA -->
+      <div class="mihrab-card" id="parchaBox">
+        <div style="text-align:center; margin-bottom:10px;">
+          <div data-i18n="report_title" style="font-size:0.95rem; font-weight:900; color:var(--gold-light);">📜 SHAR'I ZAKAT HISAB PARCHA</div>
+          <div style="font-size:0.7rem; color:var(--text-secondary);">Mustanad Fiqh-e-Hanafi Report</div>
+        </div>
+        <div id="billStatusBanner" style="padding:10px; border-radius:10px; text-align:center; margin-bottom:10px;"></div>
+        <div style="font-size:0.72rem; font-weight:800; color:var(--gold-light); margin-top:8px;">[1] ZAKAT WALA MAAL (+)</div>
+        <div id="billPlusItems"></div>
+        <div style="display:flex; justify-content:space-between; font-weight:800; padding-top:6px; border-top:1px solid var(--border-soft); margin-top:4px;"><span>Kul Zakatable (A):</span><span id="billTotalPlus">₹0</span></div>
+
+        <div style="font-size:0.72rem; font-weight:800; color:var(--green); margin-top:12px;">[2] SHARIAT MEIN MAAF (0)</div>
+        <div id="billZeroItems"></div>
+
+        <div style="font-size:0.72rem; font-weight:800; color:var(--red); margin-top:12px;">[3] QARZ KATAUTI (-)</div>
+        <div id="billMinusItems"></div>
+        <div style="display:flex; justify-content:space-between; font-weight:800; padding-top:6px; border-top:1px solid var(--border-soft); margin-top:4px;"><span>Kul Qarz (B):</span><span id="billTotalMinus">-₹0</span></div>
+
+        <div style="display:flex; justify-content:space-between; font-weight:800; margin-top:10px;"><span>Khalis Bachat (A - B):</span><span id="billNetWealth">₹0</span></div>
+        <div style="display:flex; justify-content:space-between; font-size:1.1rem; font-weight:900; color:var(--gold-light); border-top:2px solid var(--gold); padding-top:10px; margin-top:8px;">
+          <span id="lblZakatRateText">WAJIB ZAKAT (2.5%):</span><span id="billFinalZakat">₹0</span>
+        </div>
+        <div class="grid-2" style="margin-top:14px;">
+          <button class="btn-royal" data-i18n="print_pdf" onclick="if(window.AndroidBridge)AndroidBridge.printBill();else window.print();">🖨️ Print / PDF</button>
+          <button class="btn-royal" data-i18n="share_whatsapp" style="background:var(--bg-elevated); color:var(--gold-light); border:1px solid var(--border-gold);" onclick="shareParchaWhatsApp()">💬 WhatsApp Share</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- USHR SUBTAB -->
+    <div id="subsub-ushr" style="display:none;">
+      <div class="card">
+        <div class="card-head"><div class="card-title" data-i18n="ushr_title">🌾 Kheti & Fasal Ushr Calculator</div><button class="btn-dalil" onclick="showDalil('R07')" data-i18n="dalil_button">Dalil 📖</button></div>
+        <div class="field"><label data-i18n="ushr_kg">Fasal Ka Kul Wazan (Kg)</label><input type="number" id="ushrKg" placeholder="1000" oninput="calcUshr()"></div>
+        <div class="field"><label data-i18n="kg_price">1 Kg Ki Keemat</label><input type="number" id="ushrRate" placeholder="25" oninput="calcUshr()"></div>
+        <div class="field"><label data-i18n="water_source">Sinchai (Pani) Ka Zariya</label><select id="ushrType" onchange="calcUshr()"><option value="0.10" data-i18n="ushr_rain">Barish / Neher ka Pani — 10% (Ushr)</option><option value="0.05" data-i18n="ushr_well">Tubewell / Motor Kharcha — 5% (Nisf-Ushr)</option></select></div>
+        <div style="text-align:center; padding:14px; background:var(--bg-elevated); border-radius:12px;">
+          <div data-i18n="ushr_due" style="font-size:0.75rem; color:var(--text-secondary);">Wajib Ushr:</div>
+          <div id="lblUshrResult" style="font-size:1.6rem; font-weight:900; color:var(--gold-light);">₹0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FITRA SUBTAB -->
+    <div id="subsub-fitra" style="display:none;">
+      <div class="card">
+        <div class="card-head"><div class="card-title" data-i18n="fitra_title">🍞 Sadqa-e-Fitr (Fitra) Calculator</div></div>
+        <div class="grid-2">
+          <div class="field"><label data-i18n="fitra_people">Ghar Ke Kul Afrad</label><input type="number" id="fitraMembers" value="1" min="1" max="1000" oninput="calcFitra()"></div>
+          <div class="field"><label data-i18n="fitra_grain">Anaj / Mi'yar</label><select id="fitraRateType" onchange="onFitraRateChange()"><option value="wheat" data-i18n="opt_wheat">Gehun — Nisf Saa' (reference)</option><option value="barley" data-i18n="opt_barley">Jau — 1 Saa' (reference)</option><option value="dates" data-i18n="opt_dates">Khajoor — 1 Saa' (reference)</option><option value="raisins" data-i18n="opt_raisins">Kishmish — 1 Saa' (reference)</option></select></div>
+        </div>
+        <div class="grid-2">
+          <div class="field"><label data-i18n="fitra_weight">Har shakhs ka wazan (Kg)</label><input type="number" id="fitraWeightKg" value="2.041" min="0.001" max="100" step="0.001" inputmode="decimal" oninput="calcFitra()"></div>
+          <div class="field"><label><span data-i18n="fitra_price">1 Kg ki qeemat</span> <span class="cur-tag"></span></label><input type="number" id="fitraPrice" placeholder="Apne shehar ka bhav" min="0" step="0.01" inputmode="decimal" oninput="calcFitra()"></div>
+        </div>
+        <p class="note" id="fitraHint" data-i18n="fitra_note">Fitra = afrad × har shakhs ka wazan × 1 Kg ki qeemat. Yeh sirf reference weights hain; apne ilaqe ke mustanad Mufti ki batayi hui miqdaar aur local rate darj karein.</p>
+        <div style="text-align:center; padding:14px; background:var(--bg-elevated); border-radius:12px;">
+          <div data-i18n="fitra_due" style="font-size:0.75rem; color:var(--text-secondary);">Kul Wajib Fitra:</div>
+          <div id="lblFitraResult" style="font-size:1.6rem; font-weight:900; color:var(--gold-light);">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RISHTEDAR SUBTAB -->
+    <div id="subsub-tamleek" style="display:none;">
+      <div class="card">
+        <div class="card-head"><div class="card-title" data-i18n="family_title">👥 Rishtedar Tamleek Checker</div></div>
+        <div class="field"><label data-i18n="family_relation">Rishta Chunein:</label><select id="rishtaSelect" onchange="checkRishtedar()"></select></div>
+        <div id="rishtaResultBox"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= TAB: ISLAMIC CALENDAR ================= -->
+  <div id="sec-calendar" style="display:none;">
+    <div class="mihrab-card">
+      <div class="card-title" id="calendarTitle" data-i18n="calendar_title">🌙 Islamic Smart Calendar</div>
+      <p class="note" id="calendarHijriNote" data-i18n="calendar_note" style="margin:7px 0 0;">Hijri date is calculated locally for instant display and can be online-verified from the selected calendar source. For Ramadan/Eid and other sighting-dependent dates, follow the trusted local moon-sighting authority and use the correction setting.</p><div id="hijriOnlineStatus" class="badge" style="display:none; margin-top:8px;">Online verified</div>
+    </div>
+    <div class="calendar-card">
+      <div class="calendar-toolbar">
+        <button class="calendar-nav" onclick="shiftCalendarMonth(-1)" aria-label="Previous month">‹</button>
+        <div class="calendar-month" id="calendarMonthLabel">Month Year</div>
+        <button class="calendar-nav" onclick="shiftCalendarMonth(1)" aria-label="Next month">›</button>
+      </div>
+      <div class="calendar-grid" id="calendarWeekdays"></div>
+      <div class="calendar-grid" id="calendarGrid"></div>
+    </div>
+    <div class="card">
+      <div class="calendar-selected-title" id="calendarSelectedLabel">Selected day</div>
+      <div id="calendarEventsList"></div>
+      <div class="field" style="margin-top:12px;"><label id="calendarNewEventLabel" data-i18n="calendar_event_title">New reminder / event</label><input id="calendarEventTitle" type="text" maxlength="80" data-i18n-placeholder="placeholder_event" placeholder="e.g. Zakat review / family event"></div>
+      <div class="field"><label id="calendarEventNotesLabel" data-i18n="calendar_event_notes">Notes (optional)</label><input id="calendarEventNotes" type="text" maxlength="240" data-i18n-placeholder="placeholder_details" placeholder="Details"></div>
+      <button class="btn-royal" onclick="addCalendarEvent()" id="calendarSaveButton" data-i18n="calendar_save">＋ Save event on this phone</button>
+      <button class="btn-add" onclick="cancelCalendarEdit()" id="calendarCancelEdit" style="display:none;" data-i18n="calendar_cancel">Cancel edit</button>
+      <p class="inline-note" data-i18n="calendar_note_events">Events are stored locally in this app. For dependable alerts, add the event to your phone's calendar too; this app does not run background reminders.</p>
+    </div>
+  </div>
+
+  <!-- ================= TAB 3: MASARIF ================= -->
+  <div id="sec-masarif" style="display:none;">
+    <div class="card masarif-8">
+      <div class="card-head"><div class="card-title" data-i18n="masarif_title">🕌 Zakat Ke Masarif (Surah Tawbah 9:60)</div></div>
+      <p class="note" data-i18n="masarif_intro">Quran-e-Pak mein Zakat ke 8 masarif bataye gaye hain. Zakat ada hone ke liye mustahiq ko <strong>maalik banana (Tamleek)</strong> zaruri hai.</p>
+      <div class="item-row"><span data-i18n="masraf_1"><strong>1. Fuqara</strong> — jin ke paas Nisab se kam maal ho.</span></div>
+      <div class="item-row"><span data-i18n="masraf_2"><strong>2. Masakin</strong> — bilkul muhtaj, jinke paas kuch na ho.</span></div>
+      <div class="item-row"><span data-i18n="masraf_3"><strong>3. Amileen</strong> — Islami hukumat ki taraf se Zakat wasool karne wale.</span></div>
+      <div class="item-row"><span data-i18n="masraf_4"><strong>4. Riqab</strong> — gulam/mukatab ko azad karane ke liye.</span></div>
+      <div class="item-row"><span data-i18n="masraf_5"><strong>5. Gharimeen</strong> — qarzdar, jin ke paas qarz utarne ke baad Nisab na bache.</span></div>
+      <div class="item-row"><span data-i18n="masraf_6"><strong>6. Fi Sabilillah</strong> — Allah ki raah mein muhtaj (jaise muhtaj haji/ghazi); tafseel ke liye Mufti sahab se poochein.</span></div>
+      <div class="item-row"><span data-i18n="masraf_7"><strong>7. Ibn-us-Sabil</strong> — musafir jo safar mein maal se mehroom ho gaya.</span></div>
+      <div class="item-row"><span data-i18n="masraf_8"><strong>8. Muallafatul Quloob</strong> — Fiqh-e-Hanafi ke mutabiq ye hissa ab baqi nahi.</span></div>
+      <p class="note" data-i18n="masarif_booknote" style="margin-top:8px;">📚 Tafseel: Bahar-e-Shariat, Hissa 5.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-title" data-i18n="masarif_details_title">👥 Kisko Zakat Dein Aur Kisko Nahi?</div></div>
+      <div id="masarifFullList"></div>
+    </div>
+  </div>
+
+  <!-- ================= TAB 4: KITABEIN ================= -->
+  <div id="sec-books" style="display:none;">
+    <div class="card">
+      <div class="card-head"><div class="card-title" data-i18n="books_title">📚 Mustanad Fiqh-e-Hanafi Kitabein</div></div>
+      <div id="booksLibraryContainer"></div>
+    </div>
+  </div>
+
+  <!-- ================= TAB 5: SETTINGS & KHATA ================= -->
+  <div id="sec-settings" style="display:none;">
+    <div class="card">
+      <div class="card-title" data-i18n="settings_theme" style="margin-bottom:10px;">🎨 5 Royal Islamic Themes</div>
+      <div class="grid-3">
+        <button class="btn-add" data-i18n="theme_default" style="margin:0;" onclick="setTheme('default')">Kiswah Gold</button>
+        <button class="btn-add" data-i18n="theme_madinah" style="margin:0;" onclick="setTheme('madinah')">Madinah Green</button>
+        <button class="btn-add" data-i18n="theme_ottoman" style="margin:0;" onclick="setTheme('ottoman')">Ottoman Blue</button>
+        <button class="btn-add" data-i18n="theme_velvet" style="margin:0;" onclick="setTheme('velvet')">Kaaba Velvet</button>
+        <button class="btn-add" data-i18n="theme_daylight" style="margin:0;" onclick="setTheme('daylight')">Daylight Pearl</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title" data-i18n="settings_language" style="margin-bottom:10px;">🌐 Language & Region</div>
+      <div class="field"><label data-i18n="app_language">App language</label><select id="settingsLanguage" onchange="selectLang(this.value)"><option value="hinglish">Hinglish</option><option value="hindi">हिंदी</option><option value="urdu">اردو</option><option value="english">English</option><option value="arabic">العربية</option></select></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title" data-i18n="settings_currency" style="margin-bottom:10px;">🌍 Currency & Hijri Tarikh</div>
+      <div class="grid-2">
+        <div class="field"><label data-i18n="currency_label">Currency</label><select id="settingsCurrency" onchange="changeCurrency(this.value)"><option value="INR">₹ INR (India)</option><option value="PKR">Rs PKR (Pakistan)</option><option value="BDT">৳ BDT (Bangladesh)</option><option value="SAR">﷼ SAR (Saudi Arabia)</option><option value="AED">د.إ AED (UAE)</option><option value="QAR">ر.ق QAR (Qatar)</option><option value="KWD">د.ك KWD (Kuwait)</option><option value="BHD">د.ب BHD (Bahrain)</option><option value="OMR">ر.ع OMR (Oman)</option><option value="MYR">RM MYR (Malaysia)</option><option value="USD">$ USD</option><option value="GBP">£ GBP (UK)</option><option value="EUR">€ EUR</option><option value="CAD">$ CAD (Canada)</option></select></div>
+        <div class="field"><label data-i18n="settings_hijri">Hijri Tarikh (chand ke mutabiq)</label><select id="hijriOffset" onchange="setHijriOffset(this.value)"><option value="-2">-2 din</option><option value="-1">-1 din</option><option value="0">Standard</option><option value="1">+1 din</option><option value="2">+2 din</option></select></div><div class="field"><label>Hijri source</label><select id="hijriCalendarMethod" onchange="setHijriCalendarMethod(this.value)"><option value="UAQ">Umm al-Qura</option><option value="HJCoSA">Saudi judicial calculation</option></select></div>
+      </div>
+      <p class="note" data-i18n="hijri_settings_note">Hijri tarikh calculation se aati hai; aapke ilaqe mein chand dekhne se 1-2 din ka farq ho sakta hai, to yahan se adjust karein.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title" data-i18n="settings_voice" style="margin-bottom:10px;">🔊 Voice & Accessibility</div>
+      <p class="note" data-i18n="voice_note">Read-aloud prefers a same-language voice labelled female when the Android TTS engine exposes one. Voice labels vary by phone; choose a preferred female voice in Android Speech Settings if available.</p>
+      <div class="grid-2">
+        <button class="btn-add" data-i18n="voice_settings" onclick="openSpeechSettings()">⚙️ Android Voice Settings</button>
+        <button class="btn-add" data-i18n="stop_reading" onclick="stopSpeaking()">⏹ Stop Reading</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title" data-i18n="settings_about" style="margin-bottom:10px;">ℹ️ Noor-A-Zakat Ke Baare Mein</div>
+      <div class="disclaimer" data-i18n="legal_disclaimer">⚖️ Zaruri Wazahat: Yeh app sirf hisab aur ilmi rehnumai ke liye hai, <strong>fatwa nahi</strong>. Pecheeda ya shak wale masail mein apne mustanad Sunni Hanafi Mufti sahab se ruju zaroor karein. Live bhav international spot par mabni hota hai; apne shehar ka bazar bhav ho to khud daal dein.</div>
+      <p class="note"><span data-i18n="version_label">Version</span> <span id="appVersion">2.1.0</span> • <span data-i18n="about_version">Aapka hisab sirf aapke phone mein encrypt hokar rehta hai.</span></p>
+      <div class="about-actions">
+        <button class="btn-add" data-i18n="rate_app" onclick="rateApp()">⭐ Rate Karein</button>
+        <button class="btn-add" data-i18n="share_app" onclick="shareApp()">📤 App Share Karein</button>
+        <button class="btn-add" data-i18n="privacy_policy" id="btnPrivacy" style="display:none;" onclick="openPrivacy()">🔒 Privacy Policy</button>
+        <button class="btn-add" data-i18n="ad_privacy" id="btnAdPrivacy" style="display:none;" onclick="AndroidBridge.showPrivacyOptions()">🛡️ Ads Privacy Options</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-title">📒 Zakat Adaegi Kist-Khata</div><button class="btn-dalil" data-i18n="reset_data" onclick="resetAllData()" style="color:var(--red);">Reset</button></div>
+      <div class="grid-3" style="text-align:center; margin-bottom:10px;">
+        <div style="background:var(--bg-elevated); padding:9px; border-radius:10px;"><div style="font-size:0.65rem;">Wajib</div><div id="khataTotalWajib" style="font-weight:900; color:var(--gold-light);">₹0</div></div>
+        <div style="background:var(--bg-elevated); padding:9px; border-radius:10px;"><div style="font-size:0.65rem;">Ada Shuda</div><div id="khataTotalPaid" style="font-weight:900; color:var(--green);">₹0</div></div>
+        <div style="background:var(--bg-elevated); padding:9px; border-radius:10px;"><div style="font-size:0.65rem;">Baqi</div><div id="khataRemaining" style="font-weight:900; color:var(--red);">₹0</div></div>
+      </div>
+      <div class="grid-2">
+        <div class="field"><label data-i18n="given_to">Kisko Di</label><input type="text" id="kistNote" placeholder="Garib Rishtedar"></div>
+        <div class="field"><label data-i18n="amount_label">Rakam</label><input type="number" id="kistAmount" placeholder="2000"></div>
+      </div>
+      <button class="btn-royal" data-i18n="save_installment" onclick="addKistEntry()">+ Kist Save Karein</button>
+      <div id="kistHistoryList" style="margin-top:8px;"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM DOCK -->
+<div class="dock">
+  <button class="dock-item active" id="dock-rules" onclick="switchTab('rules')"><span>📖</span><span id="dtxt-rules">Usool</span></button>
+  <button class="dock-item" id="dock-calc" onclick="switchTab('calc')"><span>🧮</span><span id="dtxt-calc">Hisab</span></button>
+  <button class="dock-item" id="dock-calendar" onclick="switchTab('calendar')"><span>🌙</span><span id="dtxt-calendar">Calendar</span></button>
+  <button class="dock-item" id="dock-masarif" onclick="switchTab('masarif')"><span>👥</span><span id="dtxt-masarif">Masarif</span></button>
+  <button class="dock-item" id="dock-books" onclick="switchTab('books')"><span>📚</span><span id="dtxt-books">Kitabein</span></button>
+  <button class="dock-item" id="dock-settings" onclick="switchTab('settings')"><span>⚙️</span><span id="dtxt-settings">Settings</span></button>
+</div>
+
+<!-- DALIL BOTTOM SHEET -->
+<div class="backdrop" id="dalilModal" onclick="closeDalil()">
+  <div class="sheet" onclick="event.stopPropagation()">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+      <div style="font-size:0.98rem; font-weight:900; color:var(--gold-light);" id="dalilModalTitle">Fiqhi Dalil</div>
+      <div style="display:flex; gap:6px;"><button class="btn-dalil" data-i18n="listen_button" onclick="speakDalilText()">🔊 Suniye</button><button class="btn-dalil" data-i18n="stop_reading" onclick="stopSpeaking()">⏹ Stop</button></div>
+    </div>
+    <p id="dalilModalBody" style="font-size:0.86rem; line-height:1.6; color:var(--text-primary); margin-bottom:12px;"></p>
+    <div id="dalilModalRef" style="font-size:0.75rem; color:var(--gold-light); background:var(--bg-elevated); padding:10px; border-radius:10px; margin-bottom:14px; border:1px solid var(--border-gold);"></div>
+    <button class="btn-royal" data-i18n="understood" onclick="closeDalil()">Samajh Gaya (Band Karein)</button>
+  </div>
+</div>
+<!-- CONFIRM SHEET -->
+<div class="backdrop" id="confirmModal" onclick="closeConfirm(false)">
+  <div class="sheet" onclick="event.stopPropagation()" role="dialog" aria-modal="true">
+    <div style="font-size:.98rem; font-weight:900; color:var(--gold-light); margin-bottom:8px;">⚠️ Tasdeeq</div>
+    <p id="confirmMsg" style="font-size:.86rem; line-height:1.6; margin-bottom:14px;"></p>
+    <div class="grid-2">
+      <button class="btn-royal" data-i18n="no_button" style="background:var(--bg-elevated); color:var(--gold-light); border:1px solid var(--border-gold);" onclick="closeConfirm(false)">Nahi</button>
+      <button class="btn-royal" data-i18n="yes_button" onclick="closeConfirm(true)">Haan, Karein</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<!-- Global TTS FAB intentionally removed. TTS is available only in Dalil and final Parcha. -->
+<script>
+var STORAGE_KEY = "NOOR_ZAKAT_V4_ROYAL";
+var PRIVACY_URL = ""; // <-- apni Privacy Policy ka https link yahan daalein (Play Store ke liye zaruri)
+var currentLang = "hinglish";
+var lastCalcResult = { netZakatable: 0, zakatPayable: 0, statusTitle: "Check Ho Raha Hai", statusReason: "" };
+
+var CURRENCY_MAP = { INR: "₹", PKR: "Rs ", BDT: "৳ ", SAR: "﷼ ", AED: "د.إ ", QAR: "ر.ق ", KWD: "د.ك ", BHD: "د.ب ", OMR: "ر.ع ", MYR: "RM ", USD: "$", GBP: "£", EUR: "€", CAD: "C$" };
+
+var I18N = {
+  urdu: {
+    dir: "rtl",
+    appTitle: "نورِ زکوٰۃ پرو",
+    appSub: "اہلِ سنت و جماعت • فقہِ حنفی",
+    quickTitle: "✨ زکوٰۃ کے 4 بنیادی شرعی اصول",
+    dock: ["اصول", "حساب", "تقویم", "مصارف", "کتابیں", "سیٹنگز"],
+    rules: [
+      { title: "1. زکوٰۃ کن پر فرض ہے؟", desc: "مسلمان، عاقل اور بالغ ہو، اور حاجتِ اصلیہ سے زائد نصاب کا مالک ہو جس پر 1 قمری سال گزر جائے۔", dalil: "R01" },
+      { title: "2. شرعی تولہ (11.664 گرام)", desc: "سونے کا نصاب 7.5 تولہ (87.48g) اور چاندی کا 52.5 تولہ (612.36g) ہے۔", dalil: "R03" },
+      { title: "3. زیور کے نگ اور لاکھ کی کٹوتی", desc: "زیور میں بھری ہوئی لاکھ (موم) اور نگ/موتی پر زکوٰۃ نہیں، صرف خالص دھات پر ہے۔", dalil: "R05" },
+      { title: "4. حاجتِ اصلیہ (رہائشی مکان و گاڑی معاف)", desc: "رہنے کا گھر، ذاتی گاڑی، کپڑے اور دکان کے اوزار زکوٰۃ سے 100% معاف ہیں۔", dalil: "R07" }
+    ]
+  },
+  hindi: {
+    dir: "ltr",
+    appTitle: "नूर-ए-ज़कात प्रो",
+    appSub: "अहलुस सुन्नत • फ़िक़्ह-ए-हनफ़ी",
+    quickTitle: "✨ ज़कात के 4 बुनियादी शरई उसूल",
+    dock: ["उसूल", "हिसाब", "कैलेंडर", "मसारिफ़", "किताबें", "सेटिंग्स"],
+    rules: [
+      { title: "1. ज़कात किन पर फ़र्ज़ है?", desc: "मुसलमान, आक़िल और बालिग़ हो, और निसाब का मालिक हो जिस पर 1 क़मरी साल (354 दिन) गुज़र जाए।", dalil: "R01" },
+      { title: "2. शरई तोला (11.664 ग्राम)", desc: "सोने का निसाब 7.5 तोला (87.48g) और चाँदी का 52.5 तोला (612.36g) है।", dalil: "R03" },
+      { title: "3. नग और लाख (मोम) की कटौती", desc: "ज़ेवर में भरी लाख और नग/मोती पर ज़कात ₹0 है। सिर्फ़ शुद्ध सोने/चाँदी पर हिसाब लगता है।", dalil: "R05" },
+      { title: "4. ज़रूरत-ए-ज़िंदगी (मकान व गाड़ी) माफ़", desc: "रहने का घर, निजी गाड़ी और दुकान के औज़ार ज़कात से 100% माफ़ (₹0) हैं।", dalil: "R07" }
+    ]
+  },
+  hinglish: {
+    dir: "ltr",
+    appTitle: "NOOR-A-ZAKAT PRO",
+    appSub: "Ahlus Sunnah • Fiqh-e-Hanafi",
+    quickTitle: "✨ Zakat Ke 4 Buniyadi Usool",
+    dock: ["Usool", "Hisab", "Calendar", "Masarif", "Kitabein", "Settings"],
+    rules: [
+      { title: "1. Zakat Kin Par Farz Hai?", desc: "Musalman, Aqil aur Baaligh ho, aur Nisab ka maal ho jis par 1 Qamri saal (354 din) guzar jaye.", dalil: "R01" },
+      { title: "2. Shar'i Tola (11.664g)", desc: "Sone ka Nisab 7.5 Tola (87.48g) aur Chandi ka 52.5 Tola (612.36g) hai.", dalil: "R03" },
+      { title: "3. Nag aur Lakh Ki Katauti", desc: "Zewar mein bhari lakh (mom) aur nag par Zakat 0 hai. Sirf khalis dhatu par hisab lagta hai.", dalil: "R05" },
+      { title: "4. Zaroorat-e-Zindagi Maaf", desc: "Rehne ka makan, car/bike aur dukan ke auzar 100% MAAF (0) hain.", dalil: "R07" }
+    ]
+  },
+  english: {
+    dir: "ltr",
+    appTitle: "NOOR-A-ZAKAT PRO",
+    appSub: "Ahlus Sunnah • Hanafi Fiqh",
+    quickTitle: "✨ 4 Core Rules of Zakat",
+    dock: ["Rules", "Calculate", "Calendar", "Recipients", "Books", "Settings"],
+    rules: [
+      { title: "1. Who Must Pay Zakat?", desc: "Every sane, adult (Baligh) Muslim owning Nisab wealth for 1 lunar year (354 days).", dalil: "R01" },
+      { title: "2. Shar'i Tola (11.664g)", desc: "Gold Nisab is 7.5 Tola (87.48g) and Silver Nisab is 52.5 Tola (612.36g).", dalil: "R03" },
+      { title: "3. Stones & Lac Exempt", desc: "No Zakat on lac fillings or embedded gemstones. Calculated strictly on pure metal.", dalil: "R05" },
+      { title: "4. Living Essentials Exempt", desc: "Personal residence, vehicles, clothing, and business tools are 100% exempt.", dalil: "R07" }
+    ]
+  },
+  arabic: {
+    dir: "rtl",
+    appTitle: "نور الزكاة برو",
+    appSub: "أهل السنة • الفقه الحنفي",
+    quickTitle: "✨ أربعة أصول للزكاة",
+    dock: ["الأصول", "الحساب", "التقويم", "المصارف", "الكتب", "الإعدادات"],
+    rules: [
+      { title: "1. على من تجب الزكاة؟", desc: "على المسلم العاقل البالغ إذا ملك النصاب وحال عليه حول قمري، مع مراعاة أحكام الفقه الحنفي.", dalil: "R01" },
+      { title: "2. مقدار النصاب", desc: "نصاب الذهب 87.48 غراماً، ونصاب الفضة 612.36 غراماً وفق المقادير المعروضة في التطبيق.", dalil: "R03" },
+      { title: "3. الحلي والأحجار", desc: "تُراعى قيمة الذهب والفضة الخالصة، وتختلف أحكام الأحجار بحسب الاستعمال والتجارة.", dalil: "R05" },
+      { title: "4. الحاجات الأصلية", desc: "المسكن الشخصي والمركبة وأدوات العمل من الحاجات الأصلية في الجملة.", dalil: "R07" }
+    ]
+  }
+};
+
+var UI_TRANSLATIONS = {
+  urdu: {
+    setup_title: "🌟 ابتدائی سیٹ اپ",
+    setup_intro: "اپنی زبان، نام اور ضروری شرعی معلومات منتخب کریں۔",
+    setup_name: "حساب کس کے نام سے ہے؟",
+    setup_age: "عمر (سال)",
+    setup_owner: "شرعی حیثیت",
+    setup_currency: "ملک / کرنسی",
+    save_continue: "✅ محفوظ کریں اور آگے بڑھیں",
+    fiqh_standard: "فقہِ حنفی کا معیار",
+    rules_start: "🧮 حساب شروع کریں",
+    tab_zakat: "🪙 زکوٰۃ",
+    tab_ushr: "🌾 عشر",
+    tab_fitra: "🍞 فطرہ",
+    tab_family: "👥 رشتہ دار",
+    hero_zakat: "واجب زکوٰۃ کی رقم",
+    live_rates: "1. آج کے بازار کے بھاؤ اور سال",
+    gold_rate: "24 قیراط سونا (10 گرام)",
+    silver_rate: "چاندی (10 گرام)",
+    owner_label: "مالک کی حیثیت",
+    hawl_label: "سال (حول)",
+    jewels_title: "2. سونا اور چاندی کے زیورات",
+    jewel_name: "زیور کا نام",
+    metal_label: "دھات",
+    unit_label: "اکائی",
+    weight_label: "کل وزن",
+    stones_label: "نگ / لاکھ (گرام)",
+    purity_label: "قیراط (خالص پن)",
+    add_jewel: "+ زیور شامل کریں",
+    assets_title: "3. نقدی، کاروبار اور جائیداد",
+    asset_name: "نام",
+    amount_label: "رقم",
+    asset_type_label: "قسم اور نیت",
+    ownership_pct: "آپ کی ملکیت (%)",
+    add_asset: "+ اثاثہ شامل کریں",
+    debts_title: "4. واجب الادا قرض (-)",
+    debt_name: "قرض کا نام",
+    debt_type: "قرض کی قسم",
+    add_debt: "- قرض منہا کریں",
+    report_title: "📜 زکوٰۃ حساب کی رپورٹ",
+    print_pdf: "🖨️ پرنٹ / PDF",
+    share_whatsapp: "💬 WhatsApp پر شیئر",
+    ushr_title: "🌾 فصل کا عشر حساب",
+    ushr_kg: "فصل کا کل وزن (کلو)",
+    kg_price: "1 کلو کی قیمت",
+    water_source: "آبپاشی کا ذریعہ",
+    ushr_due: "واجب عشر:",
+    fitra_title: "🍞 صدقۂ فطر حساب",
+    fitra_people: "گھر کے کل افراد",
+    fitra_grain: "اناج / معیار",
+    fitra_weight: "فی فرد وزن (کلو)",
+    fitra_price: "1 کلو کی قیمت",
+    fitra_due: "کل واجب فطرہ:",
+    family_title: "👥 رشتہ دار کو زکوٰۃ دینے کا جائزہ",
+    family_relation: "رشتہ منتخب کریں",
+    masarif_title: "🕌 زکوٰۃ کے مصارف (التوبہ 9:60)",
+    books_title: "📚 معتبر فقہِ حنفی کی کتابیں",
+    settings_theme: "🎨 اسلامی تھیمز",
+    settings_language: "🌐 زبان اور علاقہ",
+    app_language: "ایپ کی زبان",
+    settings_currency: "🌍 کرنسی اور ہجری تاریخ",
+    settings_hijri: "ہجری تاریخ (چاند کے مطابق)",
+    settings_voice: "🔊 آواز اور سہولت",
+    voice_settings: "⚙️ Android آواز کی ترتیبات",
+    stop_reading: "⏹ پڑھنا بند کریں",
+    settings_about: "ℹ️ نور الزکاۃ کے بارے میں",
+    calendar_title: "🌙 اسلامی اسمارٹ کیلنڈر",
+    calendar_save: "＋ اس فون میں ایونٹ محفوظ کریں",
+    opt_owner_baligh: "بالغ اور عاقل",
+    opt_owner_minor: "نابالغ بچہ",
+    opt_hawl_lunar: "قمری سال 354 دن (2.5%)",
+    opt_hawl_solar: "شمسی سال 365 دن (2.5775%)",
+    opt_hawl_incomplete: "ایک سال مکمل نہیں ہوا",
+    opt_gold: "سونا",
+    opt_silver: "چاندی",
+    opt_gems: "ہیرا / موتی (ذاتی استعمال)",
+    opt_grams: "گرام",
+    opt_shari_tola: "شرعی تولہ (11.664 گرام)",
+    opt_market_tola: "بازاری تولہ (10 گرام)",
+    opt_cash: "💵 نقد / بینک / FD — قابلِ زکوٰۃ",
+    opt_committee: "🤝 کمیٹی کی جمع رقم — قابلِ زکوٰۃ",
+    opt_stock: "📦 تجارتی مال — قابلِ زکوٰۃ",
+    opt_raw: "🧱 کاروبار کا خام مال — قابلِ زکوٰۃ",
+    opt_plot: "📈 فروخت کی نیت سے خریدا پلاٹ",
+    opt_receivable: "📥 وصول ہونے کی قوی امید والا ادھار*",
+    opt_home: "🏠 ذاتی رہائشی گھر — عام طور پر مستثنیٰ",
+    opt_vehicle: "🚗 ذاتی گاڑی / موٹر سائیکل — مستثنیٰ",
+    opt_tools: "🛠️ کام کے اوزار / مشینری — مستثنیٰ",
+    opt_short_debt: "فوری واجب الادا قرض / بل",
+    opt_long_debt: "طویل قرض: موجودہ 12 ماہ کی قسطیں",
+    opt_wheat: "گندم — نصف صاع (حوالہ)",
+    opt_barley: "جو — ایک صاع (حوالہ)",
+    opt_dates: "کھجور — ایک صاع (حوالہ)",
+    opt_raisins: "کشمش — ایک صاع (حوالہ)",
+    fitra_note: "فطرہ = افراد × فی فرد وزن × فی کلو قیمت۔ یہ صرف حوالہ جاتی وزن ہیں؛ اپنے علاقے کے مستند مفتی کی بتائی ہوئی مقدار اور مقامی قیمت درج کریں۔",
+    asset_note: "*قرض کی زکوٰۃ اور وصولی کے وقت ادائیگی میں فقہی تفصیل ہے۔ مشکل صورت میں مفتی سے رجوع کریں۔ اپنی ملکیت کا حصہ درج کریں۔",
+    calendar_note: "ہجری تاریخیں اس فون پر حساب ہوتی ہیں (جہاں دستیاب ہو ام القریٰ کیلنڈر استعمال ہوتا ہے)۔ مقامی رؤیتِ ہلال میں 1–2 دن فرق ہوسکتا ہے؛ سیٹنگز میں ایڈجسٹ کریں۔",
+    calendar_event_title: "نیا یاددہانی / پروگرام",
+    calendar_event_notes: "نوٹس (اختیاری)",
+    voice_note: "یہ پہلے اسی زبان کی واضح طور پر مردانہ نام والی آواز آزماتا ہے۔ اگر ایسی آواز دستیاب نہ ہو تو Android کی منتخب آواز استعمال ہوگی؛ دستیاب ہو تو Speech Settings میں اپنی پسند کی آواز منتخب کریں۔",
+    calendar_update: "↻ ایونٹ اپ ڈیٹ کریں",
+    calendar_cancel: "ترمیم منسوخ کریں",
+    calendar_note_events: "ایونٹس اسی ایپ میں محفوظ ہوتے ہیں۔ قابلِ اعتماد الرٹ کے لیے انہیں فون کے کیلنڈر میں بھی شامل کریں؛ ایپ پس منظر میں یاددہانی نہیں چلاتی۔",
+    setup_language_label: "1. اپنی زبان منتخب کریں",
+    standard_desc: "تمام مسائل فقہِ حنفی کے مطابق دکھائے گئے ہیں؛ پیچیدہ صورت میں مستند مفتی سے رجوع کریں۔",
+    gold_nisab: "سونے کا نصاب (7.5 تولہ)",
+    silver_nisab: "چاندی کا نصاب (52.5 تولہ)",
+    listen_report: "🔊 رپورٹ سنیں",
+    live_rates_button: "🔄 تازہ بھاؤ",
+    dalil_button: "دلیل 📖",
+    carat22: "22 قیراط (91.6%)",
+    carat24: "24 قیراط (99.9%)",
+    carat20: "20 قیراط (83.3%)",
+    carat18: "18 قیراط (75%)",
+    ushr_rain: "بارش / نہر کا پانی — 10%",
+    ushr_well: "ٹیوب ویل / موٹر خرچ — 5%",
+    masarif_intro: "قرآنِ کریم (التوبہ 9:60) میں زکوٰۃ کے آٹھ مصارف بیان ہوئے ہیں۔ ادائیگی کے لیے مستحق کو مالک بنانا ضروری ہے۔",
+    theme_default: "کسوہ گولڈ",
+    theme_madinah: "مدینہ سبز",
+    theme_ottoman: "عثمانی نیلا",
+    theme_velvet: "مخملِ کعبہ",
+    theme_daylight: "روشن موتی",
+    currency_label: "کرنسی",
+    hijri_settings_note: "ہجری تاریخ حساب سے آتی ہے؛ مقامی رؤیتِ ہلال میں 1–2 دن فرق ہوسکتا ہے۔ ضرورت کے مطابق ایڈجسٹ کریں۔",
+    legal_disclaimer: "⚖️ ضروری وضاحت: یہ ایپ حساب اور معلوماتی رہنمائی کے لیے ہے، فتویٰ نہیں۔ پیچیدہ مسائل میں مستند سنی حنفی مفتی سے رجوع کریں۔",
+    rate_app: "⭐ ریٹ کریں",
+    share_app: "📤 ایپ شیئر کریں",
+    privacy_policy: "🔒 پرائیویسی پالیسی",
+    ad_privacy: "🛡️ اشتہارات کی رازداری",
+    reset_data: "ری سیٹ",
+    given_to: "کس کو دیا",
+    save_installment: "+ قسط محفوظ کریں",
+    listen_button: "🔊 سنیں",
+    understood: "سمجھ گیا (بند کریں)",
+    no_button: "نہیں",
+    yes_button: "ہاں، کریں",
+    stop_voice: "⏹ آواز بند کریں",
+    version_label: "ورژن",
+    about_version: "آپ کا حساب اسی فون پر encrypted رہتا ہے۔",
+    age_fiqh_note: "فقہِ حنفی میں صرف عمر سے بلوغت کا فیصلہ ہمیشہ نہیں ہوتا۔ متعلقہ علامات کے مطابق حیثیت منتخب کریں؛ شک ہو تو مستند مفتی سے پوچھیں۔",
+    minor_note: "فقہِ حنفی کے مطابق نابالغ کے مال کا حکم الگ ہے۔ شرعی حیثیت درست منتخب کریں؛ شبہ ہو تو مستند مفتی سے تصدیق کریں۔",
+    masraf_1: "1. فقراء — جن کے پاس نصاب سے کم مال ہو۔",
+    masraf_2: "2. مساکین — نہایت محتاج افراد۔",
+    masraf_3: "3. عاملین — مقرر کردہ زکوٰۃ وصول کرنے والے اہلکار۔",
+    masraf_4: "4. رقاب — غلامی سے آزادی کے مخصوص مصرف؛ فقہی تفصیل دیکھیں۔",
+    masraf_5: "5. غارمین — ایسے مقروض جو قرض کے بعد نصاب کے مالک نہ رہیں۔",
+    masraf_6: "6. فی سبیل اللہ — اس مصرف کی حنفی تفصیل کے لیے مفتی سے رجوع کریں۔",
+    masraf_7: "7. ابن السبیل — سفر میں مال سے محروم مسافر۔",
+    masraf_8: "8. مؤلفة القلوب — فقہِ حنفی میں اس مصرف کے موجودہ حکم کی تفصیل مفتی سے پوچھیں۔",
+    masarif_booknote: "📚 تفصیل: بہارِ شریعت، حصہ 5۔",
+    masarif_details_title: "👥 کسے زکوٰۃ دیں اور کسے نہیں؟",
+    standard_title: "فقہِ حنفی کا معیار",
+    quick_rules_title: "✨ زکوٰۃ کے چار بنیادی اصول",
+    calendar_empty: "اس دن کوئی محفوظ ایونٹ نہیں۔ نیچے یاددہانی شامل کریں۔",
+    tts_unavailable: "اس زبان کی آواز فون پر موجود نہیں۔ Android Text-to-speech میں متعلقہ voice data انسٹال کریں۔",
+    placeholder_name: "مثلاً: احمد / فاطمہ",
+    placeholder_event: "مثلاً: زکوٰۃ کا جائزہ / خاندانی تقریب",
+    placeholder_details: "تفصیل",
+    calendar_edit: "ترمیم",
+    calendar_phone: "فون کیلنڈر"
+  },
+  hindi: {
+    setup_title: "🌟 प्रारंभिक सेटअप",
+    setup_intro: "अपनी भाषा, नाम और ज़रूरी शरई जानकारी चुनें।",
+    setup_name: "हिसाब किसके नाम से है?",
+    setup_age: "उम्र (वर्ष)",
+    setup_owner: "शरई स्थिति",
+    setup_currency: "देश / मुद्रा",
+    save_continue: "✅ सेव करें और आगे बढ़ें",
+    fiqh_standard: "हन्फ़ी फ़िक़्ह का मानक",
+    rules_start: "🧮 हिसाब शुरू करें",
+    tab_zakat: "🪙 ज़कात",
+    tab_ushr: "🌾 उश्र",
+    tab_fitra: "🍞 फ़ितरा",
+    tab_family: "👥 रिश्तेदार",
+    hero_zakat: "देय ज़कात",
+    live_rates: "1. आज का बाज़ार भाव और साल",
+    gold_rate: "24 कैरेट सोना (10 ग्राम)",
+    silver_rate: "चाँदी (10 ग्राम)",
+    owner_label: "मालिक की स्थिति",
+    hawl_label: "साल (हौल)",
+    jewels_title: "2. सोना और चाँदी के गहने",
+    jewel_name: "गहने का नाम",
+    metal_label: "धातु",
+    unit_label: "इकाई",
+    weight_label: "कुल वज़न",
+    stones_label: "नग / लाख (ग्राम)",
+    purity_label: "कैरेट (शुद्धता)",
+    add_jewel: "+ गहना जोड़ें",
+    assets_title: "3. नकद, कारोबार और संपत्ति",
+    asset_name: "नाम",
+    amount_label: "रकम",
+    asset_type_label: "प्रकार और नीयत",
+    ownership_pct: "आपकी हिस्सेदारी (%)",
+    add_asset: "+ संपत्ति जोड़ें",
+    debts_title: "4. देय कर्ज़ (-)",
+    debt_name: "कर्ज़ का नाम",
+    debt_type: "कर्ज़ का प्रकार",
+    add_debt: "- कर्ज़ घटाएँ",
+    report_title: "📜 ज़कात हिसाब रिपोर्ट",
+    print_pdf: "🖨️ प्रिंट / PDF",
+    share_whatsapp: "💬 WhatsApp साझा करें",
+    ushr_title: "🌾 फसल का उश्र कैलकुलेटर",
+    ushr_kg: "फसल का कुल वज़न (किलो)",
+    kg_price: "1 किलो की कीमत",
+    water_source: "सिंचाई का तरीका",
+    ushr_due: "देय उश्र:",
+    fitra_title: "🍞 सदक़ा-ए-फ़ित्र कैलकुलेटर",
+    fitra_people: "घर के कुल सदस्य",
+    fitra_grain: "अनाज / माप",
+    fitra_weight: "प्रति व्यक्ति वज़न (किलो)",
+    fitra_price: "1 किलो की कीमत",
+    fitra_due: "कुल फ़ितरा:",
+    family_title: "👥 रिश्तेदार को ज़कात देने की जाँच",
+    family_relation: "रिश्ता चुनें",
+    masarif_title: "🕌 ज़कात के मसारिफ़ (तौबा 9:60)",
+    books_title: "📚 प्रमाणित हनफ़ी फ़िक़्ह की किताबें",
+    settings_theme: "🎨 इस्लामी थीम",
+    settings_language: "🌐 भाषा और क्षेत्र",
+    app_language: "ऐप की भाषा",
+    settings_currency: "🌍 मुद्रा और हिजरी तारीख",
+    settings_hijri: "हिजरी तारीख (चाँद के अनुसार)",
+    settings_voice: "🔊 आवाज़ और सुविधा",
+    voice_settings: "⚙️ Android आवाज़ सेटिंग",
+    stop_reading: "⏹ पढ़ना रोकें",
+    settings_about: "ℹ️ नूर-ए-ज़कात के बारे में",
+    calendar_title: "🌙 इस्लामी स्मार्ट कैलेंडर",
+    calendar_save: "＋ इस फोन में इवेंट सेव करें",
+    opt_owner_baligh: "बालिग़ और आक़िल",
+    opt_owner_minor: "नाबालिग़ बच्चा",
+    opt_hawl_lunar: "क़मरी साल 354 दिन (2.5%)",
+    opt_hawl_solar: "सौर वर्ष 365 दिन (2.5775%)",
+    opt_hawl_incomplete: "एक साल पूरा नहीं हुआ",
+    opt_gold: "सोना",
+    opt_silver: "चाँदी",
+    opt_gems: "हीरा / मोती (निजी उपयोग)",
+    opt_grams: "ग्राम",
+    opt_shari_tola: "शरई तोला (11.664 ग्राम)",
+    opt_market_tola: "बाज़ारी तोला (10 ग्राम)",
+    opt_cash: "💵 नकद / बैंक / FD — ज़कात योग्य",
+    opt_committee: "🤝 कमेटी जमा — ज़कात योग्य",
+    opt_stock: "📦 व्यापारिक स्टॉक — ज़कात योग्य",
+    opt_raw: "🧱 कारोबार का कच्चा माल — ज़कात योग्य",
+    opt_plot: "📈 बेचने की नीयत से खरीदा प्लॉट",
+    opt_receivable: "📥 मिलने की मज़बूत उम्मीद वाला उधार*",
+    opt_home: "🏠 अपना रहने का घर — आम तौर पर माफ़",
+    opt_vehicle: "🚗 निजी वाहन — माफ़",
+    opt_tools: "🛠️ काम के औज़ार / मशीनरी — माफ़",
+    opt_short_debt: "तुरंत देय कर्ज़ / बिल",
+    opt_long_debt: "लंबा कर्ज़: मौजूदा 12 माह की किस्तें",
+    opt_wheat: "गेहूँ — आधा साअ (संदर्भ)",
+    opt_barley: "जौ — एक साअ (संदर्भ)",
+    opt_dates: "खजूर — एक साअ (संदर्भ)",
+    opt_raisins: "किशमिश — एक साअ (संदर्भ)",
+    fitra_note: "फ़ितरा = सदस्य × प्रति व्यक्ति वज़न × प्रति किलो कीमत। ये केवल संदर्भ मात्रा हैं; अपने स्थानीय मान्य मुफ़्ती से मात्रा की पुष्टि करें।",
+    asset_note: "*उधार की ज़कात और वसूली के समय अदायगी में फ़िक़्ही विवरण है। कठिन स्थिति में मुफ़्ती से पूछें। अपनी हिस्सेदारी दर्ज करें।",
+    calendar_note: "हिजरी तारीखें इस फोन पर गणना होती हैं। स्थानीय चाँद देखने से 1–2 दिन का अंतर हो सकता है; सेटिंग्स में बदलें।",
+    calendar_event_title: "नई याददिहानी / कार्यक्रम",
+    calendar_event_notes: "नोट्स (वैकल्पिक)",
+    voice_note: "यह पहले उसी भाषा की स्पष्ट रूप से पुरुष नाम वाली आवाज़ चुनने की कोशिश करता है। ऐसी आवाज़ न मिले तो Android की चुनी हुई आवाज़ चलेगी; उपलब्ध हो तो Speech Settings में अपनी पसंद चुनें।",
+    calendar_update: "↻ इवेंट अपडेट करें",
+    calendar_cancel: "एडिट रद्द करें",
+    calendar_note_events: "इवेंट इसी ऐप में सेव होते हैं। भरोसेमंद अलर्ट के लिए फोन कैलेंडर में भी जोड़ें; ऐप बैकग्राउंड रिमाइंडर नहीं चलाता।",
+    setup_language_label: "1. अपनी भाषा चुनें",
+    standard_desc: "मसाइल हनफ़ी फ़िक़्ह के अनुसार दिखाए गए हैं; जटिल स्थिति में प्रमाणित मुफ़्ती से पूछें।",
+    gold_nisab: "सोने का निसाब (7.5 तोला)",
+    silver_nisab: "चाँदी का निसाब (52.5 तोला)",
+    listen_report: "🔊 रिपोर्ट सुनें",
+    live_rates_button: "🔄 लाइव भाव",
+    dalil_button: "दलील 📖",
+    carat22: "22 कैरेट (91.6%)",
+    carat24: "24 कैरेट (99.9%)",
+    carat20: "20 कैरेट (83.3%)",
+    carat18: "18 कैरेट (75%)",
+    ushr_rain: "बारिश / नहर का पानी — 10%",
+    ushr_well: "ट्यूबवेल / मोटर खर्च — 5%",
+    masarif_intro: "कुरआन (तौबा 9:60) में ज़कात के आठ मसारिफ़ बताए गए हैं। अदायगी के लिए मुस्तहिक को मालिक बनाना ज़रूरी है।",
+    theme_default: "किस्वा गोल्ड",
+    theme_madinah: "मदीना हरा",
+    theme_ottoman: "उस्मानी नीला",
+    theme_velvet: "काबा वेलवेट",
+    theme_daylight: "डे-लाइट पर्ल",
+    currency_label: "मुद्रा",
+    hijri_settings_note: "हिजरी तारीख गणना से आती है; स्थानीय चाँद देखने से 1–2 दिन का अंतर हो सकता है। ज़रूरत अनुसार बदलें।",
+    legal_disclaimer: "⚖️ ज़रूरी सूचना: यह ऐप हिसाब और जानकारी के लिए है, फ़तवा नहीं। जटिल मसाइल में प्रमाणित सुन्नी हनफ़ी मुफ़्ती से पूछें।",
+    rate_app: "⭐ रेट करें",
+    share_app: "📤 ऐप साझा करें",
+    privacy_policy: "🔒 प्राइवेसी पॉलिसी",
+    ad_privacy: "🛡️ विज्ञापन गोपनीयता",
+    reset_data: "रीसेट",
+    given_to: "किसे दिया",
+    save_installment: "+ किस्त सेव करें",
+    listen_button: "🔊 सुनें",
+    understood: "समझ गया (बंद करें)",
+    no_button: "नहीं",
+    yes_button: "हाँ, करें",
+    stop_voice: "⏹ आवाज़ रोकें",
+    version_label: "संस्करण",
+    about_version: "आपका हिसाब इसी फोन में encrypted रहता है।",
+    age_fiqh_note: "हनफ़ी फ़िक़्ह में केवल उम्र से बालिग़ होने का फैसला हमेशा नहीं होता। सही संकेतों के अनुसार स्थिति चुनें; संदेह हो तो प्रमाणित मुफ़्ती से पूछें।",
+    minor_note: "हनफ़ी फ़िक़्ह के अनुसार नाबालिग़ के माल का हुक्म अलग है। सही शरई स्थिति चुनें; संदेह हो तो प्रमाणित मुफ़्ती से पुष्टि करें।",
+    masraf_1: "1. फ़ुक़रा — जिनके पास निसाब से कम माल हो।",
+    masraf_2: "2. मसाकीन — अत्यंत ज़रूरतमंद लोग।",
+    masraf_3: "3. आमिलीन — नियुक्त ज़कात संग्रहकर्ता।",
+    masraf_4: "4. रिक़ाब — दासता से मुक्ति का निर्धारित मद; फ़िक़्ही विवरण देखें।",
+    masraf_5: "5. ग़ारिमीन — वे कर्ज़दार जिनके पास कर्ज़ के बाद निसाब न बचे।",
+    masraf_6: "6. फ़ी सबीलिल्लाह — हनफ़ी विवरण के लिए मुफ़्ती से पूछें।",
+    masraf_7: "7. इब्नुस्सबील — सफ़र में माल से वंचित मुसाफ़िर।",
+    masraf_8: "8. मुअल्लफ़तुल क़ुलूब — हनफ़ी फ़िक़्ह में इसके वर्तमान हुक्म की पुष्टि मुफ़्ती से करें।",
+    masarif_booknote: "📚 विवरण: बहार-ए-शरीअत, हिस्सा 5।",
+    masarif_details_title: "👥 किसे ज़कात दें और किसे नहीं?",
+    standard_title: "हन्फ़ी फ़िक़्ह का मानदंड",
+    quick_rules_title: "✨ ज़कात के चार बुनियादी उसूल",
+    calendar_empty: "इस दिन कोई सेव इवेंट नहीं है। नीचे रिमाइंडर जोड़ें।",
+    tts_unavailable: "इस भाषा की आवाज़ फोन में मौजूद नहीं है। Android Text-to-speech में voice data इंस्टॉल करें।",
+    placeholder_name: "जैसे: अहमद / फ़ातिमा",
+    placeholder_event: "जैसे: ज़कात समीक्षा / पारिवारिक कार्यक्रम",
+    placeholder_details: "विवरण",
+    calendar_edit: "संपादित",
+    calendar_phone: "फोन कैलेंडर"
+  },
+  hinglish: {
+    setup_title: "🌟 Shuruati Setup",
+    setup_intro: "Apni language, naam aur zaroori Shar’i details chunein.",
+    setup_name: "Hisab kiske naam se hai?",
+    setup_age: "Umar (years)",
+    setup_owner: "Shar’i haisiyat",
+    setup_currency: "Mulk / currency",
+    save_continue: "✅ Save karein aur aage badhein",
+    fiqh_standard: "Fiqh-e-Hanafi standard",
+    rules_start: "🧮 Hisab shuru karein",
+    tab_zakat: "🪙 Zakat",
+    tab_ushr: "🌾 Ushr",
+    tab_fitra: "🍞 Fitra",
+    tab_family: "👥 Rishte",
+    hero_zakat: "Wajib Zakat",
+    live_rates: "1. Aaj ka bazaar bhav aur saal",
+    gold_rate: "24K Sona (10g)",
+    silver_rate: "Chandi (10g)",
+    owner_label: "Maalik ki haisiyat",
+    hawl_label: "Saal (Hawl)",
+    jewels_title: "2. Sona aur Chandi ke zewar",
+    jewel_name: "Zewar ka naam",
+    metal_label: "Dhatu",
+    unit_label: "Unit",
+    weight_label: "Kul wazan",
+    stones_label: "Nag / lakh (g)",
+    purity_label: "Carat (purity)",
+    add_jewel: "+ Zewar jodein",
+    assets_title: "3. Cash, business aur property",
+    asset_name: "Naam",
+    amount_label: "Rakam",
+    asset_type_label: "Qism aur niyat",
+    ownership_pct: "Aapki milkiyat (%)",
+    add_asset: "+ Sampatti jodein",
+    debts_title: "4. Wajib-ul-ada qarz (-)",
+    debt_name: "Qarz ka naam",
+    debt_type: "Qarz ki qism",
+    add_debt: "- Qarz minus karein",
+    report_title: "📜 Zakat hisab report",
+    print_pdf: "🖨️ Print / PDF",
+    share_whatsapp: "💬 WhatsApp share",
+    ushr_title: "🌾 Fasal ka Ushr calculator",
+    ushr_kg: "Fasal ka kul wazan (kg)",
+    kg_price: "1 kg ki qeemat",
+    water_source: "Sinchai ka zariya",
+    ushr_due: "Wajib Ushr:",
+    fitra_title: "🍞 Sadqa-e-Fitr calculator",
+    fitra_people: "Ghar ke kul afrad",
+    fitra_grain: "Anaaj / miyaar",
+    fitra_weight: "Har shakhs ka wazan (kg)",
+    fitra_price: "1 kg ki qeemat",
+    fitra_due: "Kul wajib Fitra:",
+    family_title: "👥 Rishtedar ko Zakat dene ka check",
+    family_relation: "Rishta chunein",
+    masarif_title: "🕌 Zakat ke masarif (Tawbah 9:60)",
+    books_title: "📚 Mustanad Fiqh-e-Hanafi kitabein",
+    settings_theme: "🎨 Islamic themes",
+    settings_language: "🌐 Language aur region",
+    app_language: "App ki language",
+    settings_currency: "🌍 Currency aur Hijri tarikh",
+    settings_hijri: "Hijri tarikh (chand ke mutabiq)",
+    settings_voice: "🔊 Voice aur accessibility",
+    voice_settings: "⚙️ Android voice settings",
+    stop_reading: "⏹ Reading rokein",
+    settings_about: "ℹ️ Noor-A-Zakat ke baare mein",
+    calendar_title: "🌙 Islamic Smart Calendar",
+    calendar_save: "＋ Is phone mein event save karein",
+    opt_owner_baligh: "Baaligh & Aqil",
+    opt_owner_minor: "Nabaligh bacha",
+    opt_hawl_lunar: "Qamri 354 din (2.5%)",
+    opt_hawl_solar: "Shamsi 365 din (2.5775%)",
+    opt_hawl_incomplete: "1 saal poora nahi hua",
+    opt_gold: "Sona (Gold)",
+    opt_silver: "Chandi (Silver)",
+    opt_gems: "Heera / Moti (personal use)",
+    opt_grams: "Grams",
+    opt_shari_tola: "Shar’i Tola (11.664g)",
+    opt_market_tola: "Bazaru Tola (10g)",
+    opt_cash: "💵 Cash / Bank / FD — zakatable",
+    opt_committee: "🤝 Committee jama — zakatable",
+    opt_stock: "📦 Trading stock — zakatable",
+    opt_raw: "🧱 Raw material — zakatable",
+    opt_plot: "📈 Plot bought for resale",
+    opt_receivable: "📥 Recoverable receivable*",
+    opt_home: "🏠 Own residence — generally exempt",
+    opt_vehicle: "🚗 Personal vehicle — exempt",
+    opt_tools: "🛠️ Work tools / machinery — exempt",
+    opt_short_debt: "Fori wajib qarz / bill",
+    opt_long_debt: "Long loan: current 12 monthly instalments",
+    opt_wheat: "Gehun — Nisf Saa’ (reference)",
+    opt_barley: "Jau — 1 Saa’ (reference)",
+    opt_dates: "Khajoor — 1 Saa’ (reference)",
+    opt_raisins: "Kishmish — 1 Saa’ (reference)",
+    fitra_note: "Fitra = afrad × per-person weight × per-kg price. Ye reference weights hain; local mustanad Mufti se quantity confirm karein.",
+    asset_note: "*Udhar ki zakat aur wasooli mein fiqhi tafseel hai. Mushkil case mein Mufti se tasdeeq karein. Apna ownership hissa darj karein.",
+    calendar_note: "Hijri dates is phone par calculate hoti hain. Local chand dekhne se 1–2 din farq ho sakta hai; Settings mein adjust karein.",
+    calendar_event_title: "Naya reminder / event",
+    calendar_event_notes: "Notes (optional)",
+    voice_note: "Yeh pehle same language ki explicitly male-labelled voice try karta hai. Aisi voice na mile to Android ki selected voice use hogi; Speech Settings mein apni pasand select karein.",
+    calendar_update: "↻ Event update karein",
+    calendar_cancel: "Edit cancel karein",
+    calendar_note_events: "Events app mein local save hote hain. Reliable alert ke liye phone calendar mein bhi add karein; app background reminder nahi chalata.",
+    setup_language_label: "1. Apni language chunein",
+    standard_desc: "Masail Hanafi fiqh ke mutabiq dikhaye gaye hain; complex case mein Mufti se poochein.",
+    gold_nisab: "Sona nisab (7.5 Tola)",
+    silver_nisab: "Chandi nisab (52.5 Tola)",
+    listen_report: "🔊 Parcha suniye",
+    live_rates_button: "🔄 Live bhav",
+    dalil_button: "Dalil 📖",
+    carat22: "22 Carat (91.6%)",
+    carat24: "24 Carat (99.9%)",
+    carat20: "20 Carat (83.3%)",
+    carat18: "18 Carat (75%)",
+    ushr_rain: "Barish / neher — 10%",
+    ushr_well: "Tubewell / motor — 5%",
+    masarif_intro: "Quran (Tawbah 9:60) mein Zakat ke 8 masarif bataye gaye hain. Adaigi ke liye mustahiq ko maalik banana zaroori hai.",
+    theme_default: "Kiswah Gold",
+    theme_madinah: "Madinah Green",
+    theme_ottoman: "Ottoman Blue",
+    theme_velvet: "Kaaba Velvet",
+    theme_daylight: "Daylight Pearl",
+    currency_label: "Currency",
+    hijri_settings_note: "Hijri date calculation se aati hai; local chand se 1–2 din farq ho sakta hai. Adjust kar sakte hain.",
+    legal_disclaimer: "⚖️ Zaroori wazahat: yeh app hisab aur maloomat ke liye hai, fatwa nahi. Complex masail mein qualified Sunni Hanafi Mufti se poochein.",
+    rate_app: "⭐ Rate karein",
+    share_app: "📤 App share karein",
+    privacy_policy: "🔒 Privacy policy",
+    ad_privacy: "🛡️ Ads privacy",
+    reset_data: "Reset",
+    given_to: "Kisko diya",
+    save_installment: "+ Kist save karein",
+    listen_button: "🔊 Suniye",
+    understood: "Samajh gaya (band karein)",
+    no_button: "Nahi",
+    yes_button: "Haan, karein",
+    stop_voice: "⏹ Voice stop",
+    version_label: "Version",
+    about_version: "Aapka hisab isi phone mein encrypted rehta hai.",
+    age_fiqh_note: "Fiqh-e-Hanafi mein sirf age se baligh hone ka faisla hamesha nahi hota. Sahi signs ke mutabiq status chunein; doubt ho to Mufti se poochein.",
+    minor_note: "Fiqh-e-Hanafi mein nabaligh ke maal ka hukm alag hai. Sahi Shar’i status chunein; doubt ho to Mufti se confirm karein.",
+    masraf_1: "1. Fuqara — jinke paas nisab se kam maal ho.",
+    masraf_2: "2. Masakin — nihayat mohtaj afrad.",
+    masraf_3: "3. Amileen — muqarrar Zakat collectors.",
+    masraf_4: "4. Riqab — slavery se azadi ka muqarrar masraf; fiqhi tafseel dekhein.",
+    masraf_5: "5. Gharimeen — qarzdar jinke paas qarz ke baad nisab na bache.",
+    masraf_6: "6. Fi Sabilillah — Hanafi tafseel ke liye Mufti se ruju karein.",
+    masraf_7: "7. Ibn-us-Sabil — safar mein maal se mehroom musafir.",
+    masraf_8: "8. Muallafatul Quloob — Hanafi fiqh mein is masraf ke current hukm ki tafseel Mufti se confirm karein.",
+    masarif_booknote: "📚 Tafseel: Bahar-e-Shariat, Hissa 5.",
+    masarif_details_title: "👥 Kisko Zakat dein aur kisko nahi?",
+    standard_title: "Fiqh-e-Hanafi miyaar",
+    quick_rules_title: "✨ Zakat ke 4 buniyadi usool",
+    calendar_empty: "Is din koi saved event nahi. Neeche reminder add karein.",
+    tts_unavailable: "Is language ki voice phone mein nahi hai. Android Text-to-speech se voice data install karein.",
+    placeholder_name: "e.g. Shahid / Begum",
+    placeholder_event: "e.g. Zakat review / family event",
+    placeholder_details: "Details",
+    calendar_edit: "Edit",
+    calendar_phone: "Phone calendar"
+  },
+  english: {
+    setup_title: "🌟 Initial setup",
+    setup_intro: "Choose your language, name and required details.",
+    setup_name: "Account holder name",
+    setup_age: "Age (years)",
+    setup_owner: "Eligibility status",
+    setup_currency: "Country / currency",
+    save_continue: "✅ Save and continue",
+    fiqh_standard: "Hanafi fiqh standard",
+    rules_start: "🧮 Start calculation",
+    tab_zakat: "🪙 Zakat",
+    tab_ushr: "🌾 Ushr",
+    tab_fitra: "🍞 Fitra",
+    tab_family: "👥 Relations",
+    hero_zakat: "Zakat payable",
+    live_rates: "1. Market rates and year",
+    gold_rate: "24K Gold (10g)",
+    silver_rate: "Silver (10g)",
+    owner_label: "Owner status",
+    hawl_label: "Lunar year (Hawl)",
+    jewels_title: "2. Gold and silver jewellery",
+    jewel_name: "Item name",
+    metal_label: "Metal",
+    unit_label: "Unit",
+    weight_label: "Total weight",
+    stones_label: "Stones / lac (g)",
+    purity_label: "Carat (purity)",
+    add_jewel: "+ Add jewellery",
+    assets_title: "3. Cash, business and assets",
+    asset_name: "Name",
+    amount_label: "Amount",
+    asset_type_label: "Type and intention",
+    ownership_pct: "Your ownership (%)",
+    add_asset: "+ Add asset",
+    debts_title: "4. Payable debts (-)",
+    debt_name: "Debt name",
+    debt_type: "Debt type",
+    add_debt: "- Deduct debt",
+    report_title: "📜 Zakat calculation report",
+    print_pdf: "🖨️ Print / PDF",
+    share_whatsapp: "💬 Share on WhatsApp",
+    ushr_title: "🌾 Crop Ushr calculator",
+    ushr_kg: "Total crop weight (kg)",
+    kg_price: "Price per kg",
+    water_source: "Irrigation source",
+    ushr_due: "Ushr due:",
+    fitra_title: "🍞 Fitra calculator",
+    fitra_people: "People in household",
+    fitra_grain: "Grain / measure",
+    fitra_weight: "Weight per person (kg)",
+    fitra_price: "Price per kg",
+    fitra_due: "Total Fitra due:",
+    family_title: "👥 Zakat to relatives checker",
+    family_relation: "Choose relationship",
+    masarif_title: "🕌 Zakat recipients (At-Tawbah 9:60)",
+    books_title: "📚 Hanafi fiqh references",
+    settings_theme: "🎨 Islamic themes",
+    settings_language: "🌐 Language and region",
+    app_language: "App language",
+    settings_currency: "🌍 Currency and Hijri date",
+    settings_hijri: "Hijri date (moon sighting adjustment)",
+    settings_voice: "🔊 Voice and accessibility",
+    voice_settings: "⚙️ Android voice settings",
+    stop_reading: "⏹ Stop reading",
+    settings_about: "ℹ️ About Noor-A-Zakat",
+    calendar_title: "🌙 Islamic Smart Calendar",
+    calendar_save: "＋ Save event on this phone",
+    opt_owner_baligh: "Adult & sane",
+    opt_owner_minor: "Minor child",
+    opt_hawl_lunar: "Lunar year 354 days (2.5%)",
+    opt_hawl_solar: "Solar year 365 days (2.5775%)",
+    opt_hawl_incomplete: "One year not completed",
+    opt_gold: "Gold",
+    opt_silver: "Silver",
+    opt_gems: "Gemstones (personal use)",
+    opt_grams: "Grams",
+    opt_shari_tola: "Shar’i Tola (11.664g)",
+    opt_market_tola: "Market Tola (10g)",
+    opt_cash: "💵 Cash / bank / FD — zakatable",
+    opt_committee: "🤝 Committee savings — zakatable",
+    opt_stock: "📦 Trading stock — zakatable",
+    opt_raw: "🧱 Business raw material — zakatable",
+    opt_plot: "📈 Plot bought for resale",
+    opt_receivable: "📥 Strongly collectible receivable*",
+    opt_home: "🏠 Personal residence — generally exempt",
+    opt_vehicle: "🚗 Personal vehicle — exempt",
+    opt_tools: "🛠️ Work tools / machinery — exempt",
+    opt_short_debt: "Immediately due debt / bill",
+    opt_long_debt: "Long loan: current 12 instalments",
+    opt_wheat: "Wheat — half Saa’ (reference)",
+    opt_barley: "Barley — 1 Saa’ (reference)",
+    opt_dates: "Dates — 1 Saa’ (reference)",
+    opt_raisins: "Raisins — 1 Saa’ (reference)",
+    fitra_note: "Fitra = people × weight per person × price per kg. These are reference weights; confirm the amount with a qualified local scholar.",
+    asset_note: "*Receivables have detailed fiqh rules. Ask a qualified scholar about complex cases and enter only your ownership share.",
+    calendar_note: "Hijri dates are calculated on this phone. Local moon-sighting may differ by 1–2 days; adjust in Settings.",
+    calendar_event_title: "New reminder / event",
+    calendar_event_notes: "Notes (optional)",
+    voice_note: "It first tries a same-language voice explicitly labelled male. Otherwise it uses the Android-selected voice; choose your preferred voice in Speech Settings when available.",
+    calendar_update: "↻ Update event",
+    calendar_cancel: "Cancel edit",
+    calendar_note_events: "Events are stored in this app. Add them to your phone calendar for reliable alerts; this app does not run background reminders.",
+    setup_language_label: "1. Select your language",
+    standard_desc: "Content follows Hanafi fiqh references; consult a qualified scholar for complex cases.",
+    gold_nisab: "Gold Nisab (7.5 Tola)",
+    silver_nisab: "Silver Nisab (52.5 Tola)",
+    listen_report: "🔊 Read report",
+    live_rates_button: "🔄 Live rates",
+    dalil_button: "Reference 📖",
+    carat22: "22 Carat (91.6%)",
+    carat24: "24 Carat (99.9%)",
+    carat20: "20 Carat (83.3%)",
+    carat18: "18 Carat (75%)",
+    ushr_rain: "Rain / canal water — 10%",
+    ushr_well: "Tube well / motor — 5%",
+    masarif_intro: "The Quran (At-Tawbah 9:60) lists eight recipient categories. Transfer of ownership to an eligible recipient is required.",
+    theme_default: "Kiswah Gold",
+    theme_madinah: "Madinah Green",
+    theme_ottoman: "Ottoman Blue",
+    theme_velvet: "Kaaba Velvet",
+    theme_daylight: "Daylight Pearl",
+    currency_label: "Currency",
+    hijri_settings_note: "Hijri date is calculated; local moon sighting can differ by 1–2 days. Adjust when needed.",
+    legal_disclaimer: "⚖️ Disclaimer: This app is for calculation and education, not a fatwa. Consult a qualified Sunni Hanafi scholar for complex cases.",
+    rate_app: "⭐ Rate app",
+    share_app: "📤 Share app",
+    privacy_policy: "🔒 Privacy policy",
+    ad_privacy: "🛡️ Ads privacy",
+    reset_data: "Reset",
+    given_to: "Given to",
+    save_installment: "+ Save installment",
+    listen_button: "🔊 Listen",
+    understood: "Got it (close)",
+    no_button: "No",
+    yes_button: "Yes, continue",
+    stop_voice: "⏹ Stop voice",
+    version_label: "Version",
+    about_version: "Your calculation data is encrypted on this phone.",
+    age_fiqh_note: "In Hanafi fiqh, age alone does not always determine puberty. Select the status based on relevant signs; consult a qualified scholar if unsure.",
+    minor_note: "Hanafi fiqh treats a minor’s wealth differently. Select the correct status; consult a qualified scholar if unsure.",
+    masraf_1: "1. Fuqara — people whose wealth is below nisab.",
+    masraf_2: "2. Masakin — people in severe need.",
+    masraf_3: "3. Amileen — appointed zakat collectors.",
+    masraf_4: "4. Riqab — the designated emancipation category; see scholarly details.",
+    masraf_5: "5. Gharimeen — debtors who lack nisab after their debt.",
+    masraf_6: "6. Fi Sabilillah — consult a Hanafi scholar for its detailed scope.",
+    masraf_7: "7. Ibn-us-Sabil — a traveller cut off from their funds.",
+    masraf_8: "8. Muallafatul Quloob — ask a Hanafi scholar about its current ruling and scope.",
+    masarif_booknote: "📚 Details: Bahar-e-Shariat, Part 5.",
+    masarif_details_title: "👥 Who may or may not receive Zakat?",
+    standard_title: "Hanafi fiqh standard",
+    quick_rules_title: "✨ Four basic Zakat rules",
+    calendar_empty: "No saved event for this day. Add a reminder below.",
+    tts_unavailable: "This language voice is not installed. Install its voice data in Android Text-to-speech settings.",
+    placeholder_name: "e.g. Alex / Sam",
+    placeholder_event: "e.g. Zakat review / family event",
+    placeholder_details: "Details",
+    calendar_edit: "Edit",
+    calendar_phone: "Phone calendar"
+  },
+  arabic: {
+    setup_title: "🌟 الإعداد الأولي",
+    setup_intro: "اختر اللغة والاسم والمعلومات الشرعية المطلوبة.",
+    setup_name: "اسم صاحب الحساب",
+    setup_age: "العمر (بالسنوات)",
+    setup_owner: "الحالة الشرعية",
+    setup_currency: "البلد / العملة",
+    save_continue: "✅ حفظ ومتابعة",
+    fiqh_standard: "معيار الفقه الحنفي",
+    rules_start: "🧮 ابدأ الحساب",
+    tab_zakat: "🪙 الزكاة",
+    tab_ushr: "🌾 العشر",
+    tab_fitra: "🍞 الفطرة",
+    tab_family: "👥 الأقارب",
+    hero_zakat: "مقدار الزكاة الواجبة",
+    live_rates: "1. أسعار السوق والحول",
+    gold_rate: "ذهب عيار 24 (10 غرامات)",
+    silver_rate: "فضة (10 غرامات)",
+    owner_label: "حالة المالك",
+    hawl_label: "الحول",
+    jewels_title: "2. حلي الذهب والفضة",
+    jewel_name: "اسم الحلي",
+    metal_label: "المعدن",
+    unit_label: "الوحدة",
+    weight_label: "الوزن الإجمالي",
+    stones_label: "الأحجار / الشمع (غرام)",
+    purity_label: "العيار (النقاء)",
+    add_jewel: "+ أضف حُلياً",
+    assets_title: "3. النقد والتجارة والأصول",
+    asset_name: "الاسم",
+    amount_label: "المبلغ",
+    asset_type_label: "النوع والنية",
+    ownership_pct: "نسبة ملكيتك (%)",
+    add_asset: "+ أضف أصلاً",
+    debts_title: "4. الديون المستحقة (-)",
+    debt_name: "اسم الدين",
+    debt_type: "نوع الدين",
+    add_debt: "- اخصم الدين",
+    report_title: "📜 تقرير حساب الزكاة",
+    print_pdf: "🖨️ طباعة / PDF",
+    share_whatsapp: "💬 مشاركة عبر واتساب",
+    ushr_title: "🌾 حاسبة عشر المحاصيل",
+    ushr_kg: "وزن المحصول (كغ)",
+    kg_price: "السعر لكل كغ",
+    water_source: "مصدر الري",
+    ushr_due: "العشر الواجب:",
+    fitra_title: "🍞 حاسبة زكاة الفطر",
+    fitra_people: "عدد أفراد الأسرة",
+    fitra_grain: "الحبوب / المقدار",
+    fitra_weight: "الوزن لكل شخص (كغ)",
+    fitra_price: "السعر لكل كغ",
+    fitra_due: "إجمالي الفطرة:",
+    family_title: "👥 التحقق من إعطاء الزكاة للأقارب",
+    family_relation: "اختر صلة القرابة",
+    masarif_title: "🕌 مصارف الزكاة (التوبة 9:60)",
+    books_title: "📚 مراجع الفقه الحنفي",
+    settings_theme: "🎨 السمات الإسلامية",
+    settings_language: "🌐 اللغة والمنطقة",
+    app_language: "لغة التطبيق",
+    settings_currency: "🌍 العملة والتاريخ الهجري",
+    settings_hijri: "التاريخ الهجري (حسب رؤية الهلال)",
+    settings_voice: "🔊 الصوت وإمكانية الوصول",
+    voice_settings: "⚙️ إعدادات صوت Android",
+    stop_reading: "⏹ أوقف القراءة",
+    settings_about: "ℹ️ حول نور الزكاة",
+    calendar_title: "🌙 التقويم الإسلامي الذكي",
+    calendar_save: "＋ احفظ الموعد على الهاتف",
+    opt_owner_baligh: "بالغ وعاقل",
+    opt_owner_minor: "طفل قاصر",
+    opt_hawl_lunar: "حول قمري 354 يوماً (2.5%)",
+    opt_hawl_solar: "حول شمسي 365 يوماً (2.5775%)",
+    opt_hawl_incomplete: "لم تكتمل سنة",
+    opt_gold: "ذهب",
+    opt_silver: "فضة",
+    opt_gems: "أحجار كريمة (للاستعمال الشخصي)",
+    opt_grams: "غرام",
+    opt_shari_tola: "تولة شرعية (11.664 غرام)",
+    opt_market_tola: "تولة السوق (10 غرام)",
+    opt_cash: "💵 نقد / بنك / وديعة — تجب فيها الزكاة",
+    opt_committee: "🤝 مدخرات الجمعية — تجب فيها الزكاة",
+    opt_stock: "📦 بضاعة التجارة — تجب فيها الزكاة",
+    opt_raw: "🧱 مواد خام للتجارة — تجب فيها الزكاة",
+    opt_plot: "📈 أرض اشتريت بقصد البيع",
+    opt_receivable: "📥 دين مرجو التحصيل*",
+    opt_home: "🏠 المسكن الشخصي — مستثنى غالباً",
+    opt_vehicle: "🚗 مركبة شخصية — مستثناة",
+    opt_tools: "🛠️ أدوات العمل / الآلات — مستثناة",
+    opt_short_debt: "دين مستحق فوراً / فاتورة",
+    opt_long_debt: "قرض طويل: أقساط الاثني عشر شهراً الحالية",
+    opt_wheat: "قمح — نصف صاع (مرجع)",
+    opt_barley: "شعير — صاع واحد (مرجع)",
+    opt_dates: "تمر — صاع واحد (مرجع)",
+    opt_raisins: "زبيب — صاع واحد (مرجع)",
+    fitra_note: "الفطرة = عدد الأشخاص × وزن الفرد × سعر الكيلو. هذه أوزان مرجعية؛ تحقق من المقدار لدى عالم موثوق في منطقتك.",
+    asset_note: "*للديون أحكام فقهية تفصيلية في الزكاة والتحصيل. راجع عالماً موثوقاً في الحالات المعقدة وأدخل حصتك فقط.",
+    calendar_note: "تُحسب التواريخ الهجرية على هذا الهاتف. قد تختلف رؤية الهلال المحلية يوماً أو يومين؛ اضبطها من الإعدادات.",
+    calendar_event_title: "تذكير / موعد جديد",
+    calendar_event_notes: "ملاحظات (اختياري)",
+    voice_note: "يحاول أولاً اختيار صوت من اللغة نفسها ويكون اسمه محدداً بوضوح كصوت رجولي. وإلا يستخدم صوت Android المحدد؛ اختر الصوت المفضل من إعدادات النطق إن توفر.",
+    calendar_update: "↻ تحديث الموعد",
+    calendar_cancel: "إلغاء التعديل",
+    calendar_note_events: "تُحفظ المواعيد داخل التطبيق. أضفها إلى تقويم الهاتف للتنبيهات الموثوقة؛ لا يشغّل التطبيق تذكيرات في الخلفية.",
+    setup_language_label: "1. اختر لغتك",
+    standard_desc: "المسائل معروضة وفق الفقه الحنفي؛ راجع عالماً موثوقاً في الحالات المعقدة.",
+    gold_nisab: "نصاب الذهب (7.5 تولة)",
+    silver_nisab: "نصاب الفضة (52.5 تولة)",
+    listen_report: "🔊 استمع للتقرير",
+    live_rates_button: "🔄 الأسعار المباشرة",
+    dalil_button: "الدليل 📖",
+    carat22: "عيار 22 (91.6%)",
+    carat24: "عيار 24 (99.9%)",
+    carat20: "عيار 20 (83.3%)",
+    carat18: "عيار 18 (75%)",
+    ushr_rain: "مطر / نهر — 10%",
+    ushr_well: "بئر / مضخة — 5%",
+    masarif_intro: "ذكر القرآن (التوبة 9:60) مصارف الزكاة الثمانية، ويشترط تمليك المستحق عند الأداء.",
+    theme_default: "كسوة ذهبية",
+    theme_madinah: "أخضر المدينة",
+    theme_ottoman: "أزرق عثماني",
+    theme_velvet: "مخمل الكعبة",
+    theme_daylight: "لؤلؤ النهار",
+    currency_label: "العملة",
+    hijri_settings_note: "يُحسب التاريخ الهجري وقد تختلف الرؤية المحلية يوماً أو يومين؛ اضبطه عند الحاجة.",
+    legal_disclaimer: "⚖️ تنبيه: هذا التطبيق للحساب والإرشاد وليس فتوى. راجع مفتياً سنياً حنفياً موثوقاً في المسائل المعقدة.",
+    rate_app: "⭐ قيّم التطبيق",
+    share_app: "📤 مشاركة التطبيق",
+    privacy_policy: "🔒 سياسة الخصوصية",
+    ad_privacy: "🛡️ خصوصية الإعلانات",
+    reset_data: "إعادة ضبط",
+    given_to: "لمن أُعطي",
+    save_installment: "+ احفظ الدفعة",
+    listen_button: "🔊 استمع",
+    understood: "فهمت (إغلاق)",
+    no_button: "لا",
+    yes_button: "نعم، تابع",
+    stop_voice: "⏹ أوقف الصوت",
+    version_label: "الإصدار",
+    about_version: "تُحفظ بيانات حسابك مشفرة على هذا الهاتف.",
+    age_fiqh_note: "في الفقه الحنفي لا يحدد العمر وحده البلوغ دائماً. اختر الحالة وفق العلامات الشرعية، واستشر عالماً موثوقاً عند الشك.",
+    minor_note: "في الفقه الحنفي حكم مال القاصر مختلف. اختر الحالة الشرعية الصحيحة، واستشر عالماً موثوقاً عند الشك.",
+    masraf_1: "1. الفقراء — من لا يملكون النصاب.",
+    masraf_2: "2. المساكين — شديدو الحاجة.",
+    masraf_3: "3. العاملون عليها — القائمون بجمع الزكاة المعيّنون.",
+    masraf_4: "4. الرقاب — مصرف تحرير الرقبة؛ تُراجع تفاصيله الفقهية.",
+    masraf_5: "5. الغارمون — المدينون الذين لا يبقى لهم النصاب بعد الدين.",
+    masraf_6: "6. في سبيل الله — راجع عالماً حنفياً لمعرفة نطاقه الفقهي.",
+    masraf_7: "7. ابن السبيل — المسافر المنقطع عن ماله.",
+    masraf_8: "8. المؤلفة قلوبهم — اسأل عالماً حنفياً عن حكمه ونطاقه في الفقه الحنفي.",
+    masarif_booknote: "📚 للتفصيل: بهار الشريعة، الجزء الخامس.",
+    masarif_details_title: "👥 من يستحق الزكاة ومن لا يستحقها؟",
+    standard_title: "معيار الفقه الحنفي",
+    quick_rules_title: "✨ أربعة أصول أساسية للزكاة",
+    calendar_empty: "لا توجد مواعيد محفوظة لهذا اليوم. أضف تذكيراً أدناه.",
+    tts_unavailable: "صوت هذه اللغة غير مثبت. ثبّت بيانات الصوت من إعدادات تحويل النص إلى كلام في Android.",
+    placeholder_name: "مثال: أحمد / فاطمة",
+    placeholder_event: "مثال: مراجعة الزكاة / مناسبة عائلية",
+    placeholder_details: "التفاصيل",
+    calendar_edit: "تعديل",
+    calendar_phone: "تقويم الهاتف"
+  }
+};
+
+function applyUiTextTranslations() {
+  var map = UI_TRANSLATIONS[currentLang] || UI_TRANSLATIONS.hinglish;
+  Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (Object.prototype.hasOwnProperty.call(map, key)) el.textContent = map[key];
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-placeholder]'), function(el) {
+    var key = el.getAttribute('data-i18n-placeholder');
+    if (Object.prototype.hasOwnProperty.call(map, key)) el.setAttribute('placeholder', map[key]);
+  });
+  var saveButton = document.getElementById('calendarSaveButton');
+  if (saveButton) saveButton.textContent = (editingCalendarEventId !== null ? map.calendar_update : map.calendar_save);
+}
+
+var DALIL_DB = {
+  R01: { title: "Baaligh & Aqil Hona Shart Hai", body: "Fiqh-e-Hanafi mein Zakat farz hone ke liye maalik ka Aqil aur Baaligh hona shart hai. Nabaligh bache ke naam kitna hi sona ya bank balance ho, us par Zakat farz nahi hoti.", ref: "Bahar-e-Shariat, Hissa 5, Safha 876" },
+  R03: { title: "Shar'i Tola (11.664 Grams)", body: "Shariat mein 1 Tola = 11.664 Grams hota hai. Isliye 7.5 Tola Sona = 87.48 Grams aur 52.5 Tola Chandi = 612.36 Grams hai. Agar sirf sona hai aur 87.48g se kam hai, to Zakat 0 hogi.", ref: "Fatawa Razvia, Jild 10; Bahar-e-Shariat H5" },
+  R04: { title: "Khalt-e-Amwal (Mila-Jula Maal)", body: "Jab Sone ke sath thoda bhi Cash, Bank balance, Chandi ya Tijarati stock ho, to garibon ke faide ke liye Chandi ka Nisab (612.36g) lagaya jata hai.", ref: "Durr-ul-Mukhtar; Radd-ul-Muhtar (Shami)" },
+  R05: { title: "Zewar Ke Nag Aur Lakh Ki Katauti", body: "Kangan ya haar ke andar bhari hui Lakh (mom/lac) aur upar jade hue Nag/Moti par Zakat nahi hoti. Unka wazan ghatakar sirf khalis Sone/Chandi par 2.5% Zakat lagti hai.", ref: "Bahar-e-Shariat Hissa 5; Fatawa Alamgiri" },
+  R07: { title: "Hajat-e-Asliya (Zaroorat Ki Cheezein Maaf)", body: "Rehne ka makan, pehenne ke kapde, personal car/bike, aur dukan ke racks/machinery (Aalat-e-Hirfat) Zakat se 100% maaf hain.", ref: "Bahar-e-Shariat Hissa 5" },
+  R13: { title: "Qarz Ki Katauti (Masla-e-Istighraq)", body: "Wajib qarz pehle Cash/Tijarati maal se, phir Chandi se, aur aakhir mein Sone se ghataya jata hai.", ref: "Bahar-e-Shariat Hissa 5, Bab-ul-Qarz" }
+};
+
+var RISHTEDAR_DB = [
+  { id: "MAA_BAAP", name: "1. Maa, Baap, Dada, Dadi, Nana, Nani", status: "NAJAYAZ", title: "🔴 ZAKAT DENA JAIZ NAHI", reason: "Apne Usul (walidain/dada-dadi) ko Zakat dena mana hai kyunki unka kharcha aulad par lazmi hai.", ref: "Bahar-e-Shariat Hissa 5" },
+  { id: "BETA_BETI", name: "2. Beta, Beti, Pota, Poti, Nawasa, Nawasi", status: "NAJAYAZ", title: "🔴 ZAKAT DENA JAIZ NAHI", reason: "Apni aulad ko Zakat dena najayaz hai.", ref: "Bahar-e-Shariat Hissa 5" },
+  { id: "MIAN_BIWI", name: "3. Shauhar Biwi Ko / Biwi Shauhar Ko", status: "NAJAYAZ", title: "🔴 ZAKAT DENA JAIZ NAHI", reason: "Mian-Biwi ek doosre ko Zakat nahi de sakte.", ref: "Durr-ul-Mukhtar" },
+  { id: "SAYYID", name: "4. Sayyid / Saadaat-e-Kiram (Banu Hashim)", status: "NAJAYAZ", title: "🔴 ZAKAT DENA HARAM HAI", reason: "Huzoor ﷺ ke khandan ko Zakat dena mana hai. Unki khidmat Hadiya/Nafl maal se karein.", ref: "Sahih Muslim; Fatawa Razvia" },
+  { id: "BHAI_BEHEN", name: "5. Garib Saga Bhai ya Sagi Behen", status: "AFZAL", title: "🟢 DENA SABSE AFZAL HAI (Dohra Sawab)", reason: "Garib Bhai/Behen ko Zakat dene se Zakat aur Silah-Rahmi dono ka dohra ajar milta hai.", ref: "Sunan Tirmidhi; Bahar-e-Shariat" },
+  { id: "PHUPHI_CHACHA", name: "6. Garib Phuphi, Chacha, Mama, Khala", status: "AFZAL", title: "🟢 DENA AFZAL HAI", reason: "Mustahiq rishtedaron ko dena aam garibon se zyada afzal hai.", ref: "Bahar-e-Shariat Hissa 5" },
+  { id: "MASJID", name: "7. Masjid Ki Taamir / Imam Ki Tankhwah", status: "NAJAYAZ", title: "🔴 ZAKAT ADA NAHI HOGI", reason: "Masjid mein Tamleek (garib ko maalik banana) nahi hoti, isliye Zakat ada nahi hogi.", ref: "Bahar-e-Shariat Hissa 5" }
+];
+
+var MUSTANAD_BOOKS_DB = [
+  { title: "1. Bahar-e-Shariat (Hissa 5)", author: "Sadrush Shariah Mufti Amjad Ali Aazmi", topic: "Zewarat, Nag/Lakh, Tijarat, Ushr, Fitra aur Masarif ke tamam masail.", link: "https://www.dawateislami.net/bookslibrary/ur/bahar-e-shariat-hissa-5" },
+  { title: "2. Fatawa Razvia (Jild 10)", author: "Imam Ahmad Raza Khan Barelvi", topic: "Shar'i Tola (11.664g), Khalt-e-Amwal aur Qarz ki katauti.", link: "https://www.dawateislami.net/bookslibrary/ur/fatawa-razvia-jild-10" }
+];
+
+var appStore = {
+  setupCompleted: false,
+  userName: "Mera Hisab",
+  userAge: 22,
+  ownerStatus: "BALIGH",
+  hawlStatus: "QAMRI_354",
+  currency: "INR",
+  lang: "hinglish",
+  theme: "default",
+  goldRate10g: 0,
+  silverRate10g: 0,
+  ratesSource: "",
+  ratesAt: 0,
+  hijriOffset: 0,
+  hijriCalendarMethod: "UAQ",
+  hijriOnlineVerified: null,
+  jewels: [],
+  assets: [],
+  debts: [],
+  khataWajib: 0,
+  kistList: [],
+  calendarEvents: []
+};
+
+function escHtml(s) {
+  return String(s || "").replace(/[&<>"']/g, function(m) {
+    return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m];
+  });
+}
+
+function hasBridge() { return !!(window.AndroidBridge && AndroidBridge.loadEncryptedState); }
+
+function loadSavedState() {
+  try {
+    if (hasBridge()) {
+      var enc = AndroidBridge.loadEncryptedState(STORAGE_KEY);
+      if (enc) { var p = JSON.parse(enc); if (p) { appStore = Object.assign(appStore, p); return; } }
+    }
+    var raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) appStore = Object.assign(appStore, JSON.parse(raw));
+  } catch (e) {}
+}
+
+function saveState() {
+  try {
+    var s = JSON.stringify(appStore);
+    // Android par data sirf encrypted DB mein; plain localStorage tabhi jab bridge na ho / encrypt fail ho
+    if (hasBridge() && AndroidBridge.saveEncryptedState(STORAGE_KEY, s)) return;
+    localStorage.setItem(STORAGE_KEY, s);
+  } catch (e) {}
+}
+
+function toast(msg) {
+  var t = document.getElementById('toast');
+  t.innerText = msg; t.className = 'toast show';
+  clearTimeout(toast._t);
+  toast._t = setTimeout(function() { t.className = 'toast'; }, 3000);
+}
+
+var _confirmCb = null;
+function askConfirm(msg, cb) {
+  document.getElementById('confirmMsg').innerText = msg;
+  _confirmCb = cb;
+  document.getElementById('confirmModal').style.display = 'flex';
+}
+function closeConfirm(ok) {
+  document.getElementById('confirmModal').style.display = 'none';
+  var cb = _confirmCb; _confirmCb = null;
+  if (ok && cb) cb();
+}
+
+function animateNumber(el, to) {
+  var from = el._v || 0; el._v = to;
+  if (from === to || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) { el.innerText = formatRs(to); return; }
+  var t0 = performance.now();
+  (function step(t) {
+    var p = Math.min(1, (t - t0) / 450), e = 1 - Math.pow(1 - p, 3);
+    el.innerText = formatRs(from + (to - from) * e);
+    if (p < 1) requestAnimationFrame(step);
+  })(t0);
+}
+
+var currentTab = 'rules';
+window.handleAndroidBack = function() {
+  if (document.getElementById('confirmModal').style.display === 'flex') { closeConfirm(false); return true; }
+  if (document.getElementById('dalilModal').style.display === 'flex') { closeDalil(); return true; }
+  if (currentTab !== 'rules' || document.getElementById('sec-setup').style.display === 'block') {
+    if (!appStore.setupCompleted) return false;
+    switchTab('rules'); return true;
+  }
+  return false;
+};
+
+window.onTtsUnavailable = function() {
+  toast((UI_TRANSLATIONS[currentLang] || UI_TRANSLATIONS.hinglish).tts_unavailable);
+};
+
+function refreshGregorian() {
+  var el = document.getElementById('uiGregorianDate');
+  if (!el) return;
+  var locale = ({ urdu:'ur-PK', hindi:'hi-IN', hinglish:'en-IN', english:'en-US', arabic:'ar-SA' })[currentLang] || 'en-IN';
+  el.innerText = '📅 ' + new Date().toLocaleDateString(locale, { day:'2-digit', month:'short', year:'numeric' });
+}
+function refreshHijri() {
+  var el = document.getElementById('uiHijriDate');
+  try {
+    var d = new Date(); d.setDate(d.getDate() + (parseInt(appStore.hijriOffset) || 0));
+    var locale = ({ urdu:'ur-PK', hindi:'hi-IN', hinglish:'en-IN', english:'en-US', arabic:'ar-SA' })[currentLang] || 'en-IN';
+    var fmt;
+    try { fmt = new Intl.DateTimeFormat(locale + '-u-ca-islamic-umalqura', { day:'numeric', month:'long', year:'numeric' }); }
+    catch (e) { fmt = new Intl.DateTimeFormat(locale + '-u-ca-islamic', { day:'numeric', month:'long', year:'numeric' }); }
+    el.innerText = '🌙 ' + fmt.format(d);
+    if (window.AndroidBridge && AndroidBridge.fetchLiveHijri) {
+      AndroidBridge.fetchLiveHijri(localIsoDate(new Date()), appStore.hijriCalendarMethod || 'UAQ');
+    }
+  } catch (e) { if (el) el.innerText = '🌙 —'; }
+}
+window.onLiveHijriData = function(raw) {
+  try {
+    var d = JSON.parse(raw || '{}');
+    if (!d.ok) return;
+    appStore.hijriOnlineVerified = {
+      gregorian:d.gregorian, hijriDay:d.hijriDay, hijriMonth:d.hijriMonth,
+      hijriMonthName:d.hijriMonthName, hijriYear:d.hijriYear,
+      holidays:d.holidays ? d.holidays.split('|').filter(Boolean) : [], method:d.method,
+      fetchedAt:Date.now()
+    };
+    saveState();
+    var badge = document.getElementById('hijriOnlineStatus');
+    if (badge) {
+      var ev = appStore.hijriOnlineVerified.holidays || [];
+      badge.textContent = '🌐 Online verified • ' + d.method + (ev.length ? ' • ' + ev[0] : '');
+      badge.style.display = 'block';
+    }
+    renderCalendar();
+  } catch (e) {}
+};
+function setHijriOffset(v) { appStore.hijriOffset = parseInt(v) || 0; saveState(); refreshHijri(); renderCalendar(); }
+function setHijriCalendarMethod(v) { appStore.hijriCalendarMethod = v || 'UAQ'; saveState(); refreshHijri(); renderCalendar(); }
+function updateRateStatus() {
+  var cur = appStore.currency || 'INR';
+  Array.prototype.forEach.call(document.querySelectorAll('.cur-tag'), function(e) { e.innerText = '(' + cur + ')'; });
+  var el = document.getElementById('rateStatus'); if (!el) return;
+  if (!(appStore.goldRate10g > 0 && appStore.silverRate10g > 0)) {
+    el.className = 'rate-status warn';
+    el.innerText = "⚠️ Sone aur Chandi ka bhav daalein ya '🔄 Live Bhav' dabayein. Bhav ke bina Zakat ka sahi hisab nahi ho sakta.";
+  } else if (appStore.ratesSource === 'live') {
+    el.className = 'rate-status';
+    el.innerText = '🌐 International spot se live bhav (' + new Date(appStore.ratesAt).toLocaleString('en-IN') + '). Apne shehar ka bazar bhav alag ho sakta hai — chahein to khud badal dein.';
+  } else {
+    el.className = 'rate-status';
+    el.innerText = '✍️ Aapka daala hua bhav istemal ho raha hai.';
+  }
+}
+
+function onRateInput() { appStore.ratesSource = 'manual'; calculateAll(); }
+
+function resetRates() {
+  appStore.goldRate10g = 0; appStore.silverRate10g = 0; appStore.ratesSource = ''; appStore.ratesAt = 0;
+  document.getElementById('goldRate10g').value = ''; document.getElementById('silverRate10g').value = '';
+  fetchOnlineMarketRates(true);
+}
+
+function changeCurrency(c) {
+  if (appStore.currency === c) return;
+  appStore.currency = c; document.getElementById('settingsCurrency').value = c; document.getElementById('setupCurrency').value = c;
+  resetRates(); saveState(); calculateAll();
+  toast('Currency badal gayi: ' + c + ' — ab is currency mein bhav daalein.');
+}
+
+function openPrivacy() { if (PRIVACY_URL && window.AndroidBridge) AndroidBridge.openExternalUrl(PRIVACY_URL); }
+function rateApp() { if (window.AndroidBridge) AndroidBridge.rateApp(); }
+function shareApp() { if (window.AndroidBridge) AndroidBridge.shareApp(); }
+
+function restoreInputs() {
+  if (!appStore.ratesSource) { appStore.goldRate10g = 0; appStore.silverRate10g = 0; }
+  var g = document.getElementById('goldRate10g'), s = document.getElementById('silverRate10g');
+  if (appStore.goldRate10g > 0) g.value = appStore.goldRate10g;
+  if (appStore.silverRate10g > 0) s.value = appStore.silverRate10g;
+  document.getElementById('ownerStatus').value = appStore.ownerStatus || 'BALIGH';
+  document.getElementById('hawlStatus').value = appStore.hawlStatus || 'QAMRI_354';
+  document.getElementById('setupCurrency').value = appStore.currency || 'INR';
+  document.getElementById('settingsCurrency').value = appStore.currency || 'INR';
+  document.getElementById('hijriOffset').value = String(appStore.hijriOffset || 0);
+  var hm = document.getElementById('hijriCalendarMethod'); if (hm) hm.value = appStore.hijriCalendarMethod || "UAQ";
+  document.getElementById('settingsLanguage').value = appStore.lang || 'hinglish';
+  if (appStore.setupCompleted) {
+    document.getElementById('setupUserName').value = appStore.userName || '';
+    document.getElementById('setupUserAge').value = appStore.userAge || 22;
+    document.getElementById('setupBalighStatus').value = appStore.ownerStatus || 'BALIGH';
+  }
+  if (window.AndroidBridge && AndroidBridge.getVersion) document.getElementById('appVersion').innerText = AndroidBridge.getVersion();
+  if (PRIVACY_URL) document.getElementById('btnPrivacy').style.display = '';
+  try { if (window.AndroidBridge && AndroidBridge.privacyOptionsRequired && AndroidBridge.privacyOptionsRequired()) document.getElementById('btnAdPrivacy').style.display = ''; } catch (e) {}
+}
+
+function formatRs(n) {
+  var sym = CURRENCY_MAP[appStore.currency] || "₹";
+  return sym + Math.round(Number(n) || 0).toLocaleString('en-IN');
+}
+
+function selectLang(lang) {
+  currentLang = lang;
+  appStore.lang = lang;
+  ['urdu', 'hindi', 'hinglish', 'english', 'arabic'].forEach(function(l) {
+    var b = document.getElementById('lbtn-' + l);
+    if (b) b.className = 'lang-card-btn' + (l === lang ? ' selected' : '');
+  });
+  var languageSelect = document.getElementById('settingsLanguage');
+  if (languageSelect) languageSelect.value = lang;
+  saveState();
+  applyLanguageUI();
+}
+
+function applyLanguageUI() {
+  var dict = I18N[currentLang] || I18N.hinglish;
+  document.body.setAttribute('dir', dict.dir);
+  document.getElementById('htmlRoot').setAttribute('lang', currentLang === 'hinglish' ? 'hi-Latn' : currentLang);
+  document.getElementById('uiAppTitle').innerText = dict.appTitle;
+  document.getElementById('uiAppSub').innerText = dict.appSub;
+  document.getElementById('txtQuickRulesTitle').innerText = dict.quickTitle;
+
+  var keys = ['rules', 'calc', 'calendar', 'masarif', 'books', 'settings'];
+  keys.forEach(function(k, idx) {
+    var el = document.getElementById('dtxt-' + k);
+    if (el && dict.dock[idx]) el.innerText = dict.dock[idx];
+  });
+  var languageSelect = document.getElementById('settingsLanguage');
+  if (languageSelect) languageSelect.value = currentLang;
+
+  applyUiTextTranslations();
+  refreshGregorian();
+  refreshHijri();
+  if (document.getElementById('calendarMonthLabel')) renderCalendar();
+  document.getElementById('quickRulesContainer').innerHTML = dict.rules.map(function(r) {
+    return '<div class="item-row"><div><div style="font-weight:800; font-size:0.84rem; color:var(--text-primary);">' + escHtml(r.title) + '</div><div style="font-size:0.74rem; color:var(--text-secondary); margin-top:2px;">' + escHtml(r.desc) + '</div></div><button class="btn-dalil" onclick="showDalil(\'' + r.dalil + '\')" data-i18n="dalil_button">Dalil 📖</button></div>';
+  }).join('');
+}
+
+function checkAgeGate() {
+  var age = parseInt(document.getElementById('setupUserAge').value, 10) || 0;
+  var balSel = document.getElementById('setupBalighStatus');
+  var ageNote = document.getElementById('ageFiqhNote');
+  var alert = document.getElementById('gatekeeperAlert');
+  var isNab = !!balSel && balSel.value === 'NABALIGH';
+  var blocked = age > 0 && (age < 15 || isNab);
+
+  if (ageNote) ageNote.style.display = age > 0 && age < 15 ? 'block' : 'none';
+  if (alert) {
+    alert.style.display = blocked ? 'block' : 'none';
+    if (blocked) {
+      alert.innerHTML = '<div style="font-weight:900; color:var(--green); font-size:0.88rem;">🟢 SHARIAT KA FAISLA: AAP PAR ZAKAT FARZ NAHI HAI (₹0)</div>' +
+        '<p style="font-size:0.78rem; color:var(--text-primary); margin-top:4px; line-height:1.45;">' +
+        'Nabaligh / app ke minor gate ke mutabiq Zakat calculation forms band rahenge.<br><strong>📚 Hawala: Bahar-e-Shariat, Hissa 5</strong>' +
+        '</p>';
+    }
+  }
+
+  ['assetInputSection', 'debtInputSection'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.style.display = blocked ? 'none' : '';
+  });
+
+  return !blocked;
+}
+
+function openSetupModal() {
+  document.getElementById('sec-setup').style.display = 'block';
+  ['rules', 'calc', 'calendar', 'masarif', 'books', 'settings'].forEach(function(s) {
+    var section = document.getElementById('sec-' + s);
+    if (section) section.style.display = 'none';
+  });
+}
+
+function completeSetupAndContinue() {
+  var name = document.getElementById('setupUserName').value.trim() || 'Mera Hisab';
+  var age = parseInt(document.getElementById('setupUserAge').value, 10) || 0;
+  var bal = document.getElementById('setupBalighStatus').value;
+  var cur = document.getElementById('setupCurrency').value;
+  var blocked = age > 0 && (age < 15 || bal === 'NABALIGH');
+
+  appStore.userName = name;
+  appStore.userAge = age;
+  appStore.ownerStatus = bal;
+  appStore.zakatGatekeeperBlocked = blocked;
+
+  if (appStore.currency !== cur) {
+    appStore.currency = cur;
+    document.getElementById('settingsCurrency').value = cur;
+    resetRates();
+  } else {
+    appStore.currency = cur;
+  }
+
+  appStore.setupCompleted = true;
+
+  document.getElementById('uiProfileName').innerText = name;
+  document.getElementById('ownerStatus').value = bal;
+  saveState();
+
+  document.getElementById('sec-setup').style.display = 'none';
+
+  if (blocked) {
+    appStore.khataWajib = 0;
+    saveState();
+    switchTab('rules');
+    toast('SHARIAT KA FAISLA: ZAKAT FARZ NAHI — ₹0');
+    return;
+  }
+
+  switchTab('calc');
+}
+
+function switchTab(tabId) {
+  currentTab = tabId;
+  document.getElementById('sec-setup').style.display = 'none';
+  ['rules', 'calc', 'calendar', 'masarif', 'books', 'settings'].forEach(function(s) {
+    var sec = document.getElementById('sec-' + s);
+    var dck = document.getElementById('dock-' + s);
+    if (sec) sec.style.display = (s === tabId) ? 'block' : 'none';
+    if (dck) dck.className = 'dock-item' + (s === tabId ? ' active' : '');
+  });
+  window.scrollTo(0, 0);
+  if (tabId === 'calc') calculateAll();
+  if (tabId === 'calendar') renderCalendar();
+}
+
+function switchSubTab(subId) {
+  ['zakat', 'ushr', 'fitra', 'tamleek'].forEach(function(sub) {
+    document.getElementById('subsub-' + sub).style.display = (sub === subId) ? 'block' : 'none';
+    document.getElementById('subbtn-' + sub).className = 'lang-card-btn' + (sub === subId ? ' selected' : '');
+  });
+}
+
+var dalilDrag = { active: false, startY: 0, currentY: 0 };
+
+function showDalil(code) {
+  try {
+    var d = DALIL_DB[code] || DALIL_DB.R07;
+    var modal = document.getElementById('dalilModal');
+    var sheet = modal ? modal.querySelector('.sheet') : null;
+    if (!modal || !sheet || !d) throw new Error('Dalil modal/data missing');
+
+    document.getElementById('dalilModalTitle').innerText = '📖 ' + (d.title || 'Fiqhi Dalil');
+    document.getElementById('dalilModalBody').innerText = d.body || '';
+    document.getElementById('dalilModalRef').innerText = '📚 Hawala: ' + (d.ref || '');
+    sheet.style.transform = 'translateY(0)';
+    sheet.style.opacity = '1';
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  } catch (e) {
+    console.error('[Noor] showDalil failed:', e);
+    toast('Dalil kholne mein masla aaya.');
+  }
+}
+
+function closeDalil() {
+  var modal = document.getElementById('dalilModal');
+  if (!modal) return;
+  var sheet = modal.querySelector('.sheet');
+  if (sheet) { sheet.style.transform = 'translateY(0)'; sheet.style.opacity = '1'; }
+  modal.style.display = 'none';
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+  try { if (window.AndroidBridge && AndroidBridge.stopSpeaking) AndroidBridge.stopSpeaking(); } catch (e) {}
+}
+
+function speakDalilText() {
+  var title = document.getElementById('dalilModalTitle');
+  var body = document.getElementById('dalilModalBody');
+  if (!title || !body) return;
+  var t = title.innerText + '. ' + body.innerText;
+  if (window.AndroidBridge && AndroidBridge.speakText) AndroidBridge.speakText(t, currentLang);
+}
+
+function readAloudParcha() {
+  if (!lastCalcResult) return;
+  var t = 'Hisab Report: ' + appStore.userName + '. ' + lastCalcResult.statusTitle + '. ' +
+    lastCalcResult.statusReason + '. Wajib Zakat: ' + formatRs(lastCalcResult.zakatPayable);
+  if (window.AndroidBridge && AndroidBridge.speakText) AndroidBridge.speakText(t, currentLang);
+}
+
+function stopSpeaking() {
+  try { if (window.AndroidBridge && AndroidBridge.stopSpeaking) AndroidBridge.stopSpeaking(); } catch (e) {}
+}
+
+window.onNativeSpeakState = function(active) {
+  // TTS UI remains localized to the Dalil sheet and final Parcha.
+  document.body.classList.toggle('tts-active', !!active);
+};
+
+function setupDalilSheetDrag() {
+  var modal = document.getElementById('dalilModal');
+  var sheet = modal ? modal.querySelector('.sheet') : null;
+  if (!modal || !sheet || sheet.dataset.dragReady === '1') return;
+  sheet.dataset.dragReady = '1';
+
+  sheet.addEventListener('touchstart', function(e) {
+    if (!e.touches || !e.touches.length) return;
+    dalilDrag.active = true;
+    dalilDrag.startY = e.touches[0].clientY;
+    dalilDrag.currentY = dalilDrag.startY;
+    sheet.style.transition = 'none';
+  }, { passive: true });
+
+  sheet.addEventListener('touchmove', function(e) {
+    if (!dalilDrag.active || !e.touches || !e.touches.length) return;
+    dalilDrag.currentY = e.touches[0].clientY;
+    var delta = Math.max(0, dalilDrag.currentY - dalilDrag.startY);
+    if (delta > 0) {
+      sheet.style.transform = 'translateY(' + delta + 'px)';
+      sheet.style.opacity = String(Math.max(0.55, 1 - delta / 500));
+    }
+  }, { passive: true });
+
+  sheet.addEventListener('touchend', function() {
+    if (!dalilDrag.active) return;
+    var delta = Math.max(0, dalilDrag.currentY - dalilDrag.startY);
+    dalilDrag.active = false;
+    sheet.style.transition = 'transform 180ms ease, opacity 180ms ease';
+    if (delta > 110) {
+      sheet.style.transform = 'translateY(100%)';
+      sheet.style.opacity = '0';
+      setTimeout(closeDalil, 180);
+    } else {
+      sheet.style.transform = 'translateY(0)';
+      sheet.style.opacity = '1';
+    }
+  }, { passive: true });
+}
+
+function openSpeechSettings() {
+  if (window.AndroidBridge && AndroidBridge.openSpeechSettings) AndroidBridge.openSpeechSettings();
+  else toast('Phone Settings mein Text-to-speech kholein.');
+}
+
+// Hijri-first Islamic calendar. Uses Android WebView ICU Umm al-Qura when available.
+// Local moon sighting can differ; the user-adjustable offset is intentionally retained.
+var calendarCursor = new Date();
+var selectedCalendarDate = localIsoDate(new Date());
+function localIsoDate(d) {
+  var y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
+  return y + '-' + m + '-' + day;
+}
+function parseLocalDate(iso) {
+  var p = String(iso || '').split('-').map(Number);
+  return p.length === 3 ? new Date(p[0], p[1] - 1, p[2], 12, 0, 0) : new Date();
+}
+function hijriNumericParts(d) {
+  var adjusted = new Date(d.getFullYear(), d.getMonth(), d.getDate() + (parseInt(appStore.hijriOffset) || 0), 12);
+  for (var cal of ['islamic-umalqura', 'islamic']) {
+    try {
+      var f = new Intl.DateTimeFormat('en-US-u-ca-' + cal + '-nu-latn', { day:'numeric', month:'numeric', year:'numeric' });
+      var o = {};
+      f.formatToParts(adjusted).forEach(function(p) { if (['day','month','year'].indexOf(p.type) >= 0) o[p.type] = Number(p.value); });
+      if (o.day && o.month && o.year) return o;
+    } catch (e) {}
+  }
+  return {};
+}
+function hijriParts(d) {
+  var n = hijriNumericParts(d);
+  if (!n.day) return {};
+  var loc = ({ urdu:'ur-PK', hindi:'hi-IN', hinglish:'en-IN', english:'en-US', arabic:'ar-SA' })[currentLang] || 'en-IN';
+  var adjusted = new Date(d.getFullYear(), d.getMonth(), d.getDate() + (parseInt(appStore.hijriOffset) || 0), 12);
+  var month = '';
+  try { month = new Intl.DateTimeFormat(loc + '-u-ca-islamic-umalqura', { month:'long' }).format(adjusted); }
+  catch (e) { month = new Intl.DateTimeFormat(loc + '-u-ca-islamic', { month:'long' }).format(adjusted); }
+  return { day:String(n.day), month:month, year:String(n.year), monthNumber:n.month, yearNumber:n.year };
+}
+function hijriLabel(d) { var p = hijriParts(d); return p.day || '—'; }
+function findHijriMonthStart(anchor) {
+  for (var delta = -20; delta <= 20; delta++) {
+    var d = new Date(anchor.getFullYear(), anchor.getMonth(), anchor.getDate() + delta, 12);
+    var p = hijriNumericParts(d);
+    if (p.day === 1) return d;
+  }
+  return new Date(anchor.getFullYear(), anchor.getMonth(), 1, 12);
+}
+function shiftCalendarMonth(delta) {
+  var start = findHijriMonthStart(calendarCursor);
+  calendarCursor = new Date(start.getFullYear(), start.getMonth(), start.getDate() + (delta > 0 ? 35 : -35), 12);
+  calendarCursor = findHijriMonthStart(calendarCursor);
+  selectedCalendarDate = localIsoDate(calendarCursor);
+  cancelCalendarEdit(); renderCalendar();
+}
+function selectCalendarDate(iso) {
+  selectedCalendarDate = iso; calendarCursor = parseLocalDate(iso);
+  cancelCalendarEdit(); renderCalendar();
+}
+function renderCalendar() {
+  var monthLabel = document.getElementById('calendarMonthLabel');
+  if (!monthLabel) return;
+  var loc = ({ urdu:'ur-PK', hindi:'hi-IN', hinglish:'en-IN', english:'en-US', arabic:'ar-SA' })[currentLang] || 'en-IN';
+  var first = findHijriMonthStart(calendarCursor), fp = hijriParts(first);
+  var monthTitle = fp.month + ' ' + fp.year + ' AH';
+  monthLabel.textContent = monthTitle;
+  var days = ({ urdu:['اتوار','پیر','منگل','بدھ','جمعرات','جمعہ','ہفتہ'], hindi:['रवि','सोम','मंगल','बुध','गुरु','शुक्र','शनि'], arabic:['أحد','إثن','ثلا','أرب','خمي','جمع','سبت'] })[currentLang] || ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  document.getElementById('calendarWeekdays').innerHTML = days.map(function(x) { return '<div class="calendar-weekday">' + x + '</div>'; }).join('');
+  var monthDates = [], d = new Date(first);
+  for (var i = 0; i < 30; i++) {
+    var hp = hijriNumericParts(d);
+    if (i > 0 && (hp.day === 1 || hp.month !== fp.monthNumber || hp.year !== fp.yearNumber)) break;
+    monthDates.push(new Date(d)); d.setDate(d.getDate() + 1);
+  }
+  var offset = first.getDay(), cells = [];
+  for (var j = 0; j < offset; j++) {
+    var prev = new Date(first); prev.setDate(first.getDate() - (offset - j));
+    cells.push(calendarDayHtml(prev, true));
+  }
+  monthDates.forEach(function(date) { cells.push(calendarDayHtml(date, false)); });
+  while (cells.length % 7) {
+    var next = new Date(d); next.setDate(d.getDate() + (cells.length % 7 === 0 ? 0 : 0));
+    cells.push(calendarDayHtml(next, true)); d.setDate(d.getDate() + 1);
+  }
+  document.getElementById('calendarGrid').innerHTML = cells.join('');
+  var selected = parseLocalDate(selectedCalendarDate), h = hijriParts(selected);
+  var g = selected.toLocaleDateString(loc, { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+  var htext = h.day ? (' • ' + h.day + ' ' + h.month + ' ' + h.year + ' AH') : '';
+  var special = (selectedCalendarDate === localIsoDate(new Date()) && appStore.hijriOnlineVerified && appStore.hijriOnlineVerified.holidays && appStore.hijriOnlineVerified.holidays.length) ? (' • ⭐ ' + appStore.hijriOnlineVerified.holidays[0]) : '';
+  document.getElementById('calendarSelectedLabel').textContent = g + htext + special;
+  renderCalendarEvents();
+  var titleInput = document.getElementById('calendarEventTitle');
+  if (titleInput) titleInput.setAttribute('aria-label', 'Event title for ' + selectedCalendarDate);
+}
+function calendarDayHtml(d, other) {
+  var iso = localIsoDate(d), h = hijriLabel(d);
+  var hasEvent = (appStore.calendarEvents || []).some(function(e) { return e.date === iso; });
+  var cls = 'calendar-day' + (other ? ' other' : '') + (iso === localIsoDate(new Date()) ? ' today' : '') + (iso === selectedCalendarDate ? ' selected' : '');
+  return '<button type="button" class="' + cls + '" onclick="selectCalendarDate(&quot;' + iso + '&quot;)"><span class="gday">' + escHtml(h) + '</span><span class="hday">' + d.getDate() + ' ' + d.toLocaleDateString('en-IN',{month:'short'}) + '</span>' + (hasEvent ? '<span class="event-dot"></span>' : '') + '</button>';
+}
+function renderCalendarEvents() {
+  var list = document.getElementById('calendarEventsList'); if (!list) return;
+  var events = (appStore.calendarEvents || []).filter(function(e) { return e.date === selectedCalendarDate; });
+  var words = UI_TRANSLATIONS[currentLang] || UI_TRANSLATIONS.hinglish;
+  list.innerHTML = events.length ? events.map(function(e) {
+    return '<div class="calendar-event"><div style="flex:1; min-width:0;"><div class="calendar-event-title">' + escHtml(e.title) + '</div><div class="calendar-event-note">' + escHtml(e.notes || '') + '</div></div><button class="btn-dalil" onclick="editCalendarEvent(' + Number(e.id) + ')">' + escHtml(words.calendar_edit) + '</button><button class="btn-dalil" onclick="deleteCalendarEvent(' + Number(e.id) + ')">✕</button><button class="btn-dalil" onclick="sendCalendarEventToPhone(' + Number(e.id) + ')">' + escHtml(words.calendar_phone) + '</button></div>';
+  }).join('') : '<p class="note">' + escHtml(words.calendar_empty) + '</p>';
+}
+var editingCalendarEventId = null;
+function addCalendarEvent() {
+  var titleEl = document.getElementById('calendarEventTitle'), notesEl = document.getElementById('calendarEventNotes');
+  var title = titleEl.value.trim(); if (!title) { toast('Event ka naam likhein.'); return; }
+  appStore.calendarEvents = appStore.calendarEvents || [];
+  if (editingCalendarEventId !== null) {
+    var existing = appStore.calendarEvents.find(function(e) { return Number(e.id) === Number(editingCalendarEventId); });
+    if (existing) { existing.date = selectedCalendarDate; existing.title = title; existing.notes = notesEl.value.trim(); }
+    toast('Event update ho gaya.');
+  } else {
+    appStore.calendarEvents.push({ id: Date.now(), date: selectedCalendarDate, title: title, notes: notesEl.value.trim() });
+    toast('Event is phone par save ho gaya.');
+  }
+  cancelCalendarEdit(); saveState(); renderCalendar();
+}
+function editCalendarEvent(id) {
+  var ev = (appStore.calendarEvents || []).find(function(e) { return Number(e.id) === Number(id); });
+  if (!ev) return;
+  editingCalendarEventId = Number(id); selectedCalendarDate = ev.date; calendarCursor = new Date(parseLocalDate(ev.date).getFullYear(), parseLocalDate(ev.date).getMonth(), 1);
+  document.getElementById('calendarEventTitle').value = ev.title;
+  document.getElementById('calendarEventNotes').value = ev.notes || '';
+  document.getElementById('calendarSaveButton').textContent = (UI_TRANSLATIONS[currentLang] || UI_TRANSLATIONS.hinglish).calendar_update;
+  document.getElementById('calendarCancelEdit').style.display = 'block';
+  renderCalendar();
+}
+function cancelCalendarEdit(clearFields) {
+  if (clearFields === undefined) clearFields = true;
+  editingCalendarEventId = null;
+  var save = document.getElementById('calendarSaveButton');
+  if (save) save.textContent = (UI_TRANSLATIONS[currentLang] || UI_TRANSLATIONS.hinglish).calendar_save;
+  var cancel = document.getElementById('calendarCancelEdit'); if (cancel) cancel.style.display = 'none';
+  if (clearFields) {
+    var t = document.getElementById('calendarEventTitle'), n = document.getElementById('calendarEventNotes');
+    if (t) t.value = ''; if (n) n.value = '';
+  }
+}
+function deleteCalendarEvent(id) {
+  appStore.calendarEvents = (appStore.calendarEvents || []).filter(function(e) { return Number(e.id) !== Number(id); });
+  if (Number(editingCalendarEventId) === Number(id)) cancelCalendarEdit();
+  saveState(); renderCalendar();
+}
+function sendCalendarEventToPhone(id) {
+  var ev = (appStore.calendarEvents || []).find(function(e) { return Number(e.id) === Number(id); });
+  if (!ev) return;
+  if (window.AndroidBridge && AndroidBridge.openSystemCalendarEvent) AndroidBridge.openSystemCalendarEvent(ev.title, ev.date, ev.notes || '');
+  else toast('Phone calendar Android app mein available nahi.');
+}
+
+function updateTolaPreview() {
+  var metal = document.getElementById('jewelMetal').value;
+  var unit = document.getElementById('jewelUnit').value;
+  var w = Math.max(0, parseFloat(document.getElementById('jewelWeight').value) || 0);
+  var st = Math.max(0, parseFloat(document.getElementById('jewelStoneG').value) || 0);
+  var carat = parseFloat(document.getElementById('jewelCarat').value) || 24;
+  var el = document.getElementById('tolaPreview');
+  if (metal === 'DIAMOND_EXEMPT') { el.innerText = "Heera/Moti 100% MAAF (0)."; return; }
+  var gross = unit === 'MARKET_TOLA' ? w * 10.0 : (unit === 'SHARI_TOLA' ? w * 11.664 : w);
+  if (st > gross) { el.innerText = "⚠️ Nag/Lakh wazan kul wazan se zyada nahi ho sakta!"; return; }
+  var pure = Math.max(0, gross - st) * (carat / 24.0);
+  el.innerText = "Khalis 24K Wazan: " + pure.toFixed(2) + "g (" + (pure / 11.664).toFixed(2) + " Shar'i Tola)";
+}
+
+function addJewelItem() {
+  var name = document.getElementById('jewelName').value.trim() || "Zewar";
+  var metal = document.getElementById('jewelMetal').value;
+  var unit = document.getElementById('jewelUnit').value;
+  var w = parseFloat(document.getElementById('jewelWeight').value) || 0;
+  var st = parseFloat(document.getElementById('jewelStoneG').value) || 0;
+  var carat = parseFloat(document.getElementById('jewelCarat').value) || 24;
+  if (w <= 0 || st < 0) { toast('Wazan 0 se zyada aur nag/lakh 0 ya usse zyada hona chahiye.'); return; }
+  var grossG = unit === 'MARKET_TOLA' ? w * 10 : (unit === 'SHARI_TOLA' ? w * 11.664 : w);
+  if (st > grossG) { toast('Nag/lakh ka wazan kul zewar se zyada nahi ho sakta.'); return; }
+  appStore.jewels.push({ id: Date.now(), name: name, metal: metal, unit: unit, weight: w, stoneG: st, carat: carat });
+  document.getElementById('jewelName').value = ''; document.getElementById('jewelWeight').value = ''; document.getElementById('jewelStoneG').value = '0';
+  saveState(); calculateAll();
+}
+
+function addAssetItem() {
+  var title = document.getElementById('assetTitle').value.trim() || "Sampatti";
+  var amt = parseFloat(document.getElementById('assetAmount').value) || 0;
+  var type = document.getElementById('assetType').value;
+  var ownershipPct = Math.max(0, Math.min(100, parseFloat(document.getElementById('assetOwnership').value) || 0));
+  if (amt <= 0 || ownershipPct <= 0) { toast('Rakam aur milkiyat ka hissa 0 se zyada darj karein.'); return; }
+  appStore.assets.push({ id: Date.now(), title: title, amount: amt, type: type, ownershipPct: ownershipPct });
+  document.getElementById('assetTitle').value = ''; document.getElementById('assetAmount').value = '';
+  saveState(); calculateAll();
+}
+
+function addDebtItem() {
+  var title = document.getElementById('debtTitle').value.trim() || "Qarz";
+  var amt = parseFloat(document.getElementById('debtAmount').value) || 0;
+  var type = document.getElementById('debtType').value;
+  if (amt <= 0) return;
+  appStore.debts.push({ id: Date.now(), title: title, amount: amt, type: type });
+  document.getElementById('debtTitle').value = ''; document.getElementById('debtAmount').value = '';
+  saveState(); calculateAll();
+}
+
+function removeItem(arr, id) {
+  appStore[arr] = (appStore[arr] || []).filter(function(x) { return x.id !== id; });
+  saveState(); calculateAll();
+}
+
+function calculateAll() {
+  appStore.ownerStatus = document.getElementById('ownerStatus').value;
+  appStore.hawlStatus = document.getElementById('hawlStatus').value;
+  appStore.goldRate10g = Math.max(0, parseFloat(document.getElementById('goldRate10g').value) || 0);
+  appStore.silverRate10g = Math.max(0, parseFloat(document.getElementById('silverRate10g').value) || 0);
+  updateRateStatus();
+
+  var payload = {
+    ownerStatus: appStore.ownerStatus,
+    hawlStatus: appStore.hawlStatus,
+    solarPolicy: "DISPLAY_2_5775",
+    goldRate10g: appStore.goldRate10g,
+    silverRate10g: appStore.silverRate10g,
+    jewels: appStore.jewels,
+    assets: appStore.assets,
+    debts: appStore.debts
+  };
+
+  if (window.AndroidBridge && AndroidBridge.calculateZakatNative) {
+    try {
+      var res = JSON.parse(AndroidBridge.calculateZakatNative(JSON.stringify(payload)));
+      renderResult(res);
+    } catch (e) { toast("Hisab mein masla aaya. Dobara koshish karein."); }
+  }
+}
+
+function renderResult(res) {
+  if (!res || res.error) { toast("Hisab mein masla aaya. Dobara koshish karein."); return; }
+  lastCalcResult = res;
+  document.getElementById('lblGoldNisab').innerText = formatRs(res.goldNisabVal);
+  document.getElementById('lblSilverNisab').innerText = formatRs(res.silverNisabVal);
+  animateNumber(document.getElementById('lblHeroZakat'), res.zakatPayable);
+
+  var pill = document.getElementById('heroStatusPill');
+  pill.className = "badge " + (res.isFarz ? "b-plus" : "b-zero");
+  pill.innerText = res.statusTitle;
+
+  var banner = document.getElementById('billStatusBanner');
+  banner.className = "badge " + (res.isFarz ? "b-plus" : "b-zero");
+  banner.innerHTML = "<strong>" + escHtml(res.statusTitle) + "</strong><div style='font-size:0.74rem; margin-top:3px;'>" + escHtml(res.statusReason) + "</div>";
+
+  var plus = [], zero = [], minus = [];
+  var gTotal = 0, sTotal = 0, cTotal = 0;
+
+  document.getElementById('jewelList').innerHTML = (res.processedJewels || []).map(function(j) {
+    if (j.metal === 'GOLD') gTotal += j.value;
+    if (j.metal === 'SILVER') sTotal += j.value;
+    if (j.metal === 'DIAMOND_EXEMPT') zero.push({ l: j.name, v: "MAAF (0)", d: "R05" });
+    else plus.push({ l: j.name + " (" + j.pureG + "g)", v: formatRs(j.value), d: "R05" });
+    return '<div class="item-row"><span><strong>' + escHtml(j.name) + '</strong> (' + j.pureG + 'g)</span><div><span class="badge b-plus">' + formatRs(j.value) + '</span> <button class="btn-dalil" aria-label="Hatayein" onclick="removeItem(\'jewels\',' + j.id + ')">✕</button></div></div>';
+  }).join('');
+
+  var zakSet = ['CASH_BANK', 'BC_SAVED', 'SHOP_STOCK', 'PLOT_TRADING'];
+  document.getElementById('assetList').innerHTML = (appStore.assets || []).map(function(a) {
+    var isZ = zakSet.indexOf(a.type) !== -1;
+    if (isZ) { cTotal += a.amount; plus.push({ l: a.title, v: formatRs(a.amount), d: "R04" }); }
+    else zero.push({ l: a.title, v: "MAAF (0)", d: "R07" });
+    return '<div class="item-row"><span>' + escHtml(a.title) + '</span><div><span class="badge ' + (isZ ? 'b-plus' : 'b-zero') + '">' + (isZ ? formatRs(a.amount) : 'MAAF') + '</span> <button class="btn-dalil" aria-label="Hatayein" onclick="removeItem(\'assets\',' + a.id + ')">✕</button></div></div>';
+  }).join('');
+
+  document.getElementById('debtList').innerHTML = (appStore.debts || []).map(function(d) {
+    var val = d.type === 'LONG_EMI' ? d.amount * 12 : d.amount;
+    minus.push({ l: d.title, v: "-" + formatRs(val), d: "R13" });
+    return '<div class="item-row"><span>' + escHtml(d.title) + '</span><div><span class="badge b-minus">-' + formatRs(val) + '</span> <button class="btn-dalil" aria-label="Hatayein" onclick="removeItem(\'debts\',' + d.id + ')">✕</button></div></div>';
+  }).join('');
+
+  var sumAll = Math.max(1, gTotal + sTotal + cTotal);
+  document.getElementById('barGold').style.width = ((gTotal / sumAll) * 100) + "%";
+  document.getElementById('barSilver').style.width = ((sTotal / sumAll) * 100) + "%";
+  document.getElementById('barCash').style.width = ((cTotal / sumAll) * 100) + "%";
+
+  document.getElementById('billPlusItems').innerHTML = plus.length ? plus.map(function(r) { return '<div style="display:flex; justify-content:space-between; font-size:0.8rem; padding:4px 0;"><span>+ ' + escHtml(r.l) + ' <button class="btn-dalil" onclick="showDalil(\'' + r.d + '\')">Dalil</button></span><span>' + r.v + '</span></div>'; }).join('') : '<div style="font-size:0.75rem; color:var(--text-secondary);">Khaali</div>';
+  document.getElementById('billZeroItems').innerHTML = zero.length ? zero.map(function(r) { return '<div style="display:flex; justify-content:space-between; font-size:0.8rem; padding:4px 0;"><span>0 ' + escHtml(r.l) + ' <button class="btn-dalil" onclick="showDalil(\'' + r.d + '\')">Dalil</button></span><span style="color:var(--green);">' + r.v + '</span></div>'; }).join('') : '';
+  document.getElementById('billMinusItems').innerHTML = minus.length ? minus.map(function(r) { return '<div style="display:flex; justify-content:space-between; font-size:0.8rem; padding:4px 0;"><span>- ' + escHtml(r.l) + ' <button class="btn-dalil" onclick="showDalil(\'' + r.d + '\')">Dalil</button></span><span style="color:var(--red);">' + r.v + '</span></div>'; }).join('') : '';
+
+  document.getElementById('billTotalPlus').innerText = formatRs(res.grossZakatable);
+  document.getElementById('billTotalMinus').innerText = "-" + formatRs(res.totalDebt);
+  document.getElementById('billNetWealth').innerText = formatRs(res.netZakatable);
+  document.getElementById('billFinalZakat').innerText = formatRs(res.zakatPayable);
+
+  appStore.khataWajib = res.zakatPayable;
+  saveState(); updateKhataUI();
+}
+
+function fetchOnlineMarketRates(silent) {
+  var btn = document.getElementById('btnFetchLive');
+  if (btn) btn.innerText = "⏳ Checking...";
+  if (window.AndroidBridge && AndroidBridge.fetchLiveOnlineData) {
+    AndroidBridge.fetchLiveOnlineData(appStore.currency || 'INR');
+  } else if (btn) { btn.innerText = "🔄 Live Bhav"; }
+}
+
+window.onLiveOnlineData = function(jsonStr) {
+  var btn = document.getElementById('btnFetchLive');
+  try {
+    var d = JSON.parse(jsonStr);
+    if (d.ok && d.currency === (appStore.currency || 'INR')) {
+      var gold = Math.round(d.gold10g), silver = Math.round(d.silver10g * 100) / 100;
+      document.getElementById('goldRate10g').value = gold;
+      document.getElementById('silverRate10g').value = silver;
+      appStore.goldRate10g = gold; appStore.silverRate10g = silver;
+      appStore.ratesSource = 'live'; appStore.ratesAt = Date.now();
+      saveState(); calculateAll();
+      if (btn) btn.innerText = "✅ Updated";
+      toast("Live bhav update ho gaya (international spot).");
+      return;
+    }
+    if (btn) btn.innerText = "🔄 Live Bhav";
+    if (!d.ok) toast("Live bhav nahi mil saka. Internet check karein ya bhav khud daalein.");
+  } catch (e) { if (btn) btn.innerText = "🔄 Live Bhav"; }
+};
+
+function autoFetchRatesIfNeeded() {
+  var stale = !(appStore.ratesAt > 0) || (Date.now() - appStore.ratesAt) > 6 * 3600 * 1000;
+  var noRates = !(appStore.goldRate10g > 0 && appStore.silverRate10g > 0);
+  if (appStore.ratesSource === 'manual' && !noRates) return;
+  if (noRates || stale) fetchOnlineMarketRates(true);
+}
+
+function calcUshr() {
+  var kg = Math.max(0, parseFloat(document.getElementById('ushrKg').value) || 0);
+  var r = Math.max(0, parseFloat(document.getElementById('ushrRate').value) || 0);
+  var m = parseFloat(document.getElementById('ushrType').value) || 0.10;
+  document.getElementById('lblUshrResult').innerText = formatRs(kg * r * m);
+}
+
+var FITRA_KG = { wheat: 2.041, barley: 4.082, dates: 4.082, raisins: 4.082 };
+function onFitraRateChange() {
+  var kind = document.getElementById('fitraRateType').value;
+  document.getElementById('fitraWeightKg').value = (FITRA_KG[kind] || 2.041).toFixed(3);
+  calcFitra();
+}
+function calcFitra() {
+  var m = Math.max(1, Math.min(1000, parseInt(document.getElementById('fitraMembers').value) || 1));
+  var kg = parseFloat(document.getElementById('fitraWeightKg').value);
+  var price = Math.max(0, parseFloat(document.getElementById('fitraPrice').value) || 0);
+  var el = document.getElementById('lblFitraResult');
+  if (!isFinite(kg) || kg <= 0 || price <= 0) { el.innerText = '—'; return; }
+  el.innerText = formatRs(m * kg * price);
+}
+
+function checkRishtedar() {
+  var sel = document.getElementById('rishtaSelect').value;
+  var item = RISHTEDAR_DB.find(function(x) { return x.id === sel; }) || RISHTEDAR_DB[0];
+  var cls = item.status === 'NAJAYAZ' ? 'b-minus' : 'b-plus';
+  document.getElementById('rishtaResultBox').innerHTML = '<div class="item-row" style="flex-direction:column; align-items:flex-start;"><span class="badge ' + cls + '">' + escHtml(item.title) + '</span><p style="font-size:0.82rem; margin-top:6px;">' + escHtml(item.reason) + '</p><div style="font-size:0.72rem; color:var(--gold-light); margin-top:4px;">📚 ' + escHtml(item.ref) + '</div></div>';
+}
+
+function setTheme(t) {
+  appStore.theme = t;
+  document.body.className = (t !== 'default') ? ('theme-' + t) : '';
+  saveState();
+}
+
+function resetAllData() {
+  askConfirm("Zewar, sampatti, qarz aur kist ka poora hisab mita diya jayega. Kya aap waqai reset karna chahte hain?", function() {
+    appStore.jewels = []; appStore.assets = []; appStore.debts = []; appStore.kistList = []; appStore.khataWajib = 0;
+    saveState(); calculateAll(); updateKhataUI();
+    toast("Hisab reset ho gaya.");
+  });
+}
+
+function addKistEntry() {
+  var n = document.getElementById('kistNote').value.trim() || "Zakat Kist";
+  var a = parseFloat(document.getElementById('kistAmount').value) || 0;
+  if (a <= 0) return;
+  appStore.kistList.push({ id: Date.now(), note: n, amt: a, date: new Date().toLocaleDateString('en-IN') });
+  document.getElementById('kistNote').value = ''; document.getElementById('kistAmount').value = '';
+  saveState(); updateKhataUI();
+}
+
+function updateKhataUI() {
+  var paid = 0;
+  (appStore.kistList || []).forEach(function(x) { paid += x.amt; });
+  document.getElementById('khataTotalWajib').innerText = formatRs(appStore.khataWajib);
+  document.getElementById('khataTotalPaid').innerText = formatRs(paid);
+  document.getElementById('khataRemaining').innerText = formatRs(Math.max(0, appStore.khataWajib - paid));
+  document.getElementById('kistHistoryList').innerHTML = (appStore.kistList || []).map(function(k) {
+    return '<div class="item-row"><span>' + escHtml(k.note) + ' (' + k.date + ')</span><strong style="color:var(--green);">' + formatRs(k.amt) + '</strong></div>';
+  }).join('');
+}
+
+function shareParchaWhatsApp() {
+  var r = lastCalcResult || {};
+  var msg = "۞ *NOOR-A-ZAKAT PARCHA* ۞\n" +
+    "Naam: " + appStore.userName + "\n" +
+    "Tarikh: " + new Date().toLocaleDateString('en-IN') + " • " + document.getElementById('uiHijriDate').innerText.replace('🌙 ', '') + "\n" +
+    "Status: " + r.statusTitle + "\n" +
+    "Khalis Zakatable Maal: " + formatRs(r.netZakatable) + "\n" +
+    "Wajib Zakat: " + formatRs(r.zakatPayable) + "\n\n" +
+    "_Yeh hisab madad ke liye hai, fatwa nahi. Mufti sahab se tasdeeq karein._";
+  if (window.AndroidBridge) AndroidBridge.shareReport(msg);
+}
+
+// INITIAL BOOT
+loadSavedState();
+refreshGregorian();
+document.getElementById('uiProfileName').innerText = appStore.userName || "Setup";
+document.getElementById('rishtaSelect').innerHTML = RISHTEDAR_DB.map(function(r) { return '<option value="' + r.id + '">' + escHtml(r.name) + '</option>'; }).join('');
+document.getElementById('masarifFullList').innerHTML = RISHTEDAR_DB.map(function(r) {
+  return '<div class="item-row" style="flex-direction:column; align-items:flex-start;"><strong>' + escHtml(r.name) + '</strong><span class="badge ' + (r.status === 'NAJAYAZ' ? 'b-minus' : 'b-plus') + '" style="margin:4px 0;">' + escHtml(r.title) + '</span><span style="font-size:0.75rem; color:var(--text-secondary);">' + escHtml(r.reason) + '</span></div>';
+}).join('');
+document.getElementById('booksLibraryContainer').innerHTML = MUSTANAD_BOOKS_DB.map(function(b) {
+  return '<div class="item-row" style="flex-direction:column; align-items:flex-start; gap:5px;"><strong style="color:var(--gold-light);">' + escHtml(b.title) + '</strong><span style="font-size:0.75rem; color:var(--text-secondary);">' + escHtml(b.topic) + '</span><a class="btn-dalil" style="text-decoration:none;" href="' + b.link + '" target="_blank">🌐 Kitab Padhein ↗</a></div>';
+}).join('');
+
+restoreInputs();
+selectLang(appStore.lang || 'hinglish');
+setTheme(appStore.theme || 'default');
+checkRishtedar();
+updateTolaPreview();
+calculateAll();
+onFitraRateChange();
+renderCalendar();
+
+setupDalilSheetDrag();
+
+if (!appStore.setupCompleted) {
+  openSetupModal();
+}
+refreshHijri();
+updateRateStatus();
+autoFetchRatesIfNeeded();
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="noor_bg">#07130F</color>
+    <color name="noor_card">#0D1D18</color>
+    <color name="noor_gold">#D4AF37</color>
+    <color name="noor_gold_light">#FDE08D</color>
+    <color name="launcher_bg">#07130F</color>
+</resources>

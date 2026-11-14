@@ -1,0 +1,18 @@
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/noor_gold</item>
+        <item name="colorPrimaryDark">@color/noor_bg</item>
+        <item name="colorAccent">@color/noor_gold_light</item>
+        <item name="android:windowBackground">@color/noor_bg</item>
+        <item name="android:statusBarColor">@color/noor_bg</item>
+        <item name="android:navigationBarColor">@color/noor_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+
+    <style name="Theme.NoorZakat.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/noor_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_icon</item>
+        <item name="postSplashScreenTheme">@style/AppTheme</item>
+    </style>
+</resources>
