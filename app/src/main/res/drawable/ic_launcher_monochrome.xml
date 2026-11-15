@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <group android:scaleX="0.78" android:scaleY="0.78" android:pivotX="54" android:pivotY="54">
+        <!-- Gold mihrab outline -->
+        <path android:fillColor="#FFFFFF" android:pathData="M54,10 C30,10 14,28 14,51 L14,91 L94,91 L94,51 C94,28 78,10 54,10 Z M54,18 C73,18 86,33 86,52 L86,83 L22,83 L22,52 C22,33 35,18 54,18 Z"/>
+        <!-- Crescent -->
+        <path android:fillColor="#FFFFFF" android:pathData="M73,25 C58,27 49,41 52,55 C55,69 68,76 81,72 C72,83 54,84 42,73 C29,61 29,42 41,30 C50,21 63,19 73,25 Z"/>
+        <!-- Small star -->
+        <path android:fillColor="#FFFFFF" android:pathData="M78,20 L81,27 L88,30 L81,33 L78,40 L75,33 L68,30 L75,27 Z"/>
+        <!-- Open book -->
+        <path android:fillColor="#FFFFFF" android:pathData="M27,52 C37,47 46,49 54,55 C62,49 71,47 81,52 L81,76 C70,72 61,74 54,80 C47,74 38,72 27,76 Z"/>
+        <path android:fillColor="#FFFFFF" android:pathData="M54,55 L54,80 M32,56 C40,53 46,55 51,59 L51,74 C45,70 39,69 32,71 Z M76,56 C68,53 62,55 57,59 L57,74 C63,70 69,69 76,71 Z"/>
+    </group>
+</vector>
