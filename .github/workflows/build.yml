@@ -2,15 +2,8 @@ name: Build and Release APK
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
-    inputs:
-      release:
-        description: Create signed Play Store AAB and GitHub Release
-        required: false
-        default: false
-        type: boolean
 
 permissions:
   contents: write
@@ -42,64 +35,20 @@ jobs:
       - name: Build debug APK
         run: ./gradlew clean assembleDebug --stacktrace
 
-      - name: Verify debug APK
-        shell: bash
-        run: |
-          set -euo pipefail
-          APK="app/build/outputs/apk/debug/app-debug.apk"
-          test -s "$APK"
-          command -v zipalign >/dev/null
-          command -v apksigner >/dev/null
-          zipalign -c -v 4 "$APK"
-          apksigner verify --verbose "$APK"
-          sha256sum "$APK" | tee SHA256SUMS.txt
-
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
         with:
           name: Noor-A-Zakat-debug-apk
-          path: |
-            app/build/outputs/apk/debug/app-debug.apk
-            SHA256SUMS.txt
+          path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
           compression-level: 0
+          retention-days: 14
 
-      - name: Prepare release signing
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.release == 'true' }}
+      - name: Publish to GitHub Releases
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v3.0.1-b${{ github.run_number }}
+          name: Noor-A-Zakat v3.0.1 (Build ${{ github.run_number }})
+          files: app/build/outputs/apk/debug/*.apk
         env:
-          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          test -n "$KEYSTORE_BASE64"
-          test -n "$KEYSTORE_PASSWORD"
-          echo "$KEYSTORE_BASE64" | base64 -d > noor-release.jks
-          printf 'storeFile=noor-release.jks\nstorePassword=%s\nkeyAlias=noor\nkeyPassword=%s\n' "$KEYSTORE_PASSWORD" "$KEYSTORE_PASSWORD" > keystore.properties
-
-      - name: Build release AAB
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.release == 'true' }}
-        env:
-          ADMOB_APP_ID: ${{ secrets.ADMOB_APP_ID }}
-          ADMOB_BANNER_ID: ${{ secrets.ADMOB_BANNER_ID }}
-        run: ./gradlew bundleRelease -PADMOB_APP_ID="$ADMOB_APP_ID" -PADMOB_BANNER_ID="$ADMOB_BANNER_ID" --stacktrace
-
-      - name: Verify release AAB
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.release == 'true' }}
-        run: |
-          test -s app/build/outputs/bundle/release/app-release.aab
-          sha256sum app/build/outputs/bundle/release/app-release.aab | tee RELEASE-SHA256SUMS.txt
-
-      - name: Create GitHub Release
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.release == 'true' }}
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          TAG="v3.0.1-${GITHUB_RUN_NUMBER}"
-          gh release create "$TAG" \
-            app/build/outputs/bundle/release/app-release.aab \
-            app/build/outputs/apk/debug/app-debug.apk \
-            SHA256SUMS.txt \
-            RELEASE-SHA256SUMS.txt \
-            --title "Noor-A-Zakat $TAG" \
-            --generate-notes
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
