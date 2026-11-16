@@ -1,0 +1,72 @@
+name: Build and Release APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate WebView Assets & Logic
+        run: node scripts/validate_web_assets.js
+
+      - name: Grant Execute Permission
+        run: chmod +x ./gradlew
+
+      - name: Run Unit Tests & Assemble Debug APK
+        run: ./gradlew --no-daemon clean testDebugUnitTest assembleDebug
+
+      - name: Verify APK Signature & Prepare Clean Name
+        shell: bash
+        run: |
+          set -euo pipefail
+          APK="app/build/outputs/apk/debug/app-debug.apk"
+          test -s "$APK"
+          zip -T "$APK"
+          APKSIGNER="$(find "$ANDROID_HOME/build-tools" -type f -name apksigner | sort -V | tail -n 1)"
+          "$APKSIGNER" verify --verbose "$APK"
+          cp "$APK" Noor-A-Zakat-v4.0.0.apk
+          sha256sum Noor-A-Zakat-v4.0.0.apk > SHA256SUMS.txt
+
+      - name: Upload Uncompressed Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Noor-A-Zakat-v4.0.0-apk
+          path: |
+            Noor-A-Zakat-v4.0.0.apk
+            SHA256SUMS.txt
+          compression-level: 0
+
+      - name: Publish Direct APK to GitHub Releases
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v4.0.0-b${{ github.run_number }}
+          name: Noor-A-Zakat v4.0.0 (Build ${{ github.run_number }})
+          body: "Clean Production Build — Direct Installable APK below under Assets."
+          files: |
+            Noor-A-Zakat-v4.0.0.apk
+            SHA256SUMS.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
